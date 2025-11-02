@@ -1,0 +1,662 @@
+\documentclass[12pt,a4paper]{article}
+
+% Pakiety
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{tikz}
+
+% Konfiguracja strony
+\geometry{
+    a4paper,
+    left=2.5cm,
+    right=2.5cm,
+    top=3cm,
+    bottom=3cm
+}
+
+% Kolory Politechniki Wrocławskiej
+\definecolor{pwrred}{RGB}{154,52,45}      % PANTONE 484 - główny kolor PWr
+\definecolor{pwrgold}{RGB}{241,209,162}   % PANTONE 156 - akcentowy kolor PWr
+\definecolor{lightgray}{RGB}{245,245,245}
+
+% Konfiguracja hyperref
+\hypersetup{
+    colorlinks=true,
+    linkcolor=pwrred,
+    urlcolor=pwrred,
+    citecolor=pwrred
+}
+
+% Formatowanie sekcji
+\titleformat{\section}
+{\color{pwrred}\Large\bfseries}
+{\thesection}{1em}{}[\color{pwrgold}\titlerule]
+
+\titleformat{\subsection}
+{\color{pwrred}\large\bfseries}
+{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\color{pwrred}\normalsize\bfseries}
+{\thesubsubsection}{1em}{}
+
+% Nagłówki i stopki
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{pwrred}{Etap 1 - Modelowanie wymagań}}
+\fancyhead[R]{\small\textcolor{pwrred}{Radionenko, Perepilka}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{pwrgold}\leaders\hrule height \headrulewidth\hfill}}
+
+% Styl dla przypadków użycia
+\newtcolorbox{usecase}[1]{
+    colback=lightgray,
+    colframe=pwrred,
+    fonttitle=\bfseries,
+    title=#1,
+    arc=2mm,
+    boxrule=1pt,
+    top=8pt,
+    bottom=8pt,
+    left=10pt,
+    right=10pt,
+    before skip=10pt,
+    after skip=10pt
+}
+
+\begin{document}
+
+% === STRONA TYTUŁOWA ===
+\begin{titlepage}
+    % Tło - gradient z dekoracyjnymi elementami
+    \begin{tikzpicture}[remember picture,overlay]
+        % Główne tło PWr
+        \fill[pwrred] (current page.north west) rectangle (current page.south east);
+        
+        % Dekoracyjne paski w kolorze złotym PWr
+        \fill[pwrgold] ([xshift=-2cm,yshift=-4cm]current page.north west) 
+            -- ([xshift=2cm,yshift=-4cm]current page.north east)
+            -- ([xshift=2cm,yshift=-4.3cm]current page.north east)
+            -- ([xshift=-2cm,yshift=-4.3cm]current page.north west) -- cycle;
+        
+        \fill[pwrgold] ([xshift=-2cm,yshift=-18.5cm]current page.north west) 
+            -- ([xshift=2cm,yshift=-18.5cm]current page.north east)
+            -- ([xshift=2cm,yshift=-18.8cm]current page.north east)
+            -- ([xshift=-2cm,yshift=-18.8cm]current page.north west) -- cycle;
+        
+        % Dekoracyjne koła w tle
+        \foreach \i in {1,...,8} {
+            \pgfmathsetmacro{\xpos}{2 + \i*2.5}
+            \pgfmathsetmacro{\ypos}{-2 - \i*1.2}
+            \pgfmathsetmacro{\opacity}{0.03 + \i*0.01}
+            \fill[white,opacity=\opacity] (\xpos,\ypos) circle (1.5cm);
+        }
+        
+        % Dodatkowe subtelne elementy geometryczne
+        \draw[white,opacity=0.1,line width=0.5mm] 
+            ([xshift=1cm,yshift=-8cm]current page.north west) 
+            -- ([xshift=-1cm,yshift=-12cm]current page.north east);
+        \draw[white,opacity=0.1,line width=0.5mm] 
+            ([xshift=1cm,yshift=-15cm]current page.north west) 
+            -- ([xshift=-1cm,yshift=-17cm]current page.north east);
+    \end{tikzpicture}
+    
+    \vspace*{1cm}
+    
+    \begin{center}
+        % Numer etapu w eleganckim boxie
+        \begin{tcolorbox}[
+            colback=white,
+            colframe=white,
+            width=5cm,
+            arc=3mm,
+            boxrule=0pt,
+            left=5pt,
+            right=5pt,
+            top=3pt,
+            bottom=3pt
+        ]
+            \centering
+            {\color{pwrred}\Large\bfseries ETAP 1}
+        \end{tcolorbox}
+        
+        \vspace{0.3cm}
+        
+        % Tytuł etapu
+        {\color{white}\LARGE\bfseries Modelowanie wymagań}\\[0.2cm]
+        {\color{white}\Large i przypadków użycia}
+        
+        \vspace{1.5cm}
+        
+        % Główny tytuł projektu w eleganckim białym boxie
+        \begin{tcolorbox}[
+            colback=white,
+            colframe=pwrgold,
+            width=0.85\textwidth,
+            arc=3mm,
+            boxrule=2pt,
+            top=12pt,
+            bottom=12pt,
+            left=15pt,
+            right=15pt,
+            drop shadow={opacity=0.3,shadow xshift=3pt,shadow yshift=-3pt}
+        ]
+            \centering
+            {\color{pwrred}\Large\bfseries Zintegrowany System\\[0.25cm]
+            Sprzedaży Biletów\\[0.2cm]
+            dla Sieci Multikin}
+        \end{tcolorbox}
+        
+        \vspace{2cm}
+        
+        % Sekcja autorów z nowoczesnymi boxami
+        {\color{white}\large\bfseries Autorzy projektu:}\\[0.5cm]
+        
+        \begin{minipage}{0.42\textwidth}
+            \begin{tcolorbox}[
+                colback=white,
+                colframe=white,
+                arc=2mm,
+                boxrule=0pt,
+                top=8pt,
+                bottom=8pt,
+                left=10pt,
+                right=10pt
+            ]
+                \centering
+                {\color{pwrred}\large\bfseries Oleksandr Radionenko}\\[0.2cm]
+                {\color{gray}\normalsize nr albumu: 274003}
+            \end{tcolorbox}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.42\textwidth}
+            \begin{tcolorbox}[
+                colback=white,
+                colframe=white,
+                arc=2mm,
+                boxrule=0pt,
+                top=8pt,
+                bottom=8pt,
+                left=10pt,
+                right=10pt
+            ]
+                \centering
+                {\color{pwrred}\large\bfseries Yaroslav Perepilka}\\[0.2cm]
+                {\color{gray}\normalsize nr albumu: 282279}
+            \end{tcolorbox}
+        \end{minipage}
+        
+        \vfill
+        
+        % Stopka z informacją o uczelni
+        \begin{tcolorbox}[
+            colback=white,
+            colframe=white,
+            width=0.75\textwidth,
+            arc=2mm,
+            boxrule=0pt,
+            top=10pt,
+            bottom=10pt
+        ]
+            \centering
+            {\color{pwrred}\large\bfseries Politechnika Wrocławska}\\[0.15cm]
+            {\color{gray}\normalsize Wydział Informatyki i Telekomunikacji}\\[0.1cm]
+            {\color{gray}\normalsize Kierunek: Informatyka Techniczna}\\[0.3cm]
+            {\color{gray}\small Przedmiot: Inżynieria Oprogramowania}\\[0.3cm]
+            {\color{gray}\normalsize Wrocław, \today}
+        \end{tcolorbox}
+        
+        \vspace{0.5cm}
+    \end{center}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+% === TREŚĆ DOKUMENTU ===
+
+\section{Miejsce wdrożenia}
+
+\subsection{Nazwa projektu}
+\textbf{Zintegrowany System Sprzedaży Biletów dla Sieci Multikin}, zwany dalej systemem.
+
+\subsection{Klient}
+Sieć kin „MultiKino", posiadająca 3 obiekty kinowe w różnych miastach, zwana dalej siecią kin.
+
+\subsection{Cel projektu}
+Wykonanie systemu informatycznego wspierającego sprzedaż biletów w sieci kin, zarówno w kasach stacjonarnych, jak i przez internet.
+
+System umożliwia zarządzanie repertuarem, rezerwacjami miejsc, sprzedażą online, raportowaniem oraz centralne zarządzanie danymi o seansach i salach kinowych.
+
+\subsection{Zasoby ludzkie}
+Użytkownikami systemu są pracownicy sieci kin oraz klienci:
+
+\begin{itemize}[leftmargin=*,itemsep=0.3em]
+    \item \textbf{Kasjer} -- pracownik obsługi klienta w każdym kinie. Sprzedaje bilety w kasie, przyjmuje płatności gotówkowe i kartowe, wydaje bilety papierowe, obsługuje rezerwacje dokonane online, może też anulować błędne transakcje.
+    
+    \item \textbf{Menedżer Kina} -- osoba odpowiedzialna za organizację repertuaru w konkretnym kinie. Dodaje i edytuje seanse, zarządza salami kinowymi, ustala lokalne ceny i kontroluje pracę kasjerów. Może generować raporty sprzedaży w swoim kinie.
+    
+    \item \textbf{Administrator Sieci Kin} -- osoba odpowiedzialna za nadzór nad całą siecią kin. Zarządza centralną bazą danych, ustala globalny repertuar, nadzoruje integrację z systemem sprzedaży online, generuje zbiorcze raporty finansowe i statystyki sprzedaży dla wszystkich kin.
+    
+    \item \textbf{Klient} -- osoba dokonująca zakupu biletu przez stronę internetową. Może przeglądać repertuar, wybierać miejsca, kupować bilety online, pobierać bilety elektroniczne lub otrzymywać je na e-mail.
+\end{itemize}
+
+\subsection{Przepisy i strategie}
+
+\begin{enumerate}[leftmargin=*,itemsep=0.3em]
+    \item Działalność sieci kin podlega przepisom ustawy z dnia 9 listopada 2018 r. o imprezach artystycznych i rozrywkowych oraz przepisom dotyczącym sprzedaży usług elektronicznych.
+    
+    \item Przetwarzanie danych osobowych klientów odbywa się zgodnie z art. 13 ust. 1 i 2 Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. (RODO).
+    
+    \item Administratorem danych osobowych jest Administrator Sieci Kin, działający w imieniu sieci FilmLux Group.
+    
+    \item System wspomaga i automatyzuje procesy sprzedaży w kasach oraz online, zapewniając spójność danych w całej sieci.
+    
+    \item Każda transakcja sprzedaży (zarówno lokalna, jak i internetowa) jest rejestrowana w centralnej bazie danych.
+    
+    \item Menedżerowie kin są zobowiązani do bieżącej aktualizacji repertuaru i kontrolowania poprawności danych wprowadzanych przez kasjerów.
+    
+    \item Sprzedaż online działa całodobowo i podlega zasadom bezpieczeństwa transakcji elektronicznych (szyfrowanie SSL/TLS, integracja z bramkami płatniczymi).
+    
+    \item System musi zapewniać zgodność z wewnętrznymi procedurami dotyczącymi zwrotów, rezerwacji i anulowania transakcji.
+\end{enumerate}
+
+\subsection{Dane techniczne}
+
+\begin{enumerate}[leftmargin=*,itemsep=0.3em]
+    \item Każde kino wyposażone jest w lokalne stanowiska kasowe (2--4 komputery) z systemem Windows 11 lub Ubuntu 24.04 LTS oraz drukarkami biletów termicznych i terminalami płatniczymi.
+    
+    \item System działa w architekturze \textbf{klient--serwer}, z centralną bazą danych w chmurze (serwer główny sieci kin).
+    
+    \item Dostęp do systemu możliwy jest przez aplikację stacjonarną (dla kasjerów i menedżerów) oraz przez stronę WWW (dla klientów).
+    
+    \item System obsługuje do 30 jednoczesnych użytkowników (kasjerów i menedżerów) oraz do 500 klientów online jednocześnie.
+    
+    \item System przechowuje dane o maksymalnie 10\,000 seansach, 30 salach kinowych i 15\,000 transakcjach miesięcznie.
+    
+    \item Transakcje online są realizowane przez zintegrowany moduł płatności elektronicznych (np. PayU, Przelewy24).
+    
+    \item Dane są zabezpieczane przez codzienne automatyczne kopie zapasowe i szyfrowane transmisje danych.
+\end{enumerate}
+
+\newpage
+\section{Wymagania stawiane tworzonemu oprogramowaniu}
+
+\subsection{Wymagania funkcjonalne}
+
+\begin{itemize}[leftmargin=*,itemsep=0.3em]
+    \item \textbf{F01)} System przechowuje i przetwarza dane o seansach filmowych, salach, biletach, użytkownikach i transakcjach w całej sieci kin.
+    
+    \item \textbf{F02)} Kasjer sprzedaje bilety w kasie na wybrany seans filmowy.
+    
+    \item \textbf{F03)} Klient kupuje bilety online przez stronę WWW, wybierając film, datę, godzinę i miejsca na sali.
+    
+    \item \textbf{F04)} System automatycznie blokuje miejsca podczas procesu zakupu i odblokowuje je w przypadku przerwanej transakcji.
+    
+    \item \textbf{F05)} Menedżer Kina zarządza repertuarem lokalnego kina (dodaje, edytuje, usuwa seanse).
+    
+    \item \textbf{F06)} Administrator Sieci Kin zarządza repertuarem i danymi dla wszystkich kin.
+    
+    \item \textbf{F07)} System automatycznie aktualizuje dostępność miejsc w czasie rzeczywistym w kasach i online.
+    
+    \item \textbf{F08)} System generuje raporty sprzedaży dla pojedynczego kina (dla menedżera) oraz zbiorcze raporty sieciowe (dla administratora).
+    
+    \item \textbf{F09)} System umożliwia anulowanie lub zwrot biletów zgodnie z regulaminem sieci kin.
+    
+    \item \textbf{F10)} System umożliwia logowanie użytkowników z różnymi poziomami uprawnień (kasjer, menedżer, administrator).
+    
+    \item \textbf{F11)} System wysyła klientowi bilety elektroniczne e-mailem po zakończeniu zakupu online.
+    
+    \item \textbf{F12)} System rejestruje każdą operację sprzedaży, edycji repertuaru i anulowania biletów.
+\end{itemize}
+
+\subsection{Wymagania niefunkcjonalne}
+
+\begin{itemize}[leftmargin=*,itemsep=0.3em]
+    \item \textbf{N01)} System działa w architekturze klient--serwer z centralną bazą danych dostępną dla wszystkich kin.
+    
+    \item \textbf{N02)} System online jest dostępny 24/7 (i obsługuje do 500 równoczesnych transakcji).
+    
+    \item \textbf{N03)} Wszystkie dane przesyłane między klientem a serwerem są szyfrowane (SSL/TLS).
+    
+    \item \textbf{N04)} System zapewnia jednoczesną pracę kasjerów i klientów online bez konfliktów w rezerwacjach miejsc.
+    
+    \item \textbf{N06)} System tworzy codzienne kopie zapasowe danych.
+    
+    \item \textbf{N07)} Dostęp do danych administracyjnych mają tylko użytkownicy z uprawnieniami menedżera lub administratora.
+    
+    \item \textbf{N08)} System spełnia wymogi RODO i ustawy o świadczeniu usług drogą elektroniczną.
+    
+    \item \textbf{N09)} Interfejs użytkownika (zarówno kasowy, jak i internetowy) jest intuicyjny i prosty.
+    
+    \item \textbf{N10)} System jest skalowalny i może obsłużyć kolejne kina bez potrzeby modyfikacji kodu źródłowego.
+\end{itemize}
+
+\section{Diagram przypadków użycia}
+
+Diagram przedstawia głównych aktorów systemu oraz ich interakcje z poszczególnymi funkcjami. System obsługuje czterech podstawowych aktorów:
+
+\begin{itemize}[leftmargin=*,itemsep=0.2em]
+    \item \textbf{Klient} -- interakcja z systemem odbywa się poprzez interfejs webowy, umożliwiający rezerwację i zakup biletów online oraz zarządzanie własnymi rezerwacjami.
+    
+    \item \textbf{Kasjer} -- obsługa transakcji w punkcie stacjonarnym, wspomaganie klientów w procesie zakupu oraz rejestracja nowych użytkowników w systemie.
+    
+    \item \textbf{Menedżer Kina} -- zarządzanie lokalnym repertuarem oraz bazą klientów w obrębie pojedynczego kina.
+    
+    \item \textbf{Administrator Sieci} -- centralny nadzór nad całą siecią kin, zarządzanie ofertą filmową i seansami we wszystkich lokalizacjach.
+\end{itemize}
+
+\vspace{0.3cm}
+\noindent Diagram ilustruje hierarchię uprawnień -- Administrator Sieci dysponuje najszerszymi możliwościami modyfikacji systemu, podczas gdy Klient ma dostęp wyłącznie do funkcji związanych z rezerwacją i przeglądaniem swoich transakcji.
+
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=0.95\textwidth]{im.jpg}}
+    \caption{Diagram przypadków użycia systemu sprzedaży biletów}
+    \label{fig:usecase-diagram}
+\end{figure}
+
+\newpage
+\section{Przypadki użycia}
+
+\subsection{PU01. Rezerwacja biletu}
+
+\begin{usecase}{Rezerwacja biletu}
+\textbf{Cel:} Umożliwienie klientowi rezerwacji biletu na wybrany seans w systemie.
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki wstępne:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Klient posiada aktywne konto w systemie.
+    \item W systemie istnieje aktywna oferta seansów.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki końcowe:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Zarejestrowano rezerwację biletu w systemie.
+    \item Klient otrzymuje potwierdzenie rezerwacji.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Scenariusz:}
+\begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
+    \item Klient loguje się do systemu.
+    \item Klient wybiera film, datę i godzinę seansu.
+    \item Klient wybiera miejsce w sali.
+    \item System sprawdza dostępność miejsca.
+    \item Klient potwierdza rezerwację.
+    \item System zapisuje rezerwację i generuje potwierdzenie.
+\end{enumerate}
+
+\vspace{0.15cm}
+\noindent\textbf{Alternatywny przebieg:} Jeśli miejsce jest zajęte, system informuje klienta i prosi o wybór innego miejsca.
+\end{usecase}
+
+\subsection{PU02. Zwrot zarezerwowanego biletu}
+
+\begin{usecase}{Zwrot zarezerwowanego biletu}
+\textbf{Cel:} Umożliwienie klientowi anulowania wcześniej zarezerwowanego biletu.
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki wstępne:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Klient posiada aktywną rezerwację biletu.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki końcowe:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Rezerwacja biletu została anulowana.
+    \item System zwraca środki pieniężne (poprzez PU03).
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Scenariusz:}
+\begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
+    \item Klient loguje się do systemu.
+    \item Klient wybiera rezerwację do anulowania.
+    \item System weryfikuje możliwość zwrotu (np. przed rozpoczęciem seansu).
+    \item Klient potwierdza anulowanie.
+    \item System usuwa rezerwację i przekazuje informację do PU03 w celu zwrotu środków.
+\end{enumerate}
+
+\vspace{0.15cm}
+\noindent\textbf{Alternatywny przebieg:} Jeśli seans już się rozpoczął, system informuje, że zwrot nie jest możliwy.
+\end{usecase}
+
+\subsection{PU03. Wykonano PU02 i zwrócono pieniądze za bilet}
+
+\begin{usecase}{Zwrot pieniędzy za bilet}
+\textbf{Cel:} Realizacja zwrotu pieniędzy za anulowany bilet.
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki wstępne:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Inicjacja przez PU02 (Zwrot zarezerwowanego biletu).
+    \item PU02 przekazuje dane o bilecie i kwocie do zwrotu.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki końcowe:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Zwrócono pieniądze klientowi.
+    \item System zarejestrował wykonanie zwrotu.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Scenariusz:}
+\begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
+    \item System pobiera dane rezerwacji anulowanego biletu.
+    \item System oblicza kwotę do zwrotu.
+    \item System inicjuje operację zwrotu środków na konto klienta.
+    \item System zapisuje zdarzenie zwrotu.
+\end{enumerate}
+
+\vspace{0.15cm}
+\noindent\textbf{Alternatywny przebieg:} W przypadku błędu transakcji system zgłasza komunikat o niepowodzeniu zwrotu i proponuje ponowną próbę.
+\end{usecase}
+
+\subsection{PU04. Edytowanie oferty Kina w systemie}
+
+\begin{usecase}{Edytowanie oferty Kina}
+\textbf{Cel:} Aktualizacja oferty filmowej w systemie sieci kin.
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki wstępne:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Administrator sieci jest zalogowany.
+    \item System zawiera aktualną listę kin i seansów.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki końcowe:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Oferta filmowa została zaktualizowana w całym systemie.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Scenariusz:}
+\begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
+    \item Administrator wybiera opcję „Edycja oferty kin".
+    \item Administrator modyfikuje dane filmów (tytuł, opis, plakat, czas trwania itp.).
+    \item System weryfikuje poprawność wprowadzonych danych.
+    \item System zapisuje zmiany i aktualizuje ofertę.
+\end{enumerate}
+
+\vspace{0.15cm}
+\noindent\textbf{Alternatywny przebieg:} Jeśli dane są błędne, system wyświetla komunikat o konieczności poprawy.
+\end{usecase}
+
+\subsection{PU05. Dodanie nowego seansu do systemu}
+
+\begin{usecase}{Dodanie nowego seansu}
+\textbf{Cel:} Wprowadzenie do systemu nowego seansu filmowego.
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki wstępne:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Administrator sieci lub menedżer kina jest zalogowany.
+    \item W systemie istnieje film przypisany do danego kina.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki końcowe:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Nowy seans jest dostępny w harmonogramie kina.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Scenariusz:}
+\begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
+    \item Użytkownik wybiera film z listy.
+    \item Określa datę, godzinę i salę projekcyjną.
+    \item System sprawdza dostępność sali.
+    \item Użytkownik potwierdza dodanie seansu.
+    \item System zapisuje nowy seans i aktualizuje harmonogram.
+\end{enumerate}
+
+\vspace{0.15cm}
+\noindent\textbf{Alternatywny przebieg:} Jeśli sala jest zajęta w wybranym terminie, system informuje o konflikcie.
+\end{usecase}
+
+\subsection{PU06. Edytowanie seansów w systemie kin}
+
+\begin{usecase}{Edytowanie seansów}
+\textbf{Cel:} Umożliwienie administratorowi modyfikacji istniejących seansów.
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki wstępne:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Administrator sieci jest zalogowany.
+    \item W systemie istnieją wcześniej dodane seanse.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki końcowe:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Zaktualizowano dane seansu.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Scenariusz:}
+\begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
+    \item Administrator wybiera seans z listy.
+    \item Edytuje szczegóły (np. datę, godzinę, salę).
+    \item System weryfikuje poprawność danych.
+    \item Administrator zatwierdza zmiany.
+    \item System zapisuje nową wersję seansu.
+\end{enumerate}
+
+\vspace{0.15cm}
+\noindent\textbf{Alternatywny przebieg:} Jeśli nowa godzina koliduje z innym seansem, system zgłasza błąd.
+\end{usecase}
+
+\subsection{PU07. Dodanie nowego klienta do systemu kina (Rejestracja)}
+
+\begin{usecase}{Rejestracja nowego klienta}
+\textbf{Cel:} Rejestracja nowego klienta w systemie.
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki wstępne:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Kasjer lub menedżer jest zalogowany.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki końcowe:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Nowy klient został dodany do bazy danych.
+    \item Klient może logować się do systemu i rezerwować bilety.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Scenariusz:}
+\begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
+    \item Kasjer wybiera opcję „Nowy klient".
+    \item Wprowadza dane osobowe klienta (imię, nazwisko, e-mail itp.).
+    \item System weryfikuje poprawność danych.
+    \item System zapisuje klienta i generuje konto użytkownika.
+\end{enumerate}
+
+\vspace{0.15cm}
+\noindent\textbf{Alternatywny przebieg:} Jeśli e-mail jest już w bazie, system informuje o istnieniu konta.
+\end{usecase}
+
+\subsection{PU08. Edytowanie listy klientów sieci kin}
+
+\begin{usecase}{Edytowanie listy klientów}
+\textbf{Cel:} Zarządzanie listą klientów sieci przez menedżera kina.
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki wstępne:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Menedżer jest zalogowany do systemu.
+    \item W systemie istnieje lista klientów.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki końcowe:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Lista klientów została zaktualizowana.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Scenariusz:}
+\begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
+    \item Menedżer wybiera klienta z listy.
+    \item Edytuje dane (np. status konta, dane kontaktowe).
+    \item System weryfikuje poprawność danych.
+    \item System zapisuje zmiany.
+\end{enumerate}
+
+\vspace{0.15cm}
+\noindent\textbf{Alternatywny przebieg:} Jeśli dane są niepoprawne, system odrzuca zmiany.
+\end{usecase}
+
+\subsection{PU09. Przegląd historii rezerwacji}
+
+\begin{usecase}{Przegląd historii rezerwacji}
+\textbf{Cel:} Umożliwienie klientowi sprawdzenia historii swoich rezerwacji.
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki wstępne:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Klient jest zalogowany do systemu.
+    \item Klient posiada wcześniejsze rezerwacje.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki końcowe:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Klient wyświetlił historię swoich rezerwacji.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Scenariusz:}
+\begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
+    \item Klient loguje się do systemu.
+    \item Wybiera opcję „Historia rezerwacji".
+    \item System pobiera dane z bazy.
+    \item System wyświetla listę poprzednich rezerwacji (daty, filmy, status).
+\end{enumerate}
+
+\vspace{0.15cm}
+\noindent\textbf{Alternatywny przebieg:} Jeśli klient nie posiada rezerwacji, system informuje o pustej historii.
+\end{usecase}
+
+\end{document}
