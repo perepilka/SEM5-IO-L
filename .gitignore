@@ -2,3 +2,16 @@
 .~lock.*#
 .OnlineCinema.vpp.lck
 OnlineCinema.vpp.bak_000f
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Temporary text files from PDF extraction
+etap1/instructions.txt
+etap1/example.txt
