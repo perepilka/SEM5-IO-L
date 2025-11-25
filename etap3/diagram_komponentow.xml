@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:Visual_Paradigm="http://www.visual-paradigm.com/uml">
   <xmi:Documentation exporter="Visual Paradigm" exporterVersion="17.0"/>
   
   <!-- Model -->
@@ -140,6 +140,19 @@ Zawiera encje: Film, Seans, Kino.</body>
       </packagedElement>
       
     </packagedElement>
+    
+    <!-- Diagram Information -->
+    <Visual_Paradigm:Diagram xmi:type="Visual_Paradigm:Diagram" xmi:id="diagram_component" name="Diagram Komponentów - MVC" diagramType="ComponentDiagram">
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:ComponentShape" xmi:id="shape_widok" modelElement="component_widok" x="100" y="100" width="150" height="100"/>
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:InterfaceShape" xmi:id="shape_interface_kontroler" modelElement="interface_kontroler" x="350" y="80" width="200" height="140"/>
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:ComponentShape" xmi:id="shape_kontroler" modelElement="component_kontroler" x="350" y="280" width="200" height="120"/>
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:InterfaceShape" xmi:id="shape_interface_model" modelElement="interface_model" x="650" y="80" width="180" height="140"/>
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:ComponentShape" xmi:id="shape_model" modelElement="component_model" x="650" y="280" width="180" height="100"/>
+      <Visual_Paradigm:Connector xmi:type="Visual_Paradigm:UsageLine" xmi:id="conn_widok_kontroler" from="shape_widok" to="shape_interface_kontroler" modelElement="usage_widok_kontroler"/>
+      <Visual_Paradigm:Connector xmi:type="Visual_Paradigm:RealizationLine" xmi:id="conn_kontroler_interface" from="shape_kontroler" to="shape_interface_kontroler" modelElement="realization_kontroler"/>
+      <Visual_Paradigm:Connector xmi:type="Visual_Paradigm:UsageLine" xmi:id="conn_kontroler_model" from="shape_kontroler" to="shape_interface_model" modelElement="usage_kontroler_model"/>
+      <Visual_Paradigm:Connector xmi:type="Visual_Paradigm:RealizationLine" xmi:id="conn_model_interface" from="shape_model" to="shape_interface_model" modelElement="realization_model"/>
+    </Visual_Paradigm:Diagram>
     
   </uml:Model>
   

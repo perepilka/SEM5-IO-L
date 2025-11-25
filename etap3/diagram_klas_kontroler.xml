@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1">
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:Visual_Paradigm="http://www.visual-paradigm.com/uml">
   <xmi:Documentation exporter="Visual Paradigm" exporterVersion="17.0"/>
   
   <!-- Model -->
@@ -586,6 +586,18 @@
         <body>«use» - uses validators for data validation</body>
       </ownedComment>
     </packagedElement>
+    
+    <!-- Diagram Information -->
+    <Visual_Paradigm:Diagram xmi:type="Visual_Paradigm:Diagram" xmi:id="diagram_class_kontroler" name="Diagram Klas - Komponent Kontroler" diagramType="ClassDiagram">
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:ClassShape" xmi:id="shape_system" modelElement="class_system" x="50" y="50" width="250" height="80"/>
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:ClassShape" xmi:id="shape_kontroler_admin" modelElement="class_kontroler_admin" x="50" y="180" width="280" height="200"/>
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:InterfaceShape" xmi:id="shape_imodel" modelElement="interface_model" x="450" y="50" width="220" height="150"/>
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:ClassShape" xmi:id="shape_obsluga" modelElement="class_obsluga" x="50" y="430" width="250" height="180"/>
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:ClassShape" xmi:id="shape_walidator" modelElement="class_walidator" x="400" y="430" width="280" height="150"/>
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:ClassShape" xmi:id="shape_walidator_nazwa" modelElement="class_walidator_nazwa" x="350" y="640" width="180" height="100"/>
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:ClassShape" xmi:id="shape_walidator_opis" modelElement="class_walidator_opis" x="570" y="640" width="180" height="100"/>
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:ClassShape" xmi:id="shape_walidator_data" modelElement="class_walidator_data" x="460" y="780" width="180" height="100"/>
+    </Visual_Paradigm:Diagram>
     
   </uml:Model>
   
