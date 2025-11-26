@@ -335,6 +335,8 @@ Użytkownikami systemu są pracownicy sieci kin oraz klienci:
     
     \item \textbf{N04)} System zapewnia jednoczesną pracę kasjerów i klientów online bez konfliktów w rezerwacjach miejsc.
     
+    \item \textbf{N05)} Interfejs użytkownika systemu jest zgodny z zasadami ergonomii i dostępności.
+    
     \item \textbf{N06)} System tworzy codzienne kopie zapasowe danych.
     
     \item \textbf{N07)} Dostęp do danych administracyjnych mają tylko użytkownicy z uprawnieniami menedżera lub administratora.
@@ -373,290 +375,395 @@ Diagram przedstawia głównych aktorów systemu oraz ich interakcje z poszczegó
 \newpage
 \section{Przypadki użycia}
 
-\subsection{PU01. Rezerwacja biletu}
+\subsection{PU01. Rezerwacja biletu online}
 
-\begin{usecase}{Rezerwacja biletu}
-\textbf{Cel:} Umożliwienie klientowi rezerwacji biletu na wybrany seans w systemie.
+\begin{usecase}{PU01. Rezerwacja biletu online}
+\textbf{Cel:} Umożliwienie klientowi rezerwacji biletu na wybrany seans filmowy przez stronę internetową.
 
 \vspace{0.15cm}
 \noindent\textbf{Warunki wstępne:}
 \begin{itemize}[nosep,topsep=0pt,leftmargin=*]
-    \item Klient posiada aktywne konto w systemie.
-    \item W systemie istnieje aktywna oferta seansów.
+    \item Klient ma dostęp do systemu online.
+    \item W systemie istnieją dostępne seanse filmowe.
+    \item System przechowuje dane o salach kinowych i miejscach.
 \end{itemize}
 
 \vspace{0.15cm}
 \noindent\textbf{Warunki końcowe:}
 \begin{itemize}[nosep,topsep=0pt,leftmargin=*]
-    \item Zarejestrowano rezerwację biletu w systemie.
-    \item Klient otrzymuje potwierdzenie rezerwacji.
+    \item Bilet został zarezerwowany i zablokowany w systemie dla wybranego klienta.
+    \item System wysłał potwierdzenie rezerwacji klientowi e-mailem.
+    \item Miejsce w sali zostało czasowo zablokowane dla transakcji klienta.
 \end{itemize}
 
 \vspace{0.15cm}
-\noindent\textbf{Scenariusz:}
+\noindent\textbf{Scenariusz główny:}
 \begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
-    \item Klient loguje się do systemu.
+    \item Klient przegląda repertuar filmowy (zawiera PU09).
     \item Klient wybiera film, datę i godzinę seansu.
-    \item Klient wybiera miejsce w sali.
-    \item System sprawdza dostępność miejsca.
-    \item Klient potwierdza rezerwację.
-    \item System zapisuje rezerwację i generuje potwierdzenie.
+    \item System wyświetla plan sali z dostępnymi miejscami.
+    \item Klient wybiera jedno lub więcej miejsc w sali.
+    \item System sprawdza dostępność wybranych miejsc.
+    \item System tymczasowo blokuje wybrane miejsca na czas transakcji.
+    \item Klient podaje dane kontaktowe (imię, nazwisko, e-mail).
+    \item Klient potwierdza rezerwację i przechodzi do płatności.
+    \item System zapisuje rezerwację w bazie danych.
+    \item System generuje potwierdzenie rezerwacji z numerem biletu.
+    \item System wysyła e-mail z potwierdzeniem i biletem elektronicznym do klienta.
 \end{enumerate}
 
 \vspace{0.15cm}
-\noindent\textbf{Alternatywny przebieg:} Jeśli miejsce jest zajęte, system informuje klienta i prosi o wybór innego miejsca.
+\noindent\textbf{Scenariusz alternatywny:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item \textbf{[Krok 5]:} Jeśli wybrane miejsce zostało w międzyczasie zarezerwowane przez innego klienta, system informuje o niedostępności i prosi o wybór innego miejsca.
+    \item \textbf{[Krok 6]:} Jeśli klient nie dokończy transakcji w określonym czasie (np. 10 minut), system automatycznie odblokowuje miejsca i anuluje rezerwację.
+    \item \textbf{[Krok 8]:} Jeśli płatność nie powiedzie się, system anuluje rezerwację i odblokowuje miejsca.
+\end{itemize}
 \end{usecase}
 
-\subsection{PU02. Zwrot zarezerwowanego biletu}
+\subsection{PU02. Anulowanie rezerwacji biletu}
 
-\begin{usecase}{Zwrot zarezerwowanego biletu}
-\textbf{Cel:} Umożliwienie klientowi anulowania wcześniej zarezerwowanego biletu.
+\begin{usecase}{PU02. Anulowanie rezerwacji biletu}
+\textbf{Cel:} Umożliwienie klientowi anulowania wcześniej zarezerwowanego biletu przed rozpoczęciem seansu.
 
 \vspace{0.15cm}
 \noindent\textbf{Warunki wstępne:}
 \begin{itemize}[nosep,topsep=0pt,leftmargin=*]
     \item Klient posiada aktywną rezerwację biletu.
+    \item Seans filmowy jeszcze się nie rozpoczął.
 \end{itemize}
 
 \vspace{0.15cm}
 \noindent\textbf{Warunki końcowe:}
 \begin{itemize}[nosep,topsep=0pt,leftmargin=*]
-    \item Rezerwacja biletu została anulowana.
-    \item System zwraca środki pieniężne (poprzez PU03).
+    \item Rezerwacja biletu została anulowana w systemie.
+    \item Miejsce w sali zostało odblokowane i jest ponownie dostępne.
+    \item Wykonano zwrot pieniędzy za bilet (zawiera PU03).
 \end{itemize}
 
 \vspace{0.15cm}
-\noindent\textbf{Scenariusz:}
+\noindent\textbf{Scenariusz główny:}
 \begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
-    \item Klient loguje się do systemu.
-    \item Klient wybiera rezerwację do anulowania.
-    \item System weryfikuje możliwość zwrotu (np. przed rozpoczęciem seansu).
-    \item Klient potwierdza anulowanie.
-    \item System usuwa rezerwację i przekazuje informację do PU03 w celu zwrotu środków.
+    \item Klient loguje się do systemu online lub zwraca się do kasjera.
+    \item Klient wybiera rezerwację do anulowania ze swojej historii (zawiera PU09).
+    \item System wyświetla szczegóły rezerwacji (film, data, godzina, miejsca).
+    \item System weryfikuje, czy seans jeszcze się nie rozpoczął.
+    \item Klient potwierdza chęć anulowania rezerwacji.
+    \item System usuwa rezerwację z bazy danych.
+    \item System odblokowuje zarezerwowane miejsca.
+    \item System inicjuje zwrot pieniędzy (zawiera PU03).
+    \item System wysyła klientowi potwierdzenie anulowania rezerwacji e-mailem.
 \end{enumerate}
 
 \vspace{0.15cm}
-\noindent\textbf{Alternatywny przebieg:} Jeśli seans już się rozpoczął, system informuje, że zwrot nie jest możliwy.
+\noindent\textbf{Scenariusz alternatywny:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item \textbf{[Krok 4]:} Jeśli seans już się rozpoczął lub rozpoczyna się w ciągu najbliższych 30 minut, system informuje, że zwrot nie jest możliwy zgodnie z regulaminem.
+    \item \textbf{[Krok 8]:} Jeśli wystąpi błąd podczas zwrotu płatności, system powiadamia klienta i zapisuje zgłoszenie do ręcznej obsługi przez administratora.
+\end{itemize}
 \end{usecase}
 
-\subsection{PU03. Wykonano PU02 i zwrócono pieniądze za bilet}
+\subsection{PU03. Zwrot pieniędzy za bilet}
 
-\begin{usecase}{Zwrot pieniędzy za bilet}
-\textbf{Cel:} Realizacja zwrotu pieniędzy za anulowany bilet.
+\begin{usecase}{PU03. Zwrot pieniędzy za bilet}
+\textbf{Cel:} Realizacja zwrotu pieniędzy klientowi za anulowany bilet.
 
 \vspace{0.15cm}
 \noindent\textbf{Warunki wstępne:}
 \begin{itemize}[nosep,topsep=0pt,leftmargin=*]
-    \item Inicjacja przez PU02 (Zwrot zarezerwowanego biletu).
-    \item PU02 przekazuje dane o bilecie i kwocie do zwrotu.
+    \item Przypadek użycia PU02 (Anulowanie rezerwacji biletu) został zainicjowany i przekazał dane o anulowanej rezerwacji.
+    \item System posiada dane o płatności za bilet (metoda płatności, kwota).
 \end{itemize}
 
 \vspace{0.15cm}
 \noindent\textbf{Warunki końcowe:}
 \begin{itemize}[nosep,topsep=0pt,leftmargin=*]
-    \item Zwrócono pieniądze klientowi.
-    \item System zarejestrował wykonanie zwrotu.
+    \item Pieniądze zostały zwrócone klientowi na konto lub kartę, z której dokonano płatności.
+    \item System zarejestrował operację zwrotu w bazie danych.
 \end{itemize}
 
 \vspace{0.15cm}
-\noindent\textbf{Scenariusz:}
+\noindent\textbf{Scenariusz główny:}
 \begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
-    \item System pobiera dane rezerwacji anulowanego biletu.
-    \item System oblicza kwotę do zwrotu.
-    \item System inicjuje operację zwrotu środków na konto klienta.
-    \item System zapisuje zdarzenie zwrotu.
+    \item System pobiera dane o anulowanej rezerwacji biletu z PU02.
+    \item System identyfikuje metodę płatności użytą przy zakupie biletu.
+    \item System oblicza kwotę do zwrotu (zgodnie z polityką zwrotów sieci kin).
+    \item System inicjuje transakcję zwrotu środków przez bramkę płatności.
+    \item Bramka płatności przetwarza zwrot na konto lub kartę klienta.
+    \item System zapisuje operację zwrotu w historii transakcji.
+    \item System generuje potwierdzenie zwrotu dla klienta.
 \end{enumerate}
 
 \vspace{0.15cm}
-\noindent\textbf{Alternatywny przebieg:} W przypadku błędu transakcji system zgłasza komunikat o niepowodzeniu zwrotu i proponuje ponowną próbę.
+\noindent\textbf{Scenariusz alternatywny:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item \textbf{[Krok 5]:} Jeśli bramka płatności zwraca błąd, system zapisuje niepowodzenie i powiadamia klienta o konieczności kontaktu z działem obsługi klienta.
+    \item \textbf{[Krok 5]:} Jeśli zwrot został zainicjowany przez kasjera (płatność gotówką), kasjer zwraca pieniądze bezpośrednio klientowi w kasie, a system rejestruje zwrot.
+\end{itemize}
 \end{usecase}
 
-\subsection{PU04. Edytowanie oferty Kina w systemie}
+\subsection{PU04. Zarządzanie repertuarem filmowym sieci kin}
 
-\begin{usecase}{Edytowanie oferty Kina}
-\textbf{Cel:} Aktualizacja oferty filmowej w systemie sieci kin.
+\begin{usecase}{PU04. Zarządzanie repertuarem filmowym sieci kin}
+\textbf{Cel:} Aktualizacja i zarządzanie ofertą filmową dostępną w całej sieci kin przez Administratora Sieci.
 
 \vspace{0.15cm}
 \noindent\textbf{Warunki wstępne:}
 \begin{itemize}[nosep,topsep=0pt,leftmargin=*]
-    \item Administrator sieci jest zalogowany.
-    \item System zawiera aktualną listę kin i seansów.
+    \item Administrator Sieci Kin jest zalogowany do systemu.
+    \item System posiada bazę danych filmów i kin w sieci.
 \end{itemize}
 
 \vspace{0.15cm}
 \noindent\textbf{Warunki końcowe:}
 \begin{itemize}[nosep,topsep=0pt,leftmargin=*]
-    \item Oferta filmowa została zaktualizowana w całym systemie.
+    \item Repertuar filmowy w systemie został zaktualizowany.
+    \item Zmiany są widoczne dla wszystkich kin w sieci oraz dla klientów online.
 \end{itemize}
 
 \vspace{0.15cm}
-\noindent\textbf{Scenariusz:}
+\noindent\textbf{Scenariusz główny:}
 \begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
-    \item Administrator wybiera opcję „Edycja oferty kin".
-    \item Administrator modyfikuje dane filmów (tytuł, opis, plakat, czas trwania itp.).
+    \item Administrator wybiera opcję „Zarządzanie repertuarem".
+    \item System wyświetla listę dostępnych filmów w bazie.
+    \item Administrator wybiera operację: dodanie nowego filmu, edycję istniejącego lub usunięcie filmu.
+    \item Administrator wprowadza lub modyfikuje dane filmu (tytuł, reżyser, gatunek, czas trwania, opis, plakat, klasyfikacja wiekowa).
     \item System weryfikuje poprawność wprowadzonych danych.
-    \item System zapisuje zmiany i aktualizuje ofertę.
-\end{enumerate}
-
-\vspace{0.15cm}
-\noindent\textbf{Alternatywny przebieg:} Jeśli dane są błędne, system wyświetla komunikat o konieczności poprawy.
-\end{usecase}
-
-\subsection{PU05. Dodanie nowego seansu do systemu}
-
-\begin{usecase}{Dodanie nowego seansu}
-\textbf{Cel:} Wprowadzenie do systemu nowego seansu filmowego.
-
-\vspace{0.15cm}
-\noindent\textbf{Warunki wstępne:}
-\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
-    \item Administrator sieci lub menedżer kina jest zalogowany.
-    \item W systemie istnieje film przypisany do danego kina.
-\end{itemize}
-
-\vspace{0.15cm}
-\noindent\textbf{Warunki końcowe:}
-\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
-    \item Nowy seans jest dostępny w harmonogramie kina.
-\end{itemize}
-
-\vspace{0.15cm}
-\noindent\textbf{Scenariusz:}
-\begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
-    \item Użytkownik wybiera film z listy.
-    \item Określa datę, godzinę i salę projekcyjną.
-    \item System sprawdza dostępność sali.
-    \item Użytkownik potwierdza dodanie seansu.
-    \item System zapisuje nowy seans i aktualizuje harmonogram.
-\end{enumerate}
-
-\vspace{0.15cm}
-\noindent\textbf{Alternatywny przebieg:} Jeśli sala jest zajęta w wybranym terminie, system informuje o konflikcie.
-\end{usecase}
-
-\subsection{PU06. Edytowanie seansów w systemie kin}
-
-\begin{usecase}{Edytowanie seansów}
-\textbf{Cel:} Umożliwienie administratorowi modyfikacji istniejących seansów.
-
-\vspace{0.15cm}
-\noindent\textbf{Warunki wstępne:}
-\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
-    \item Administrator sieci jest zalogowany.
-    \item W systemie istnieją wcześniej dodane seanse.
-\end{itemize}
-
-\vspace{0.15cm}
-\noindent\textbf{Warunki końcowe:}
-\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
-    \item Zaktualizowano dane seansu.
-\end{itemize}
-
-\vspace{0.15cm}
-\noindent\textbf{Scenariusz:}
-\begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
-    \item Administrator wybiera seans z listy.
-    \item Edytuje szczegóły (np. datę, godzinę, salę).
-    \item System weryfikuje poprawność danych.
     \item Administrator zatwierdza zmiany.
-    \item System zapisuje nową wersję seansu.
+    \item System zapisuje dane w centralnej bazie danych.
+    \item System synchronizuje zmiany ze wszystkimi kinami w sieci.
 \end{enumerate}
 
 \vspace{0.15cm}
-\noindent\textbf{Alternatywny przebieg:} Jeśli nowa godzina koliduje z innym seansem, system zgłasza błąd.
+\noindent\textbf{Scenariusz alternatywny:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item \textbf{[Krok 5]:} Jeśli wprowadzone dane są niepełne lub niepoprawne (np. brak tytułu, nieprawidłowy format czasu trwania), system wyświetla komunikat o błędzie i prosi o poprawę.
+    \item \textbf{[Krok 3]:} Jeśli administrator próbuje usunąć film, dla którego zaplanowane są przyszłe seanse, system ostrzega o istniejących seansach i pyta o potwierdzenie usunięcia.
+\end{itemize}
 \end{usecase}
 
-\subsection{PU07. Dodanie nowego klienta do systemu kina (Rejestracja)}
+\subsection{PU05. Dodanie nowego seansu filmowego}
 
-\begin{usecase}{Rejestracja nowego klienta}
-\textbf{Cel:} Rejestracja nowego klienta w systemie.
+\begin{usecase}{PU05. Dodanie nowego seansu filmowego}
+\textbf{Cel:} Wprowadzenie do systemu nowego seansu filmowego w danym kinie przez Menedżera Kina lub Administratora Sieci.
 
 \vspace{0.15cm}
 \noindent\textbf{Warunki wstępne:}
 \begin{itemize}[nosep,topsep=0pt,leftmargin=*]
-    \item Kasjer lub menedżer jest zalogowany.
+    \item Menedżer Kina lub Administrator Sieci jest zalogowany do systemu.
+    \item W systemie istnieje film dostępny w repertuarze.
+    \item W kinie istnieje sala projekcyjna z wolnymi terminami.
 \end{itemize}
 
 \vspace{0.15cm}
 \noindent\textbf{Warunki końcowe:}
 \begin{itemize}[nosep,topsep=0pt,leftmargin=*]
-    \item Nowy klient został dodany do bazy danych.
-    \item Klient może logować się do systemu i rezerwować bilety.
+    \item Nowy seans został dodany do harmonogramu kina.
+    \item Seans jest widoczny dla klientów online i kasjerów.
+    \item Miejsca w sali są dostępne do rezerwacji.
 \end{itemize}
 
 \vspace{0.15cm}
-\noindent\textbf{Scenariusz:}
+\noindent\textbf{Scenariusz główny:}
 \begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
-    \item Kasjer wybiera opcję „Nowy klient".
-    \item Wprowadza dane osobowe klienta (imię, nazwisko, e-mail itp.).
-    \item System weryfikuje poprawność danych.
-    \item System zapisuje klienta i generuje konto użytkownika.
+    \item Użytkownik wybiera opcję „Dodaj nowy seans".
+    \item System wyświetla listę dostępnych filmów w repertuarze (zawiera PU04).
+    \item Użytkownik wybiera film z listy.
+    \item Użytkownik określa datę i godzinę rozpoczęcia seansu.
+    \item System wyświetla listę dostępnych sal projekcyjnych w kinie.
+    \item Użytkownik wybiera salę projekcyjną.
+    \item System sprawdza dostępność sali w wybranym terminie (weryfikacja kolizji z innymi seansami).
+    \item Użytkownik określa cenę biletu dla seansu (lub używa domyślnej).
+    \item Użytkownik potwierdza dodanie seansu.
+    \item System zapisuje nowy seans w bazie danych.
+    \item System aktualizuje harmonogram kina i udostępnia seans do rezerwacji.
 \end{enumerate}
 
 \vspace{0.15cm}
-\noindent\textbf{Alternatywny przebieg:} Jeśli e-mail jest już w bazie, system informuje o istnieniu konta.
+\noindent\textbf{Scenariusz alternatywny:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item \textbf{[Krok 7]:} Jeśli wybrana sala jest zajęta w podanym terminie (kolizja z innym seansem), system wyświetla komunikat o konflikcie i prosi o wybór innej sali lub innego terminu.
+    \item \textbf{[Krok 4]:} Jeśli użytkownik poda datę w przeszłości, system wyświetla błąd i prosi o podanie przyszłej daty.
+\end{itemize}
 \end{usecase}
 
-\subsection{PU08. Edytowanie listy klientów sieci kin}
+\subsection{PU06. Edytowanie istniejącego seansu}
 
-\begin{usecase}{Edytowanie listy klientów}
-\textbf{Cel:} Zarządzanie listą klientów sieci przez menedżera kina.
+\begin{usecase}{PU06. Edytowanie istniejącego seansu}
+\textbf{Cel:} Umożliwienie Menedżerowi Kina lub Administratorowi Sieci modyfikacji parametrów istniejącego seansu filmowego.
 
 \vspace{0.15cm}
 \noindent\textbf{Warunki wstępne:}
 \begin{itemize}[nosep,topsep=0pt,leftmargin=*]
-    \item Menedżer jest zalogowany do systemu.
-    \item W systemie istnieje lista klientów.
+    \item Menedżer Kina lub Administrator Sieci jest zalogowany do systemu.
+    \item W systemie istnieje seans, który wymaga modyfikacji.
 \end{itemize}
 
 \vspace{0.15cm}
 \noindent\textbf{Warunki końcowe:}
 \begin{itemize}[nosep,topsep=0pt,leftmargin=*]
-    \item Lista klientów została zaktualizowana.
+    \item Dane seansu zostały zaktualizowane w systemie.
+    \item Zmiany są widoczne dla klientów i kasjerów.
+    \item Istniejące rezerwacje pozostają ważne (jeśli zmiany nie są krytyczne) lub klienci zostają powiadomieni o zmianach.
 \end{itemize}
 
 \vspace{0.15cm}
-\noindent\textbf{Scenariusz:}
+\noindent\textbf{Scenariusz główny:}
 \begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
+    \item Użytkownik wybiera opcję „Zarządzanie seansami".
+    \item System wyświetla listę wszystkich seansów w kinie.
+    \item Użytkownik wybiera seans do edycji.
+    \item System wyświetla szczegóły seansu (film, data, godzina, sala, cena).
+    \item Użytkownik modyfikuje wybrane parametry (datę, godzinę, salę lub cenę).
+    \item System weryfikuje poprawność nowych danych (np. dostępność sali w nowym terminie).
+    \item Użytkownik zatwierdza zmiany.
+    \item System zapisuje zaktualizowane dane seansu.
+    \item System aktualizuje harmonogram kina.
+\end{enumerate}
+
+\vspace{0.15cm}
+\noindent\textbf{Scenariusz alternatywny:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item \textbf{[Krok 6]:} Jeśli nowa godzina lub sala koliduje z innym seansem, system wyświetla komunikat o konflikcie i prosi o wprowadzenie innych danych.
+    \item \textbf{[Krok 5]:} Jeśli dla seansu istnieją już rezerwacje, a zmiana dotyczy daty, godziny lub sali, system ostrzega użytkownika i wymaga dodatkowego potwierdzenia. Po potwierdzeniu system wysyła powiadomienia e-mail do klientów z istniejącymi rezerwacjami.
+    \item \textbf{[Krok 5]:} Jeśli użytkownik próbuje zmienić datę na przeszłą, system wyświetla błąd i odrzuca zmianę.
+\end{itemize}
+\end{usecase}
+
+\subsection{PU07. Rejestracja nowego klienta w systemie}
+
+\begin{usecase}{PU07. Rejestracja nowego klienta w systemie}
+\textbf{Cel:} Utworzenie konta dla nowego klienta w systemie, umożliwiającego rezerwację biletów online i zarządzanie własnymi rezerwacjami.
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki wstępne:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Klient nie posiada jeszcze konta w systemie.
+    \item Kasjer jest zalogowany (w przypadku rejestracji w kasie) lub system rejestracji online jest dostępny.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki końcowe:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Nowy klient został dodany do bazy danych systemu.
+    \item Klient otrzymał dane dostępowe do systemu (login, hasło).
+    \item Klient może logować się i korzystać z funkcji rezerwacji biletów online.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Scenariusz główny:}
+\begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
+    \item Klient wybiera opcję „Rejestracja" na stronie internetowej lub zgłasza się do kasjera.
+    \item Klient lub kasjer wprowadza dane osobowe: imię, nazwisko, adres e-mail, numer telefonu.
+    \item Klient tworzy hasło (w przypadku rejestracji online) lub kasjer generuje tymczasowe hasło.
+    \item System weryfikuje unikalność adresu e-mail w bazie danych.
+    \item System sprawdza poprawność formatu wprowadzonych danych (e-mail, telefon).
+    \item Klient akceptuje regulamin i politykę prywatności (zgoda RODO).
+    \item System zapisuje dane klienta w bazie danych.
+    \item System wysyła e-mail aktywacyjny z linkiem potwierdzającym rejestrację.
+    \item Klient potwierdza rejestrację poprzez kliknięcie w link w e-mailu.
+    \item System aktywuje konto klienta.
+\end{enumerate}
+
+\vspace{0.15cm}
+\noindent\textbf{Scenariusz alternatywny:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item \textbf{[Krok 4]:} Jeśli adres e-mail już istnieje w systemie, system informuje o istniejącym koncie i proponuje opcję przypomnienia hasła.
+    \item \textbf{[Krok 5]:} Jeśli format danych jest niepoprawny (np. nieprawidłowy e-mail), system wyświetla komunikat o błędzie i prosi o poprawę.
+    \item \textbf{[Krok 9]:} Jeśli klient nie aktywuje konta w ciągu 24 godzin, system wysyła przypomnienie. Po 7 dniach bez aktywacji, konto zostaje usunięte.
+\end{itemize}
+\end{usecase}
+
+\subsection{PU08. Zarządzanie danymi klientów}
+
+\begin{usecase}{PU08. Zarządzanie danymi klientów}
+\textbf{Cel:} Umożliwienie Menedżerowi Kina edycji i zarządzania danymi klientów w bazie systemu.
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki wstępne:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Menedżer Kina jest zalogowany do systemu.
+    \item W systemie istnieje baza danych zarejestrowanych klientów.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Warunki końcowe:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item Dane klienta zostały zaktualizowane w systemie.
+    \item Zmiany są zapisane w bazie danych zgodnie z wymogami RODO.
+\end{itemize}
+
+\vspace{0.15cm}
+\noindent\textbf{Scenariusz główny:}
+\begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
+    \item Menedżer wybiera opcję „Zarządzanie klientami".
+    \item System wyświetla listę zarejestrowanych klientów z możliwością wyszukiwania.
+    \item Menedżer wyszukuje klienta (po imieniu, nazwisku lub e-mailu).
     \item Menedżer wybiera klienta z listy.
-    \item Edytuje dane (np. status konta, dane kontaktowe).
-    \item System weryfikuje poprawność danych.
-    \item System zapisuje zmiany.
+    \item System wyświetla szczegółowe dane klienta (imię, nazwisko, e-mail, telefon, status konta).
+    \item Menedżer edytuje wybrane dane kontaktowe lub status konta klienta.
+    \item System weryfikuje poprawność wprowadzonych danych.
+    \item Menedżer zatwierdza zmiany.
+    \item System zapisuje zaktualizowane dane klienta w bazie.
+    \item System rejestruje operację zgodnie z wymogami RODO (kto, kiedy i co zmienił).
 \end{enumerate}
 
 \vspace{0.15cm}
-\noindent\textbf{Alternatywny przebieg:} Jeśli dane są niepoprawne, system odrzuca zmiany.
+\noindent\textbf{Scenariusz alternatywny:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item \textbf{[Krok 7]:} Jeśli wprowadzone dane są niepoprawne (np. nieprawidłowy format e-maila), system wyświetla komunikat o błędzie i prosi o poprawę.
+    \item \textbf{[Krok 6]:} Jeśli menedżer próbuje dezaktywować konto klienta, który ma aktywne rezerwacje, system ostrzega o istniejących rezerwacjach i wymaga dodatkowego potwierdzenia.
+    \item \textbf{[Krok 3]:} Jeśli klient nie zostanie znaleziony, system informuje o braku wyników i oferuje opcję dodania nowego klienta (zawiera PU07).
+\end{itemize}
 \end{usecase}
 
-\subsection{PU09. Przegląd historii rezerwacji}
+\subsection{PU09. Przeglądanie historii rezerwacji i repertuaru}
 
-\begin{usecase}{Przegląd historii rezerwacji}
-\textbf{Cel:} Umożliwienie klientowi sprawdzenia historii swoich rezerwacji.
+\begin{usecase}{PU09. Przeglądanie historii rezerwacji i repertuaru}
+\textbf{Cel:} Umożliwienie klientowi przeglądania dostępnego repertuaru filmowego oraz historii własnych rezerwacji biletów.
 
 \vspace{0.15cm}
 \noindent\textbf{Warunki wstępne:}
 \begin{itemize}[nosep,topsep=0pt,leftmargin=*]
-    \item Klient jest zalogowany do systemu.
-    \item Klient posiada wcześniejsze rezerwacje.
+    \item Klient ma dostęp do systemu online (może być zalogowany lub przeglądać repertuar bez logowania).
+    \item System posiada dane o seansach filmowych i rezerwacjach klienta.
 \end{itemize}
 
 \vspace{0.15cm}
 \noindent\textbf{Warunki końcowe:}
 \begin{itemize}[nosep,topsep=0pt,leftmargin=*]
-    \item Klient wyświetlił historię swoich rezerwacji.
+    \item Klient wyświetlił repertuar lub historię swoich rezerwacji.
+    \item Klient uzyskał potrzebne informacje o filmach, seansach lub swoich biletach.
 \end{itemize}
 
 \vspace{0.15cm}
-\noindent\textbf{Scenariusz:}
+\noindent\textbf{Scenariusz główny — Przeglądanie repertuaru:}
+\begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
+    \item Klient wchodzi na stronę internetową systemu.
+    \item System wyświetla aktualny repertuar filmowy dla wszystkich kin w sieci.
+    \item Klient może filtrować repertuar według: kina, daty, gatunku filmu, godziny seansu.
+    \item System wyświetla listę dostępnych seansów zgodnie z wybranymi kryteriami.
+    \item Klient wybiera konkretny seans, aby zobaczyć szczegóły (opis filmu, obsada, czas trwania, dostępność miejsc).
+    \item Klient może przejść do rezerwacji biletu (rozszerza przez PU01).
+\end{enumerate}
+
+\vspace{0.15cm}
+\noindent\textbf{Scenariusz główny — Przeglądanie historii rezerwacji:}
 \begin{enumerate}[nosep,topsep=0pt,leftmargin=*]
     \item Klient loguje się do systemu.
-    \item Wybiera opcję „Historia rezerwacji".
-    \item System pobiera dane z bazy.
-    \item System wyświetla listę poprzednich rezerwacji (daty, filmy, status).
+    \item Klient wybiera opcję „Moje rezerwacje" lub „Historia".
+    \item System pobiera dane o rezerwacjach klienta z bazy danych.
+    \item System wyświetla listę wszystkich rezerwacji (przeszłych i przyszłych) z informacjami: data, film, godzina, sala, miejsca, status.
+    \item Klient może wybrać konkretną rezerwację, aby zobaczyć szczegóły i pobrać bilet.
+    \item Klient może anulować przyszłą rezerwację (rozszerza przez PU02).
 \end{enumerate}
 
 \vspace{0.15cm}
-\noindent\textbf{Alternatywny przebieg:} Jeśli klient nie posiada rezerwacji, system informuje o pustej historii.
+\noindent\textbf{Scenariusz alternatywny:}
+\begin{itemize}[nosep,topsep=0pt,leftmargin=*]
+    \item \textbf{[Przeglądanie historii, krok 4]:} Jeśli klient nie ma żadnych rezerwacji, system wyświetla komunikat „Nie masz jeszcze żadnych rezerwacji" i oferuje przejście do repertuaru.
+    \item \textbf{[Przeglądanie repertuaru, krok 4]:} Jeśli brak seansów spełniających wybrane kryteria filtrowania, system informuje o braku wyników i sugeruje zmianę kryteriów.
+\end{itemize}
 \end{usecase}
 
 \end{document}
