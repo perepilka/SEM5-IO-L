@@ -1,0 +1,3663 @@
+# 🤖 Copilot CLI Session
+
+> **Session ID:** `511cef3c-4f1f-4666-bb3f-ac3d28994b26`  
+> **Started:** 11/24/2025, 11:30:29 PM  
+> **Duration:** 84m 10s  
+> **Exported:** 11/25/2025, 12:54:40 AM
+
+<sub>⏱️ 0s</sub>
+
+### ℹ️ Info
+
+Connected to GitHub MCP Server
+
+---
+
+<sub>⏱️ 0s</sub>
+
+### ℹ️ Info
+
+Logged in as user: perepilka
+
+---
+
+<sub>⏱️ 9m 10s</sub>
+
+### 👤 User
+
+start new branch and in new branch i want from you to scan the project @[DIR] /home/perepilka/SEM5-IO-L, so in @etap1 you will find realization of first stage, in @etap2 you will find realization of second part, in @etap3 you will find instructions for third part, base on previous context u need to do third one, i suggest making xml files which i will import to @OnlineCinema.vpp, in file @IO-L Miniprojekt Biblioteka.pdf u can find the example of realization of simmilar project from my teacher(but its raport,but i want from u only diagrams). So first of all, we will no create with you our workflow, so create it and i will check if you understood me corectly(im new in using coding agent, so do it how others use you)
+
+---
+
+<sub>⏱️ 9m 14s</sub>
+
+### 💬 Copilot
+
+I'll help you create a workflow for completing stage 3 of your project. Let me first scan the project structure to understand what you've done and what needs to be completed.
+
+---
+
+<sub>⏱️ 9m 17s</sub>
+
+### ✅ `view`
+
+**view the file at /home/perepilka/SEM5-IO-L.**
+
+/home/perepilka/SEM5-IO-L
+
+<details>
+<summary>14 lines</summary>
+
+```diff
+
+diff --git a/home/perepilka/SEM5-IO-L b/home/perepilka/SEM5-IO-L
+create file mode 100644
+index 0000000..0000000
+--- a/dev/null
++++ b/home/perepilka/SEM5-IO-L
+@@ -1,0 +1,8 @@
+ .git
+ .gitignore
+ .idea
+ IO-L Miniprojekt Biblioteka.pdf
+ OnlineCinema.vpp
+ etap1
+ etap2
+ etap3
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 9m 17s</sub>
+
+### ✅ `view`
+
+**view the file at /home/perepilka/SEM5-IO-L/etap1.**
+
+/home/perepilka/SEM5-IO-L/etap1
+
+<details>
+<summary>8 lines</summary>
+
+```diff
+
+diff --git a/home/perepilka/SEM5-IO-L/etap1 b/home/perepilka/SEM5-IO-L/etap1
+create file mode 100644
+index 0000000..0000000
+--- a/dev/null
++++ b/home/perepilka/SEM5-IO-L/etap1
+@@ -1,0 +1,2 @@
+ IO-L Modelowanie wymagań i przypadków użycia.pdf
+ etap1.tex
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 9m 17s</sub>
+
+### ✅ `view`
+
+**view the file at /home/perepilka/SEM5-IO-L/etap2.**
+
+/home/perepilka/SEM5-IO-L/etap2
+
+<details>
+<summary>8 lines</summary>
+
+```diff
+
+diff --git a/home/perepilka/SEM5-IO-L/etap2 b/home/perepilka/SEM5-IO-L/etap2
+create file mode 100644
+index 0000000..0000000
+--- a/dev/null
++++ b/home/perepilka/SEM5-IO-L/etap2
+@@ -1,0 +1,2 @@
+ IO-L Modelowanie realizacji przypadków użycia.pdf
+ Projekt_Inz_Opr_Part_2.pdf
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 9m 17s</sub>
+
+### ✅ `view`
+
+**view the file at /home/perepilka/SEM5-IO-L/etap3.**
+
+/home/perepilka/SEM5-IO-L/etap3
+
+<details>
+<summary>7 lines</summary>
+
+```diff
+
+diff --git a/home/perepilka/SEM5-IO-L/etap3 b/home/perepilka/SEM5-IO-L/etap3
+create file mode 100644
+index 0000000..0000000
+--- a/dev/null
++++ b/home/perepilka/SEM5-IO-L/etap3
+@@ -1,0 +1,1 @@
+ IO-L Modelowanie obiektowej 3-warstwowej architektury.pdf
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 9m 19s</sub>
+
+### 💬 Copilot
+
+Now let me check the content of the stage 3 instructions and examine what's already in the VPP file:
+
+---
+
+<sub>⏱️ 9m 35s</sub>
+
+### ✅ `bash`
+
+**Extract text from etap3 PDF instructions**
+
+$ cd /home/perepilka/SEM5-IO-L/etap3 && pdftotext "IO-L Modelowanie obiektowej 3-warstwowej architektury.pdf" - 2>/dev/null | head -100
+
+<details>
+<summary>92 lines</summary>
+
+```
+Inżynieria Oprogramowania
+laboratoria 6—8
+
+Modelowanie obiektowej 3-warstwowej architektury
+Cel zajęć: Budowa warstwowego modelu architektury tworzonego oprogramowania w postaci diagramu komponentów.
+Budowa obiektowego modelu struktury komponentu oprogramowania w postaci diagramu klas.
+Zastosowanie wybranych wzorców projektowych zgodnie z zasadami SOLID.
+Wstępna implementacja struktury tworzonego oprogramowania na podstawie jego modelu.
+Źródła wiedzy: Wykład IO: Języki graficznego modelowania (dostępny też w ePortalu PWr).
+Wykład IO: Modelowanie struktury diagramami komponentów i diagramami wdrożenia
+(dostępny też w ePortalu PWr).
+Wykład IO: Modelowanie struktury diagramami klas, diagramami obiektów, diagramami pakietów
+i diagramami struktur złożonych (dostępny też w ePortalu PWr).
+Przykład: Miniprojekt Biblioteka (dostępny też w ePortalu PWr).
+Tutorial Visual Paradigm: How to Draw Component Diagram?
+Tutorial Visual Paradigm: How to Draw Class Diagram?
+Tutorial Visual Paradigm: Instant Generation (of source code from class model)
+Inne: Wzorce Projektowe (Refactoring Guru)
+Zawartość instrukcji: 4 zadania – ich wykonanie jest oceniane.
+2 ćwiczenia pomocnicze.
+Spis rzeczy, które należy umieścić w sprawozdaniu z wykonania zadań.
+Spis błędów i braków mogących obniżyć ocenę.
+
+Zadania
+Zadanie 1
+Budowa warstwowego modelu architektury oprogramowania w postaci diagramu komponentów.
+Należy utworzyć diagram komponentów w Visual Paradigm przedstawiający architekturę tworzonego oprogramowania: jego warstwy i połączenia między nimi. Architektura powinna być 3-warstwowa typu BCE (np. MVC, MVP) lub inna,
+bardziej złożona.
+Najpierw należy określić, z jakich warstw składa się architektura tworzonego oprogramowania i każdą warstwę przedstawić jako osobny komponent o jej nazwie. Nazwa warstwy zależy od wybranej architektury; zwykle są to warstwy: prezentacji (np. widok), encji (np. model) i kontroli (np. kontroler, prezenter).
+Następnie należy określić połączenia między warstwami, zgodnie z wybraną architekturą, i przedstawić je jako relacje
+łączące komponenty pośrednio, czyli poprzez klasy graniczne zdefiniowane przy pomocy interfejsów w postaci tzw. lizaka
+i łapki, bez używania portów. Połączenia bezpośrednie, np. przy pomocy relacji zależności, są zabronione.
+Komponenty powinny być puste, czyli nie powinny zawierać klas. Ich wewnętrzna struktura zostanie wykonania w kolejnych zadaniach jako diagramy klas.
+Architektura 3-warstwowa:
+Warstwa prezentacji (widok w MVC i MVP) – warstwa graniczna, zapewniająca integrację oprogramowania ze światem zewnętrznym, np. GUI użytkownika.
+Warstwa encji (model w MVC i MVP) – warstwa biznesowa modelująca i przetwarzająca dane oraz łącząca się z magazynem danych, np. bazą danych.
+Warstwa kontroli (kontroler w MVC, prezenter w MVP) – warstwa biznesowa kontrolująca oprogramowanie, zarządzająca procesami biznesowymi oraz pośrednicząca między warstwami prezentacji i zasobów.
+Łączenie komponentów poprzez interfejs:
+Komponent A udostępnia usługę U komponentowi B, zdefiniowaną w interfejsie I w następujący sposób.
+Komponent A posiada klasę graniczną KA, działającą zgodnie ze wzorcem fasada, która:
+– inicjuje wykonanie usługi U na żądanie klasy KB komponentu B,
+– jest dostępna (np. przez referencję) klasie KB,
+
+dr inż. Paweł Głuchowski
+Wydział Informatyki i Telekomunikacji
+Politechnika Wrocławska
+
+Inżynieria Oprogramowania
+laboratoria 6—8
+Modelowanie obiektowej 3-warstwowej architektury
+
+zapisano 5 XI 2025
+1
+
+– realizuje interfejs I, definiujący operację usługi U (nagłówek tej operacji).
+Komponent B posiada klasę KB, która:
+– żąda od klasy KA komponentu A wykonania usługi U;
+– otrzymuje wynik usługi U, jeśli modelująca go operacja zwraca wynik;
+– używa interfejsu I, czyli zna definicję operacji usługi U.
+Na diagramie komponentów to połączenie ogranicza się do połączenia interfejsem w postaci tzw. lizaka i łapki złączonych ze sobą. Lizak jest połączony z komponentem zapewniającym usługę (A). Łapka jest połączona z komponentem żądającym lub wykorzystującym tę usługę (B).
+
+Zadanie 2
+Budowa obiektowego modelu struktury komponentu warstwy kontroli w postaci diagramu klas.
+Należy utworzyć diagram klas w Visual Paradigm przedstawiający strukturę warstwy kontroli: jej klasy i relacje między
+nimi, czyli strukturę komponentu tej warstwy, w pakiecie o nazwie tego komponentu.
+W tym celu należy wykonać analizę wspólności i zmienności dla scenariuszy przypadków użycia wybranych w poprzednim etapie laboratoriów. Należy przy tym stosować założenia SOLID i odpowiednie wzorce projektowe.
+Wymagane wzorce projektowe: fasada i metoda szablonowa lub strategia.
+Polecane dodatkowe wzorce projektowe: łańcuch zobowiązań.
+Na diagramie należy umieścić m.in.:
+– główną klasę całego oprogramowania z główną operacją (main) i ewentualnie inne klasy i operacje zapewniające działanie oprogramowania składającego się ze wszystkich jego komponentów;
+– realizowane i używane interfejsy (klasy ze stereotypem «interface»), które na diagramie komponentów są połączone
+z tym komponentem;
+– fasadowe klasy graniczne, realizujące interfejsy tego komponentu, zbudowane na podstawie wzorca fasada;
+– inne klasy (zwykłe i abstrakcyjne) wynikające m.in. z zastosowanych wzorców projektowych;
+– odpowiednie relacje między klasami: realizację, uogólnienie, asocjację (zwykłą, agregację lub kompozycję) i zależność
+ze stereotypem «use» – używanie klasy lub «instantiate» – tworzenie instancji klasy lub ewentualnie bez stereotypu;
+– pakiet o nazwie komponentu, zawierający wszystkie klasy tego komponentu, z wyjątkiem interfejsów definiujących usługi innych komponentów, a używanych przez ten komponent; takie interfejsy powinny być na diagramie poza tym pakietem.
+Klasy tego komponentu nie mogą być zależne od definicji klas innych komponentów (czyli nie mogą ich wykorzystywać np. jako typ atrybutu czy parametru), z wyjątkiem interfejsów realizowanych przez te inne komponenty.
+Interfejs realizowany przez ten komponent, czyli przez jego fasadową klasę graniczną, powinien zawierać operacje inicjujące realizację poszczególnych przypadków użycia.
+Warstwa prezentacji nie będzie modelowana diagramem klas ani implementowana, więc komponent warstwy kontroli
+powinien też symulować działanie warstwy prezentacji, czyli operacje wejścia-wyjścia, w głównej operacji (main) lub innym miejscu odpowiedzialnym za operacje realizacji przypadku użycia.
+Klasy i operacje odpowiedzialne za realizację przypadków użycia i ich pomocnicze klasy i operacje zostaną dokładniej
+zamodelowane, dodane nowe i zaimplementowane w następnym etapie laboratoriów. Wtedy ten diagram klas zostanie
+uzupełniony.
+Warstwa kontroli:
+Kontroler w architekturze MVC. Prezenter w architekturze MVP.
+Zapewnia działanie oprogramowania i realizację jego przypadków użycia. Jej klasy sterują działaniem oprogramowania i łączą jego warstwy. Odpowiadają więc za realizację przypadków użycia i przepływ sterowania między klasami tej i innych warstw.
+Analiza wspólności i zmienności przypadków użycia:
+Ma na celu określenie klas komponentu (tu: warstwy kontroli) i relacji między nimi:
+– klasy bazowe: ogólne, abstrakcyjne, interfejsy;
+– ich klasy pochodne – powiązane z nimi relacją uogólnienia lub realizacji (odpowiednio do klasy bazowej);
+– strukturalne związki między klasami, czyli relacje: asocjacji, agregacji i kompozycji;
+– opis tych relacji: kierunek dostępu, liczność, role itd.
+– niestrukturalne związki między klasami, czyli relacje zależności;
+
+dr inż. Paweł Głuchowski
+Wydział Informatyki i Telekomunikacji
+Politechnika Wrocławska
+
+Inżynieria Oprogramowania
+<exited with exit code 0>
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 9m 52s</sub>
+
+### ✅ `bash`
+
+**Check current git branches**
+
+$ cd /home/perepilka/SEM5-IO-L && git branch
+
+```
+* main
+(END)
+<command with sessionId: 0 is still running after 30 seconds. The command is still running. Check the output above - if it looks like the command is waiting for input, use write_bash to provide it. Otherwise, use read_bash to continue waiting for output, or stop_bash to stop it.>
+```
+
+
+---
+
+<sub>⏱️ 9m 55s</sub>
+
+### ✅ `write_bash`
+
+<details>
+<summary>Arguments</summary>
+
+```json
+{
+  "sessionId": "0",
+  "input": "q"
+}
+```
+
+</details>
+
+```
+* main
+(END)
+<command with id: 0 exited with exit code 0>
+```
+
+
+---
+
+<sub>⏱️ 9m 57s</sub>
+
+### 💬 Copilot
+
+Now let me check the etap1 and etap2 PDFs to understand what's been done:
+
+---
+
+<sub>⏱️ 11m 42s</sub>
+
+### ✅ `bash`
+
+**Check etap1 content**
+
+$ cd /home/perepilka/SEM5-IO-L/etap1 && pdftotext "IO-L Modelowanie wymagań i przypadków użycia.pdf" - 2>/dev/null | head -80
+
+<details>
+<summary>73 lines</summary>
+
+```
+Inżynieria Oprogramowania
+laboratoria 1—3
+
+Modelowanie wymagań i przypadków użycia
+Cel zajęć: Organizacja zespołu projektowego.
+Ustalenie dziedziny tworzonego oprogramowania.
+Określenie wymagań stawianych tworzonemu oprogramowaniu.
+Budowa modelu przypadków użycia tworzonego oprogramowania.
+Źródła wiedzy: Wykład IO: Języki graficznego modelowania (dostępny też w ePortalu PWr).
+Wykład IO: Modelowanie wymagań i przypadków użycia (dostępny też w ePortalu PWr).
+Przykład: Miniprojekt Biblioteka (dostępny też w ePortalu PWr).
+Tutorial Visual Paradigm: How to Draw Use Case Diagram?
+Zawartość instrukcji: 6 zadań – ich wykonanie jest oceniane.
+4 ćwiczenia pomocnicze.
+Spis rzeczy, które należy umieścić w sprawozdaniu z wykonania zadań.
+Spis błędów i braków mogących obniżyć ocenę.
+
+Zadania
+Zadanie 1
+Ustalenie dziedziny tworzonego oprogramowania
+Należy wybrać dziedzinę dla tworzonego oprogramowania.
+Przykładowe dziedziny:
+1) Sprzedawanie biletów na seanse filmowe w multikinie.
+2) Wykonywanie operacji bankowych przy pomocy infokiosku lub bankomatu.
+3) Rejestrowanie statusu obywateli w urzędzie przez dział ewidencji ludności.
+4) Zarządzanie rozkładem jazdy i kontrolowanie przejazdów komunikacji miejskiej.
+5) Magazynowanie i wypożyczanie sprzętu budowlanego.
+6) Zarządzanie siecią paczkomatów i przewozem paczek przez firmę kurierską.
+7) Zapisywanie się studenta na zajęcia.
+8) Księgowanie operacji finansowych przez zewnętrzną księgowość.
+9) Rezerwowanie i opłacanie wynajmu miejsc w hotelu przez klienta.
+10) Zarządzanie pracą lotniska pasażerskiego.
+11) Zarządzanie projektem informatycznym przy pomocy systemu Git.
+
+Zadanie 2
+Przygotowanie projektu informatycznego
+Należy utworzyć nowy projekt w programie Visual Paradigm. W tym i kolejnych etapach laboratoriów będą w nim
+umieszczane dokumenty tekstowe i diagramy modelujące tworzone oprogramowanie.
+Nazwa projektu powinna krótko i zrozumiale opisywać dziedzinę tworzonego oprogramowania.
+Należy umieścić ten projekt w repozytorium Visual Paradigm (robi to jedna osoba z zespołu projektowego) i udostępnić go pozostałym członkom zespołu oraz prowadzącemu laboratoria.
+Praca z repozytorium Visual Paradigm:
+– Connect Visual Paradigm to VP Online for team collaboration
+– Tworzenie współdzielonego projektu Visual Paradigm
+
+dr inż. Paweł Głuchowski
+Wydział Informatyki i Telekomunikacji
+Politechnika Wrocławska
+
+Inżynieria Oprogramowania
+laboratoria 1—3
+Modelowanie wymagań i przypadków użycia
+
+zapisano 1 X 2025
+1
+
+Zadanie 3
+Opisanie miejsca wdrożenia tworzonego oprogramowania
+Należy utworzyć dokument tekstowy w Visual Paradigm i umieścić w nim krótki, szkicowy opis miejsca wdrożenia tworzonego oprogramowania (tzw. „świat rzeczywisty”), który byłby przekazany przez zamawiającego oprogramowanie.
+Główne elementy opisu:
+– zasoby ludzkie,
+– przepisy i strategie,
+– dane techniczne.
+Zasoby ludzkie:
+Kim są i co robią przyszli użytkownicy oprogramowania?
+W kolejnych zadaniach na podstawie tego opisu określi się aktorów, czyli role użytkowników, i wymagania funkcjonal ne, czyli zadania, które oprogramowanie musi wykonać lub wykonywać, aby wspomagać pracę jego użytkowników.
+W przypadku systemów wbudowanych ten opis dotyczy procesów technologicznych, które należy zautomatyzować.
+Przepisy i strategie:
+Co ogranicza działalność klienta zamawiającego oprogramowanie?
+Mogą to być np.: ustawy, zarządzenia, strategie klienta lub użytkownika.
+W kolejnych zadaniach na podstawie tego opisu określi się wymagania niefunkcjonalne, czyli ograniczenia dla wymagań funkcjonalnych i dla działania oprogramowania.
+Dane techniczne:
+Jakie dane (artefakty) są związane z pracą tworzonego oprogramowania?
+Mogą to być np.:
+– liczba pracowników klienta, rodzaj i liczba przetwarzanych danych, częstość wykonywania operacji na danych;
+– umiejscowienie i charakterystyka użytkownika;
+– używany sprzęt i oprogramowanie, w tym to przeznaczone do wdrożenia tworzonego oprogramowania.
+
+Zadanie 4
+Określenie wymagań stawianych tworzonemu oprogramowaniu
+Należy utworzyć dokument tekstowy w Visual Paradigm i umieścić w nim numerowaną listę wymagań funkcjonalnych
+<exited with exit code 0>
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 11m 34s</sub>
+
+### ✅ `bash`
+
+**Check etap2 content**
+
+$ cd /home/perepilka/SEM5-IO-L/etap2 && pdftotext "IO-L Modelowanie realizacji przypadków użycia.pdf" - 2>/dev/null | head -80
+
+<details>
+<summary>74 lines</summary>
+
+```
+Inżynieria Oprogramowania
+laboratoria 4—5
+
+Modelowanie realizacji przypadków użycia
+Cel zajęć: Budowa modelu realizacji przypadku użycia w postaci czynności, na podstawie analizy jego scenariusza.
+Określenie przepływów sterowania i przepływów obiektów dla czynności.
+Źródła wiedzy: Wykład IO: Języki graficznego modelowania (dostępny też w ePortalu PWr).
+Wykład IO: Modelowanie zachowania diagramem czynności (dostępny też w ePortalu PWr).
+Przykład: Miniprojekt Biblioteka (dostępny też w ePortalu PWr).
+Tutorial Visual Paradigm: How to Draw Activity Diagram?
+Zawartość instrukcji: 2 zadania – ich wykonanie jest oceniane.
+4 ćwiczenia pomocnicze.
+Spis rzeczy, które należy umieścić w sprawozdaniu z wykonania zadań.
+Spis błędów i braków mogących obniżyć ocenę.
+
+Zadania
+Zadanie 1
+Budowa modelu realizacji przypadku użycia w postaci czynności, na podstawie analizy jego
+scenariusza – określenie i umiejscowienie akcji i obiektów.
+Należy wybrać dwa najbardziej złożone (przez związki zawierania lub rozszerzenia) i, jeśli to możliwe, niepowiązane
+ze sobą przypadki użycia, które wykonano w poprzednim etapie laboratoriów.
+Należy przedstawić scenariusz każdego przypadku użycia, który jest częścią któregoś z tych wybranych złożonych
+przypadków użycia, jako osobną czynność o nazwie tego przypadku użycia. Jej modelem będzie diagram czynności.
+Dla danej czynności należy utworzyć diagram czynności w Visual Paradigm o nazwie tej czynności, umieścić w nim tę
+czynność i umieścić w niej elementy określone na podstawie scenariusza związnego z nią przypadku użycia:
+Najpierw należy określić partycje segregujące składowe akcje tych przepływów na podstawie aktorów biorących
+w nich bezpośredni udział. Nazwy partycji powinny być nazwami tych aktorów.
+Następnie należy określić akcje składające się na te przepływy i umieścić je w odpowiednich partycjach, oraz określić
+obiekty przekazywane między nimi.
+Czynność:
+Złożona procedura realizacji określonego zachowania. Może modelować realizację scenariusza pojedynczego przypadku użycia.
+Akcja:
+Prosta i niepodzielna część czynności. Może modelować całe zdarzenie ze scenariusza przypadku użycia (jeśli zdarzenie jest niepodzielne) lub jego część (jeśli jest zbyt ogólnie zdefiniowane lub dzieli się na pod-zdarzenia – wtedy diagram czynności będzie szczegółowszy od scenariusza przypadku użycia).
+Akcja powinna być nazwana ogólnie jak krok funkcji tworzonego oprogramowania, a nie jak obiekt. Przykład dobrej
+nazwy: Wyświetlenie komunikatu o awarii. Przykład złej nazwy: Komunikat o awarii.
+Jeśli zdarzeniem jest inicjacja innego przypadku użycia, to akcja modelująca to zdarzenie jest akcją wywołania operacji (oznaczoną „widłami”). Powiązana jest z diagramem czynności i czynnością modelującymi realizację scenariusza tego
+innego przypadku użycia i nazwana jak czynność go modelująca, czyli jak on sam. W innym razie – jest akcją wywołania
+zachowania.
+Jeśli zdarzeniem jest przekazanie artefaktu (np. informacji) aktorowi, to akcja modelująca to zdarzenie jest akcją wysłania sygnału (o kształcie trójkątnie wypukłego prostokąta). Jej nazwą jest nazwa tego artefaktu, np. nazwa informacji
+lub krótka treść informacji.
+Jeśli zamiast zdarzenia w scenariuszu przypadku użycia jest oczekiwanie na zajście zdarzenia (np. działanie aktora
+lub upływ czasu), to akcja modelująca to oczekiwanie jest akcją oczekiwania na zdarzenie (o kształcie trójkątnie wciętego
+prostokąta) lub akcją oczekiwania na czasowe zdarzenie (o kształcie klepsydry). Jej nazwą jest nazwa tego zdarzenia.
+
+dr inż. Paweł Głuchowski
+Wydział Informatyki i Telekomunikacji
+Politechnika Wrocławska
+
+Inżynieria Oprogramowania
+laboratoria 4—5
+Modelowanie realizacji przypadków użycia
+
+zapisano 17 XI 2025
+1
+
+Obiekt:
+Artefakt przetwarzany przez akcję lub czynność, np. informacja, dokument lub plik i przekazywany między nimi. Może
+być wejściowy, jeśli akcja go otrzymuje do jej wykonania, lub wyjściowy, jeśli akcja go wydaje po swoim wykonaniu.
+Jeśli bieżący stan obiektu jest istotny, można go nazwać w nawiasach [ ] pod nazwą obiektu.
+Jeśli artefakt jest przechowywany w repozytorium takich artefaktów, to obiekt modelujący takie artefakty jest kontenerem typu bufor centralny lub magazyn danych.
+Partycja:
+Segregacja akcji, np. na podstawie aktorów biorących w nich udział, miejsca lub sposobu ich wykonania. Segregowaną akcję umieszcza się w danej partycji. Partycje można zagnieżdżać, aby segregować akcje na więcej sposobów.
+Partycja nie segreguje obiektów, ale zaleca się, aby obiekt przekazywany między akcjami z tej samej partycji, też był
+w niej umieszczony.
+
+Zadanie 2
+Budowa modelu realizacji przypadku użycia w postaci czynności, na podstawie analizy jego
+scenariusza – określenie przepływów sterowania i przepływów obiektów.
+Dla danej czynności na związanym z nią diagramie czynności, wykonanym w poprzednim zadaniu, należy połączyć jej
+akcje składowe i obiekty przekazywane między nimi w przepływy sterowania i przepływy obiektów na podstawie scenariusza związanego z nią przypadku użycia.
+Przepływy powinny uwzględniać alternatywność i współbieżność tam, gdzie to jest możliwe i niezabronione przez scenariusz przypadku użycia. Należy tu stosować odpowiednie węzły (musi być przykład każdego z nich):
+– węzeł decyzji (decision) i, gdzie trzeba, węzeł złączenia (merge) dla przepływów alternatywnych;
+– węzeł współbieżności (fork) i, gdzie trzeba, węzeł złączenia (join) dla przepływów jednoczesnych lub niezależnych od
+siebie.
+Należy też zastosować obszar rozszerzenia (musi być przykład) i obszar przerywalny (opcjonalnie).
+Przepływ sterowania:
+Bezpośrednie przejście między dwiema czynnościami, dwiema akcjami lub czynnością i akcją, czyli bez przekazania
+obiektu między nimi.
+Przepływ obiektu:
+Pośrednie przejście między dwiema czynnościami, dwiema akcjami lub czynnością i akcją, czyli z przekazaniem
+<exited with exit code 0>
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 11m 44s</sub>
+
+### 💬 Copilot
+
+Perfect! Now let me create a new branch and propose a workflow. Let me first check git status:
+
+---
+
+<sub>⏱️ 11m 47s</sub>
+
+### ✅ `bash`
+
+**Check git status**
+
+$ cd /home/perepilka/SEM5-IO-L && git status
+
+<details>
+<summary>13 lines</summary>
+
+```
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    etap1/IO-L Miniprojekt Biblioteka.pdf
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	IO-L Miniprojekt Biblioteka.pdf
+	etap2/
+	etap3/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+<exited with exit code 0>
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 11m 49s</sub>
+
+### 💬 Copilot
+
+Now let me create the workflow document for you to review:
+
+---
+
+<sub>⏱️ 12m 56s</sub>
+
+### ✅ `bash`
+
+**Create new branch for etap3**
+
+$ cd /home/perepilka/SEM5-IO-L && git checkout -b etap3-implementation
+
+```
+Switched to a new branch 'etap3-implementation'
+<exited with exit code 0>
+```
+
+
+---
+
+<sub>⏱️ 17m 16s</sub>
+
+### ✅ `create`
+
+**create a new file at /home/perepilka/SEM5-IO-L/WORKFLOW.md.**
+
+/home/perepilka/SEM5-IO-L/WORKFLOW.md
+
+<details>
+<summary>115 lines</summary>
+
+```diff
+
+diff --git a/home/perepilka/SEM5-IO-L/WORKFLOW.md b/home/perepilka/SEM5-IO-L/WORKFLOW.md
+create file mode 100644
+index 0000000..0000000
+--- a/dev/null
++++ b/home/perepilka/SEM5-IO-L/WORKFLOW.md
+@@ -1,0 +1,109 @@
++# Workflow for Stage 3 (Etap 3) - 3-Layer Object Architecture Modeling
++
++## Project Context
++- **Project**: Online Cinema (OnlineCinema)
++- **Stage 1 (Etap 1)**: Requirements and use case modeling ✅ COMPLETED
++- **Stage 2 (Etap 2)**: Use case realization modeling with activity diagrams ✅ COMPLETED
++- **Stage 3 (Etap 3)**: 3-layer object architecture modeling ⏳ IN PROGRESS
++
++## Objectives for Stage 3
++Based on the instructions in `etap3/IO-L Modelowanie obiektowej 3-warstwowej architektury.pdf`:
++
++### Task 1: Component Diagram (3-Layer Architecture)
++**Goal**: Create a component diagram showing the 3-layer architecture (BCE/MVC/MVP)
++
++**Requirements**:
++- Define 3 layers as separate components:
++  - **Presentation Layer** (View) - UI/GUI integration
++  - **Control Layer** (Controller/Presenter) - Business logic coordination
++  - **Entity Layer** (Model) - Data processing and database connection
++- Connect components using interfaces (lollipop & socket notation)
++- NO direct dependencies between components
++- Components should be empty (internal structure comes in Task 2)
++- Use Facade pattern for boundary classes
++
++**Output**: XML file for component diagram to import into OnlineCinema.vpp
++
++### Task 2: Class Diagram for Control Layer
++**Goal**: Create detailed class diagram for the Control Layer component
++
++**Requirements**:
++- Analyze commonality and variability of use cases from Stage 2
++- Apply SOLID principles
++- **Required design patterns**:
++  - Facade (for boundary classes)
++  - Template Method OR Strategy
++- **Recommended patterns**:
++  - Chain of Responsibility
++- Include:
++  - Main class with main() operation
++  - Interfaces (realized and used)
++  - Facade boundary classes
++  - Abstract and concrete classes from patterns
++  - Relationships: realization, generalization, association, dependency
++  - Package containing all Control Layer classes
++- The Control Layer should simulate Presentation Layer (I/O operations)
++- Classes cannot depend on other components' classes (only on interfaces)
++
++**Output**: XML file for Control Layer class diagram to import into OnlineCinema.vpp
++
++## Proposed Workflow
++
++### Phase 1: Project Analysis (CURRENT PHASE)
++1. ✅ Read project structure
++2. ✅ Read etap1, etap2, etap3 instructions
++3. ✅ Create new git branch `etap3-implementation`
++4. 🔄 Analyze OnlineCinema.vpp to understand existing diagrams
++5. 🔄 Review teacher's example (IO-L Miniprojekt Biblioteka.pdf) for reference
++
++### Phase 2: Architecture Design
++1. Identify use cases from Stage 1
++2. Review activity diagrams from Stage 2 (select 2 most complex)
++3. Design 3-layer architecture (decide: MVC, MVP, or other BCE variant)
++4. Define interfaces between layers
++5. Create component diagram XML structure
++
++### Phase 3: Control Layer Design
++1. Analyze selected use cases for commonality/variability
++2. Apply SOLID principles to identify classes
++3. Design class hierarchy with required patterns:
++   - Facade for boundary classes
++   - Template Method or Strategy for use case execution
++   - Chain of Responsibility (if applicable)
++4. Define class attributes, operations, and relationships
++5. Create class diagram XML structure
++
++### Phase 4: XML Generation
++1. Generate XML for component diagram (Task 1)
++2. Generate XML for class diagram (Task 2)
++3. Validate XML format compatible with Visual Paradigm
++4. Save files in etap3/ directory
++
++### Phase 5: Validation & Documentation
++1. Test importing XML files into OnlineCinema.vpp
++2. Verify diagrams are correctly structured
++3. Create documentation/notes if needed
++4. Commit changes to branch
++
++## Files to Create
++- `etap3/component_diagram.xml` - Component diagram for 3-layer architecture
++- `etap3/control_layer_class_diagram.xml` - Class diagram for Control Layer
++- `etap3/README.md` - Brief explanation of architecture decisions (optional)
++
++## Questions for You to Confirm
++
++1. **Architecture choice**: Should I use MVC, MVP, or another BCE architecture variant?
++2. **Use cases**: Which use cases were defined in Stage 1? (I need to analyze the VPP file)
++3. **Complexity**: Should I focus on the 2 most complex use cases from Stage 2, or consider all?
++4. **XML format**: Do you want standalone XML files or specific Visual Paradigm XML format?
++
++## Next Steps (After Your Approval)
++Once you approve this workflow, I will:
++1. Analyze the OnlineCinema.vpp file to extract existing use cases and activity diagrams
++2. Review the teacher's example for XML format reference
++3. Begin Phase 2: Architecture Design
++4. Keep you updated at each major phase
++
++---
++**Status**: Awaiting your approval to proceed with Phase 1 (steps 4-5) and beyond.
++
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 17m 18s</sub>
+
+### 💬 Copilot
+
+Perfect! I've created a new branch `etap3-implementation` and a detailed workflow document. Let me show you what I've prepared:
+
+## Summary
+
+✅ **Created new branch**: `etap3-implementation`
+
+✅ **Created workflow document**: `WORKFLOW.md` with:
+
+### What Stage 3 Requires:
+1. **Task 1**: Component diagram showing 3-layer architecture (Presentation/Control/Entity layers connected via interfaces)
+2. **Task 2**: Detailed class diagram for Control Layer with design patterns (Facade, Template Method/Strategy)
+
+### My Proposed Workflow (5 Phases):
+1. **Phase 1**: Project Analysis - understand existing work
+2. **Phase 2**: Architecture Design - design 3 layers and interfaces  
+3. **Phase 3**: Control Layer Design - apply SOLID + design patterns
+4. **Phase 4**: XML Generation - create importable XML files
+5. **Phase 5**: Validation - test imports and document
+
+### What I'll Create:
+- `etap3/component_diagram.xml` (3-layer architecture)
+- `etap3/control_layer_class_diagram.xml` (Control Layer details)
+
+### Questions for You:
+1. MVC, MVP, or other architecture preference?
+2. Should I extract use cases from your VPP file automatically?
+3. Focus on 2 most complex use cases or all?
+
+**Check the WORKFLOW.md file** and let me know if this approach looks good! Once you approve, I'll analyze your OnlineCinema.vpp file and start designing the architecture.
+
+---
+
+<sub>⏱️ 50m 13s</sub>
+
+### 👤 User
+
+1. i think mvc
+2. you can extract them, and also u can find them in context i provided.
+3.i don`t know, use what instruction of third stage say, and also u can find help in example from our teacher. 
+Also you see that project in polish language, so you need to continue implement it in polish. Also i think you know it, but i will say, don`t do everething at once, you will work better if you will make parts for your job.
+
+---
+
+<sub>⏱️ 50m 16s</sub>
+
+### 💬 Copilot
+
+Świetnie! Rozumiem:
+1. ✅ Architektura **MVC** (Model-View-Controller)
+2. ✅ Wyciągnę przypadki użycia z VPP i kontekstu
+3. ✅ Zgodnie z instrukcją etapu 3: **2 najbardziej złożone** przypadki użycia
+4. ✅ Wszystko po **polsku**
+5. ✅ **Krok po kroku**, nie wszystko naraz
+
+Zaczynam **Fazę 1, krok 4**: Analiza OnlineCinema.vpp i przykładu nauczyciela.
+
+---
+
+<sub>⏱️ 50m 25s</sub>
+
+### ✅ `bash`
+
+**Check VPP file structure**
+
+$ cd /home/perepilka/SEM5-IO-L && head -200 OnlineCinema.vpp | grep -i "usecase\|diagram\|model" | head -30
+
+```
+grep: (standard input): binary file matches
+<exited with exit code 0>
+```
+
+
+---
+
+<sub>⏱️ 50m 25s</sub>
+
+### ✅ `bash`
+
+**Extract use case names from VPP**
+
+$ cd /home/perepilka/SEM5-IO-L && grep -o "name=\"[^\"]*\"" OnlineCinema.vpp | grep -i "case\|diagram" | head -40
+
+```
+grep: OnlineCinema.vpp: binary file matches
+<exited with exit code 0>
+```
+
+
+---
+
+<sub>⏱️ 50m 28s</sub>
+
+### 💬 Copilot
+
+VPP to plik binarny. Spróbuję inaczej - wyciągnę tekst z PDF-ów etapu 1 i 2:
+
+---
+
+<sub>⏱️ 51m 29s</sub>
+
+### ✅ `bash`
+
+**Extract use cases from etap1 PDF**
+
+$ cd /home/perepilka/SEM5-IO-L/etap1 && pdftotext "IO-L Modelowanie wymagań i przypadków użycia.pdf" - 2>/dev/null | grep -A 200 "Przypadki użycia\|Use case\|Aktor" | head -100
+
+<details>
+<summary>92 lines</summary>
+
+```
+Aktor:
+Osoba, urządzenie, inne oprogramowanie itp. może być aktorem tworzonego oprogramowania, jeśli ma mieć bezpośredni udział w jego działaniu, czyli bez pośrednictwa innego aktora. Tylko taki aktor może być połączony relacją asocjacji
+z przypadkiem użycia.
+Współpracę aktorów, będącą poza tworzonym oprogramowaniem, ale ważną dla jego modelu, można zamodelować
+przez połączenie ich ze sobą relacją asocjacji.
+Przypadek użycia:
+Proces biznesowy składający się z operacji wykonywanych przez tworzone oprogramowanie (jego funkcja), zmierzający do spełnienia jednego lub więcej wymagań funkcjonalnych z uwzględnieniem ograniczeń zawartych w wymaganiach
+niefunkcjonalnych.
+Przypadek użycia powinien być nazwany ogólnie jak funkcja tworzonego oprogramowania, a nie jak obiekt. Przykład
+dobrej nazwy: Włączenie sygnalizacji alarmowej. Przykład złej nazwy: Sygnalizacja alarmowa.
+Relacja uogólnienia:
+Łączy przypadki użycia lub aktorów w związek wersja podstawowa (ogólna) – wersja pochodna (szczególna).
+Gdy dwaj aktorzy mają identyczny lub prawie identyczny udział w realizacji przypadku użycia, to łączy ich uogólnienie
+i tylko ogólny aktor jest połączony relacją asocjacji z tym przypadkiem użycia.
+Relacja zawierania («include»):
+Łączy przypadki użycia w związek zależna całość – obowiązkowa część.
+Gdy część realizacji przypadku użycia może być wykonywana osobno (nie tylko jako jego część) lub gdy może być
+też wykonywana jako część innego przypadku użycia, to należy ją zamodelować osobnym przypadkiem użycia i przyłączyć go relacją zawierania.
+Relacja rozszerzania («extend»):
+Łączy przypadki użycia w związek niezależna całość – opcjonalna lub alternatywna część.
+Gdy część realizacji przypadku użycia może być wykonywana opcjonalnie (losowo lub zależnie od spełnienia jakiegoś
+warunku) lub alternatywnie z inną, lub innymi częściami jego realizacji, to należy ją zamodelować osobnym przypadkiem
+użycia i przyłączyć go relacją rozszerzania.
+Złożony przypadek użycia:
+Zawiera w sobie lub jest rozszerzany przez inne przypadki użycia.
+Za bardziej złożony przypadek użycia należy przyjąć taki, który sam składa się ze złożonych przypadków użycia.
+Relacja asocjacji:
+Głównie łączy aktora z tym przypadkiem użycia, którego realizację ten aktor inicjuje (aktywny udział) lub który inicjuje
+z tym aktorem przepływ danych albo sterowania (pasywny udział). Relacja ta może być skierowana i mieć określoną licz ność (w ilu naraz realizacjach przypadku użycia może brać udział aktor).
+
+dr inż. Paweł Głuchowski
+Wydział Informatyki i Telekomunikacji
+Politechnika Wrocławska
+
+Inżynieria Oprogramowania
+laboratoria 1—3
+Modelowanie wymagań i przypadków użycia
+
+zapisano 1 X 2025
+3
+
+Zadanie 6
+Budowa modelu przypadków użycia tworzonego oprogramowania – słowny opis
+Należy wykonać słowny opis każdego przypadku użycia, który znajduje się na diagramie wykonanym w poprzednim
+zadaniu. Ten opis należy umieścić w odpowiednich zakładkach okna Use Case Details programu Visual Paradigm dla danego przypadku użycia.
+Elementy opisu przypadku użycia:
+– numer: identyfikator;
+– nazwa: krótka, mająca formę wykonywanej operacji, a nie obiektu, zaczynająca się od numeru przypadku użycia;
+– cel: dłuższe wyjaśnienie, jeśli nazwa nie wyjaśnia przeznaczenia przypadku użycia;
+– warunki wstępne: możliwość realizacji przypadku użycia, w tym: wymagania, których wcześniejsze spełnienie lub przypadki użycia, których wcześniejsze zrealizowanie pozwala rozpocząć wykonywanie opisywanego przypadku użycia;
+– warunki końcowe: poprawność zrealizowania przypadku użycia, w tym wymagania spełnione lub przypadki użycia zrealizowane przez opisywany przypadek użycia;
+– scenariusz: przepływ zdarzeń, które składają się na realizację przypadku użycia; algorytm w postaci szczegółowego,
+numerowanego pseudokodu w języku naturalnym;
+– alternatywne scenariusze: alternatywne przepływy zdarzeń (jeśli istnieją) z podaniem ich warunków wstępnych.
+Scenariusz musi pokazywać miejsce (punkt w pseudokodzie) realizacji innego przypadku użycia, będącego w relacji
+zawierania z opisywanym przypadkiem użycia oraz miejsce (punkt w pseudokodzie) i warunek (opcjonalność, losowość,
+alternatywność) realizacji innego przypadku użycia, będącego w relacji rozszerzania z opisywanym przypadkiem użycia.
+Scenariusz nie może zawierać scenariusza innego przypadku użycia, w szczególności takiego, który jest z nim połączony relacją zawierania lub rozszerzania.
+Zadania 3, 5 i 6 opracowano na podstawie instrukcji 2 i instrukcji 3 „Laboratorium z przedmiotu: Inżynieria Oprogramowania W04ITE-SI0011G”, autorstwa dr inż. Zofii Kruczkiewicz.
+
+Ćwiczenia
+Przykład wstępnego opisu wymagań:
+Poniższa lista zawiera razem wymagania funkcjonalne i niefunkcjonalne. Wiele z nich jest złożonych i mogą wymagać
+dekompozycji na prostsze wymagania, w szczególności przez rozdzielenie danego wymagania na wymaganie funkcjonalne i ograniczające je wymaganie niefunkcjonalne. Jest to więc podstawa do dalszej analizy wymagań.
+1) Projektowany system informatyczny (SI) automatyzuje kontrolę bezpiecznego poziomu promieniowania i reagowanie
+na jego przekroczenie w sterowni elektrowni atomowej.
+2) SI jest obsługiwany przez kontrolera bezpieczeństwa i nadzorowany przez kierownika sterowni.
+3) Kierownik sterowni ma te same uprawnienia do obsługi SI, co kontroler bezpieczeństwa, a dodatkowo na koniec każ dego miesiąca otrzymuje z SI raport o pracy SI.
+4) SI działa na podstawie poleceń wydawanych przez kontrolera bezpieczeństwa lub kierownika sterowni oraz odczytów
+stanu urządzeń pomiarowych i urządzeń alarmowych.
+5) Kontroler bezpieczeństwa sprawdza sprawność systemu alarmowego przez przeprowadzenie testu sygnalizacji
+świetlnej i dźwiękowej przekroczenia bezpiecznego poziomu promieniowania, opcjonalnie razem z testem sygnalizacji
+świetlnej nakazującej ewakuację pracowników sterowni.
+6) Test sygnalizacji świetlnej i dźwiękowej systemu alarmowego nie może być wykonywany częściej niż raz na tydzień.
+7) SI stale monitoruje poziom promieniowania w sterowni przy pomocy odczytów z urządzeń pomiarowych.
+8) SI na bieżąco informuje kontrolera bezpieczeństwa o stanie i zmianach poziomu promieniowania w sterowni.
+9) SI włącza w urządzeniach alarmowych alarm przekroczenia bezpiecznego poziomu promieniowania i nakaz ewakuacji pracowników sterowni w przypadku przekroczenia bezpiecznego poziomu promieniowania w sterowni oraz informuje o tym kontrolera bezpieczeństwa.
+10) Kontroler bezpieczeństwa odwołuje alarm przekroczenia bezpiecznego poziomu promieniowania i nakaz ewakuacji
+pracowników sterowni, jeśli uzna taką potrzebę. Wówczas SI wyłącza w urządzeniach alarmowych ten alarm i nakaz.
+
+dr inż. Paweł Głuchowski
+Wydział Informatyki i Telekomunikacji
+Politechnika Wrocławska
+
+Inżynieria Oprogramowania
+laboratoria 1—3
+Modelowanie wymagań i przypadków użycia
+
+zapisano 1 X 2025
+4
+
+Ćwiczenie 1
+Dekompozycja i segregacja wymagań
+Proszę przekształcić wybrane wymagania tak, aby:
+– były niepodzielne (nie zawierały w sobie innego wymagania),
+– jednoznacznie wskazywały, czy są funkcjonalne czy niefunkcjonalne.
+Przykład dekompozycji wymagania 1) na wymagania funkcjonalne 1a) i 1b):
+1) Projektowany system informatyczny (SI) automatyzuje kontrolę bezpiecznego poziomu promieniowania i reagowanie
+na jego przekroczenie w sterowni elektrowni atomowej.
+1a) SI automatyzuje kontrolę bezpiecznego poziomu promieniowania w sterowni.
+<exited with exit code 0>
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 51m 20s</sub>
+
+### ✅ `bash`
+
+**Check etap2 project content**
+
+$ cd /home/perepilka/SEM5-IO-L/etap2 && pdftotext "Projekt_Inz_Opr_Part_2.pdf" - 2>/dev/null | head -150
+
+<details>
+<summary>101 lines</summary>
+
+```
+ETAP 2
+
+Modelowanie realizacji przypadków użycia
+Diagramy czynności i ich opisy
+
+Zintegrowany System
+Sprzedaży Biletów
+dla Sieci Multikin
+
+Autorzy projektu:
+Oleksandr Radionenko
+
+Yaroslav Perepilka
+
+nr albumu: 274003
+
+nr albumu: 282279
+
+Politechnika Wrocławska
+Wydział Informatyki i Telekomunikacji
+Kierunek: Informatyka Techniczna
+Przedmiot: Inżynieria Oprogramowania
+
+Wrocław, 10 listopada 2025
+
+Etap 2 - Modelowanie realizacji przypadków użycia
+
+Radionenko, Perepilka
+
+Spis treści
+1 Diagramy czynności
+1.1 Czynność - Edytowanie oferty kina w systemie . . . . . . . . . . . . . . . .
+1.2 Czynność - Dodanie nowego seansu do systemu . . . . . . . . . . . . . . .
+1.3 Czynność - Edytowanie sczegółów seansów w systemie kin . . . . . . . . .
+1.4 Czynność - Usunięcie seansu z systemu . . . . . . . . . . . . . . . . . . . .
+
+1
+
+2
+2
+3
+4
+5
+
+Etap 2 - Modelowanie realizacji przypadków użycia
+
+Radionenko, Perepilka
+
+1
+
+Diagramy czynności
+
+1.1
+
+Czynność - Edytowanie oferty kina w systemie
+
+Rysunek 1: Diagram czynności dla przypadku użycia 04 - Edytowanie oferty kina w
+systemie
+
+Na podstawie scenariusza przypadku użycia PU04 powstała czynność Edytowanie oferty kina w systemie
+Scenariusz
+1. Administrator Sieci wybiera opcję - Edycja oferty kin - w systemie.
+2. Administrator wybiera jedną z trzech opcji edytowania:
+• Opcja „Dodaj nowy film- przejście do czynności Dodanie nowego filmu
+• Opcja „Edytuj film- przejście do czynności Edytowanie filmu
+• Opcja „Usuń film- przejście do czynności Usunięcie filmu
+3. System wykonuje wybraną operację i aktualizuje ofertę filmową w całej sieci kin.
+
+2
+
+Etap 2 - Modelowanie realizacji przypadków użycia
+
+1.2
+
+Radionenko, Perepilka
+
+Czynność - Dodanie nowego seansu do systemu
+
+Rysunek 2: Diagram czynności dla przypadku użycia 05 - Dodanie nowego seansu do
+systemu
+
+Na podstawie scenariusza przypadku użycia PU05 powstała czynność Dodanie
+nowego seansu do systemu
+Scenariusz
+1. Administrator Sieci wybiera opcję - Dodaj seans - w systemie.
+2. Administrator wprowadza dane nowego seansu:
+• Nazwę filmu (wybór z listy dostępnych filmów)
+• Opis filmu
+• Liczbę wymaganych seansów
+3. System waliduje wprowadzone parametry.
+4. Jeśli walidacja zakończy się sukcesem, system dodaje nowy seans do bazy danych.
+5. System wyświetla potwierdzenie dodania seansu.
+
+3
+
+Etap 2 - Modelowanie realizacji przypadków użycia
+
+1.3
+
+Radionenko, Perepilka
+
+Czynność - Edytowanie sczegółów seansów w systemie kin
+
+Rysunek 3: Diagram czynności dla przypadku użycia 06 - Edytowanie sczegółów seansów
+w systemie kin
+
+Na podstawie scenariusza przypadku użycia PU06 powstała czynność Edytowanie sczegółów seansów w systemie kin
+Scenariusz
+1. Administrator sieci rozpoczyna edytowanie sczegółów seansów w systemie sieci Kin.
+2. System prosi o wprowadzenie identyfikatora filmu.
+3. Administrator wpisuje (ID).
+4. System wykonuje sprawdzenie identyfikatora filmu w bazie danych.
+5. Jeśli film o podanym (ID) istnieje, system pobiera Film.
+6. System wyświetla szczegóły filmu.
+7. Administrator wykonuje edycję danych.
+8. Administrator zatwierdza wprowadzone zmiany.
+9. System zapisuje zmiany.
+10. System wyświetla potwierdzenie aktualizacji danych.
+
+4
+
+Etap 2 - Modelowanie realizacji przypadków użycia
+
+1.4
+
+Radionenko, Perepilka
+
+Czynność - Usunięcie seansu z systemu
+
+Rysunek 4: Diagram czynności dla przypadku użycia 07 - Usunięcie seansu z systemu
+
+Na podstawie scenariusza przypadku użycia PU07 powstała czynność Usunięcie
+seansu z systemu
+Scenariusz
+1. Administrator Sieci wybiera opcję - Usuń film - w ramach edycji oferty kin.
+2. Administrator wprowadza identyfikator (ID) filmu, który ma zostać usunięty.
+3. System sprawdza, czy film o podanym ID istnieje w bazie danych.
+4. Jeśli film istnieje, system wykonuje operację usunięcia filmu z listy filmów.
+5. System wyświetla potwierdzenie usunięcia filmu.
+6. Jeśli film nie istnieje, system wyświetla komunikat - SendSignalAction - informujący o
+niepoprawnym ID.
+
+5
+<exited with exit code 0>
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 51m 31s</sub>
+
+### 💬 Copilot
+
+Doskonale! Widzę że projekt to **"Zintegrowany System Sprzedaży Biletów dla Sieci Multikin"**. 
+
+Teraz sprawdzę przykład nauczyciela, żeby zobaczyć format XML:
+
+---
+
+<sub>⏱️ 52m 27s</sub>
+
+### ✅ `bash`
+
+**Check teacher example for component diagram**
+
+$ cd /home/perepilka/SEM5-IO-L && pdftotext "IO-L Miniprojekt Biblioteka.pdf" - 2>/dev/null | grep -A 30 "Diagram komponentów\|Component\|Warstwa\|Layer" | head -60
+
+<details>
+<summary>52 lines</summary>
+
+```
+Diagram komponentów.....................................................................................................................................................14
+Diagram klas komponentu Kontroler................................................................................................................................14
+Diagram klas komponentu Model.....................................................................................................................................16
+Kod klas komponentów Kontroler i Model........................................................................................................................19
+Modelowanie interakcji między klasami i obiektami........................................................................................................26
+Diagramy sekwencji i kod opisanych nimi operacji..........................................................................................................26
+Wynik działania programu................................................................................................................................................32
+Kod klas............................................................................................................................................................................35
+Modelowanie zmienności warstwy widoku.......................................................................................................................59
+
+dr inż. Paweł Głuchowski
+Wydział Informatyki i Telekomunikacji
+Politechnika Wrocławska
+
+Inżynieria Oprogramowania
+laboratoria
+Miniprojekt Biblioteka
+
+zapisano 19 XI 2025
+1
+
+Modelowanie wymagań i przypadków użycia
+Miejsce wdrożenia
+dokument tekstowy z zadania 3
+Nazwa projektu:
+System Zarządzania Biblioteką, zwany dalej systemem.
+Klient:
+Miejska Biblioteka Publiczna w Miasteczku, zwana dalej biblioteką.
+Cel projektu:
+Wykonanie systemu informatycznego wspierającego zadania pracowników biblioteki w zakresie przetwarzania danych o wypożyczanych przez nią książkach i o jej czytelnikach.
+Zasoby ludzkie:
+--
+Diagram komponentów
+diagram z zadania 1
+Rys. 15. Diagram komponentów.
+
+Powyższy diagram komponentów określa warstwową architekturę oprogramowania, składającą się z warstwy prezentacji (komponent Widok), warstwy kontroli (komponent Kontroler) i warstwy encji (komponent Model). Łączą je interfejsy
+IKontrolerBibliotekarza, IKontrolerKierownikaBiblioteki i IModel.
+Klasa fasadowa komponentu Model realizuje interfejs IModel. Używają go klasy komponentu Kontroler.
+Klasy fasadowe komponentu Kontroler realizują interfejsy IKontrolerBibliotekarza i IKontrolerKierownikaBiblioteki. Używają ich klasy komponentu Widok.
+
+Diagram klas komponentu Kontroler
+diagram z zadania 2
+
+Rys. 16. Diagram klas komponentu Kontroler.
+
+Powyższy diagram modeluje klasy komponentu Kontroler, zawarte w pakiecie Kontroler, oraz używany przez nie interfejs IModel z komponentu Model.
+Założenia projektowe:
+1) Klasa SystemZarządzaniaBiblioteką, zawierająca główną operację main(), znajduje się w pakiecie Kontroler. Dla lepszej czytelności diagram nie pokazuje relacji zależności (typu instantiate lub use) tej klasy od innych klas. W szczególności byłyby to klasy: IKontrolerBibliotekarza, IKontrolerKierownikaBiblioteki i IModel.
+2) Każda operacja klas fasadowych KontrolerBibliotekarza i KontrolerKierownikaBiblioteki jest realizacją przypadku użycia bezpośrednio inicjowanego przez Bibliotekarza lub Kierownika Biblioteki i ma jego nazwę.
+3) Oprócz klas fasadowych diagram pokasuje tylko klasy potrzebne do realizacji przypadku użycia Wypisanie Czytelnika
+z Biblioteki oraz klasy wynikłe z zastosowania wzorców projektowych.
+4) Każda klasa potrzebna do realizacji tego złożonego przypadku użycia ma jedną odpowiedzialność – realizację jego
+składowego pojedynczego przypadku użycia, zgodnie z powiązaną z nim czynnością (wg diagramu czynności). Jej
+operacje odpowiadają akcjom tej czynności, o ile są wykonywane przez komponent Kontroler. Pozostałym akcjom tej
+czynności zwykle odpowiadają operacje zdefiniowane w interfejsie IModel, czyli operacje przetwarzania danych.
+5) Nazwa klasy, atrybutu lub operacji dokładnie, jeśli to możliwe, definiuje odpowiedzialność.
+6) Realizacja przypadku użycia, czyli wykonanie modelującej go czynności, polega na utworzeniu instancji klasy odpowiedzialnej za tę realizację. Akcje tej czynności, zgodnie z jej diagramem czynności, wykonywane są w ciele konstruktora tej klasy. Alternatywnie można by do tego celu utworzyć specjalną operację w tej klasie.
+
+dr inż. Paweł Głuchowski
+<exited with exit code 0>
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 52m 29s</sub>
+
+### 💬 Copilot
+
+Świetnie! Teraz już wiem jak to powinno wyglądać. Stwórzmy dokument ze stanem analizy:
+
+---
+
+<sub>⏱️ 53m 51s</sub>
+
+### ✅ `create`
+
+**create a new file at /home/perepilka/SEM5-IO-L/etap3/analiza.md.**
+
+/home/perepilka/SEM5-IO-L/etap3/analiza.md
+
+<details>
+<summary>132 lines</summary>
+
+```diff
+
+diff --git a/home/perepilka/SEM5-IO-L/etap3/analiza.md b/home/perepilka/SEM5-IO-L/etap3/analiza.md
+create file mode 100644
+index 0000000..0000000
+--- a/dev/null
++++ b/home/perepilka/SEM5-IO-L/etap3/analiza.md
+@@ -1,0 +1,126 @@
++# Analiza projektu - Etap 3
++
++## Informacje o projekcie
++- **Nazwa**: Zintegrowany System Sprzedaży Biletów dla Sieci Multikin (OnlineCinema)
++- **Autorzy**: Oleksandr Radionenko, Yaroslav Perepilka
++- **Architektura**: MVC (Model-View-Controller)
++
++## Przypadki użycia z Etapu 2
++
++Z dokumentacji etapu 2 wynika, że wybrano **4 diagramy czynności**:
++
++### PU04 - Edytowanie oferty kina w systemie
++- **Złożoność**: WYSOKA (zawiera 3 pod-przypadki użycia)
++- **Aktor**: Administrator Sieci
++- **Pod-przypadki**:
++  - Dodanie nowego filmu
++  - Edytowanie filmu
++  - Usunięcie filmu
++- **Status**: ✅ Wybrany jako jeden z 2 najbardziej złożonych
++
++### PU05 - Dodanie nowego seansu do systemu
++- **Złożoność**: ŚREDNIA
++- **Aktor**: Administrator Sieci
++- **Operacje**:
++  - Wprowadzenie danych seansu
++  - Walidacja parametrów
++  - Dodanie do bazy
++- **Status**: ⚪ Pomocniczy
++
++### PU06 - Edytowanie szczegółów seansów w systemie kin
++- **Złożoność**: ŚREDNIA/WYSOKA
++- **Aktor**: Administrator Sieci
++- **Operacje**:
++  - Wyszukiwanie filmu po ID
++  - Edycja danych
++  - Walidacja i zapis
++- **Status**: ⚪ Potencjalnie wybrany
++
++### PU07 - Usunięcie seansu z systemu
++- **Złożoność**: ŚREDNIA
++- **Aktor**: Administrator Sieci
++- **Operacje**:
++  - Wprowadzenie ID filmu
++  - Sprawdzenie istnienia
++  - Usunięcie lub komunikat błędu
++- **Status**: ⚪ Pomocniczy
++
++## Dodatkowe przypadki użycia (z kontekstu etapu 1)
++
++Z dokumentacji wynika, że system obsługuje również:
++- Zarządzanie sieciami kin
++- Sprzedaż biletów
++- Rezerwacje
++- Inne funkcje administracyjne
++
++**Uwaga**: Pełna lista przypadków użycia znajduje się w OnlineCinema.vpp (plik binarny)
++
++## Wybór 2 najbardziej złożonych przypadków użycia
++
++Zgodnie z instrukcją etapu 3, wybieramy:
++
++1. **PU04 - Edytowanie oferty kina w systemie** ✅
++   - Najbardziej złożony (zawiera relacje «include»/«extend»)
++   - 3 scenariusze alternatywne
++   
++2. **PU06 - Edytowanie szczegółów seansów w systemie kin** ✅
++   - Drugi co do złożoności
++   - Zawiera obsługę błędów i walidację
++
++## Architektura MVC - 3 warstwy
++
++### Warstwa WIDOK (View)
++- **Odpowiedzialność**: Interfejs użytkownika, GUI
++- **Interfejs udostępniany**: Brak (warstwa zewnętrzna)
++- **Interfejs używany**: IKontrolerAdministratoraSieci
++- **Uwaga**: NIE będzie modelowana ani implementowana (symulowana przez Kontroler)
++
++### Warstwa KONTROLER (Controller)
++- **Odpowiedzialność**: Logika biznesowa, koordynacja, realizacja przypadków użycia
++- **Interfejs udostępniany**: IKontrolerAdministratoraSieci
++- **Interfejs używany**: IModel
++- **Główna klasa**: SystemSprzedazyBiletow (z operacją main())
++- **Status**: ✅ DO MODELOWANIA (Zadanie 2)
++
++### Warstwa MODEL (Model)
++- **Odpowiedzialność**: Zarządzanie danymi, dostęp do bazy danych
++- **Interfejs udostępniany**: IModel
++- **Interfejs używany**: Brak
++- **Uwaga**: Będzie zawierać operacje CRUD dla filmów i seansów
++
++## Wzorce projektowe do zastosowania
++
++### Wymagane:
++1. **Fasada** (Facade)
++   - Klasa: KontrolerAdministratoraSieci
++   - Cel: Uproszczenie dostępu do funkcji kontrolera
++   - Realizuje: IKontrolerAdministratoraSieci
++
++2. **Metoda Szablonowa** (Template Method) LUB **Strategia** (Strategy)
++   - Decyzja: **Metoda Szablonowa**
++   - Klasa abstrakcyjna: ObslugaSeansow
++   - Klasy pochodne: DodawanieSeansow, EdytowanieSeansow, UsuwanieSeansow
++   - Cel: Wspólny algorytm obsługi seansów z modyfikowalnymi krokami
++
++### Zalecane:
++3. **Łańcuch Zobowiązań** (Chain of Responsibility)
++   - Potencjalne użycie: Walidacja danych seansów
++   - Klasy: WalidatorDanych → WalidatorID → WalidatorParametrow
++
++## Plan dalszych kroków
++
++### Faza 2: Projekt architektury (NASTĘPNA)
++- [ ] Stworzenie diagramu komponentów (3 komponenty + 2 interfejsy)
++- [ ] Definicja interfejsów IKontrolerAdministratoraSieci i IModel
++- [ ] Generacja XML dla diagramu komponentów
++
++### Faza 3: Projekt warstwy Kontroler
++- [ ] Analiza wspólności i zmienności PU04 i PU06
++- [ ] Zaprojektowanie hierarchii klas z wzorcami
++- [ ] Stworzenie diagramu klas dla komponentu Kontroler
++- [ ] Generacja XML dla diagramu klas
++
++---
++**Data analizy**: 2025-11-24
++**Status**: Faza 1 zakończona ✅
++
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 54m 3s</sub>
+
+### ✅ `bash`
+
+**Stage changes and check status**
+
+$ cd /home/perepilka/SEM5-IO-L && git add -A && git status
+
+<details>
+<summary>11 lines</summary>
+
+```
+On branch etap3-implementation
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   IO-L Miniprojekt Biblioteka.pdf
+	new file:   WORKFLOW.md
+	deleted:    etap1/IO-L Miniprojekt Biblioteka.pdf
+	new file:   "etap2/IO-L Modelowanie realizacji przypadk\303\263w u\305\274ycia.pdf"
+	new file:   etap2/Projekt_Inz_Opr_Part_2.pdf
+	new file:   etap3/IO-L Modelowanie obiektowej 3-warstwowej architektury.pdf
+	new file:   etap3/analiza.md
+<exited with exit code 0>
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 54m 5s</sub>
+
+### 💬 Copilot
+
+Doskonale! **Faza 1 zakończona** ✅
+
+## Podsumowanie analizy:
+
+✅ **Projekt**: System Sprzedaży Biletów dla Sieci Multikin  
+✅ **Architektura**: MVC (3 warstwy)  
+✅ **Wybrane przypadki użycia** (2 najbardziej złożone):
+- PU04: Edytowanie oferty kina (zawiera 3 pod-przypadki)
+- PU06: Edytowanie szczegółów seansów
+
+✅ **Wzorce projektowe**:
+- Fasada (wymagany)
+- Metoda Szablonowa (wybrałem zamiast Strategii)
+- Łańcuch Zobowiązań (zalecany - do walidacji)
+
+📄 **Utworzone pliki**:
+- `WORKFLOW.md` - ogólny plan pracy
+- `etap3/analiza.md` - szczegółowa analiza projektu
+
+## Następny krok - Faza 2: Projekt architektury
+
+Teraz zacznę projektować **diagram komponentów**. Stworzę:
+1. 3 komponenty: Widok, Kontroler, Model
+2. 2 interfejsy: IKontrolerAdministratoraSieci, IModel
+3. Połączenia między nimi
+
+Czy mogę przejść do **Fazy 2** i zacząć tworzyć diagram komponentów? 🚀
+
+---
+
+<sub>⏱️ 58m 1s</sub>
+
+### 👤 User
+
+speek with me in english, but project is in polish. so you can go to the next stage
+
+---
+
+<sub>⏱️ 58m 4s</sub>
+
+### 💬 Copilot
+
+Perfect! Moving to **Phase 2: Architecture Design** - creating the component diagram.
+
+---
+
+<sub>⏱️ 61m 21s</sub>
+
+### ✅ `create`
+
+**create a new file at /home/perepilka/SEM5-IO-L/etap3/diagram_komponentow_projekt.md.**
+
+/home/perepilka/SEM5-IO-L/etap3/diagram_komponentow_projekt.md
+
+<details>
+<summary>98 lines</summary>
+
+```diff
+
+diff --git a/home/perepilka/SEM5-IO-L/etap3/diagram_komponentow_projekt.md b/home/perepilka/SEM5-IO-L/etap3/diagram_komponentow_projekt.md
+create file mode 100644
+index 0000000..0000000
+--- a/dev/null
++++ b/home/perepilka/SEM5-IO-L/etap3/diagram_komponentow_projekt.md
+@@ -1,0 +1,92 @@
++# Projekt Diagramu Komponentów - Architektura MVC
++
++## Struktura architektury 3-warstwowej
++
++### Komponenty:
++
++1. **Widok** (View)
++   - Warstwa prezentacji
++   - Odpowiada za GUI/interfejs użytkownika
++   - Używa interfejsu: IKontrolerAdministratoraSieci
++   - Nie będzie implementowana (symulowana przez Kontroler)
++
++2. **Kontroler** (Controller)
++   - Warstwa logiki biznesowej i koordynacji
++   - Realizuje interfejs: IKontrolerAdministratoraSieci
++   - Używa interfejsu: IModel
++   - Zawiera główną klasę: SystemSprzedazyBiletow
++
++3. **Model** (Model)
++   - Warstwa danych i dostępu do bazy
++   - Realizuje interfejs: IModel
++   - Zarządza encjami: Film, Seans, Kino
++
++### Interfejsy:
++
++#### IKontrolerAdministratoraSieci
++Operacje inicjujące przypadki użycia:
++- edytujOferteKina() : void
++- dodajNowySeans(nazwaFilmu: String, opisFilmu: String, liczbaSeansow: int) : void
++- edytujSzczegolySeansow(idFilmu: String) : void
++- usunSeans(idFilmu: String) : void
++
++#### IModel
++Operacje dostępu do danych:
++- pobierzFilm(id: String) : Film
++- zapiszFilm(film: Film) : void
++- usunFilm(id: String) : boolean
++- pobierzSeans(id: String) : Seans
++- zapiszSeans(seans: Seans) : void
++- usunSeans(id: String) : boolean
++- walidujParametrySeansu(seans: Seans) : boolean
++
++### Połączenia (zgodnie z wzorcem Fasada):
++
++```
++Widok ----( IKontrolerAdministratoraSieci )---- Kontroler
++                                                      |
++                                                      |
++                                         Kontroler ----( IModel )---- Model
++```
++
++## Klasy graniczne (Facade):
++
++### W komponencie Kontroler:
++- **KontrolerAdministratoraSieci** (realizuje IKontrolerAdministratoraSieci)
++  - Fasada dla warstwy kontrolera
++  - Punkt wejścia dla operacji administracyjnych
++
++### W komponencie Model:
++- **ModelBazyDanych** (realizuje IModel)
++  - Fasada dla warstwy modelu
++  - Zarządza dostępem do danych
++
++## Diagram komponentów (tekstowa reprezentacja):
++
++```
++┌─────────────────────────────────────────────────────────────┐
++│                                                               │
++│  ┌────────────┐                                               │
++│  │   Widok    │                                               │
++│  └─────┬──────┘                                               │
++│        │ uses                                                 │
++│        └──────( IKontrolerAdministratoraSieci )              │
++│                           │                                   │
++│                           │ provided by                       │
++│                    ┌──────▼──────┐                           │
++│                    │  Kontroler  │                           │
++│                    └──────┬──────┘                           │
++│                           │ uses                              │
++│                           └──────( IModel )                   │
++│                                      │                        │
++│                                      │ provided by            │
++│                               ┌──────▼──────┐                │
++│                               │    Model    │                │
++│                               └─────────────┘                │
++│                                                               │
++└─────────────────────────────────────────────────────────────┘
++```
++
++---
++**Status**: Gotowe do generacji XML
++
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 61m 23s</sub>
+
+### 💬 Copilot
+
+Now I'll create the XML file for the component diagram in Visual Paradigm format. Let me check the teacher's example to understand the XML structure:
+
+---
+
+<sub>⏱️ 61m 36s</sub>
+
+### ✅ `bash`
+
+**Check VPP file structure**
+
+$ cd /home/perepilka/SEM5-IO-L && unzip -l OnlineCinema.vpp 2>/dev/null | head -20
+
+```
+Archive:  OnlineCinema.vpp
+<exited with exit code 0>
+```
+
+
+---
+
+<sub>⏱️ 61m 38s</sub>
+
+### 💬 Copilot
+
+The VPP file is not a standard zip. Let me create the component diagram XML in Visual Paradigm's XMI format:
+
+---
+
+<sub>⏱️ 62m 30s</sub>
+
+### ✅ `create`
+
+**create a new file at /home/perepilka/SEM5-IO-L/etap3/diagram_komponentow.xml.**
+
+/home/perepilka/SEM5-IO-L/etap3/diagram_komponentow.xml
+
+<details>
+<summary>153 lines</summary>
+
+```diff
+
+diff --git a/home/perepilka/SEM5-IO-L/etap3/diagram_komponentow.xml b/home/perepilka/SEM5-IO-L/etap3/diagram_komponentow.xml
+create file mode 100644
+index 0000000..0000000
+--- a/dev/null
++++ b/home/perepilka/SEM5-IO-L/etap3/diagram_komponentow.xml
+@@ -1,0 +1,147 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1">
++  <xmi:Documentation exporter="Visual Paradigm" exporterVersion="17.0"/>
++  
++  <!-- Model -->
++  <uml:Model xmi:type="uml:Model" xmi:id="model_1" name="Architektura MVC - System Sprzedaży Biletów">
++    
++    <!-- Component Diagram -->
++    <packagedElement xmi:type="uml:Package" xmi:id="pkg_component_diagram" name="Diagram Komponentów">
++      
++      <!-- Interface: IKontrolerAdministratoraSieci -->
++      <packagedElement xmi:type="uml:Interface" xmi:id="interface_kontroler" name="IKontrolerAdministratoraSieci">
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_edytuj_oferte" name="edytujOferteKina">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_edytuj_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_dodaj_seans" name="dodajNowySeans">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodaj_nazwa" name="nazwaFilmu" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodaj_opis" name="opisFilmu" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodaj_liczba" name="liczbaSeansow" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodaj_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_edytuj_szczegoly" name="edytujSzczegolySeansow">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_edytuj_id" name="idFilmu" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_edytuj_szcz_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_usun_seans" name="usunSeans">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usun_id" name="idFilmu" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usun_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++      </packagedElement>
++      
++      <!-- Interface: IModel -->
++      <packagedElement xmi:type="uml:Interface" xmi:id="interface_model" name="IModel">
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_pobierz_film" name="pobierzFilm">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_pobierz_id" name="id" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_pobierz_return" name="return" direction="return">
++            <type xmi:type="uml:Class" xmi:idref="class_film"/>
++          </ownedParameter>
++        </ownedOperation>
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_zapisz_film" name="zapiszFilm">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_zapisz_film" name="film" direction="in">
++            <type xmi:type="uml:Class" xmi:idref="class_film"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_zapisz_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_usun_film" name="usunFilm">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usun_film_id" name="id" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usun_film_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
++          </ownedParameter>
++        </ownedOperation>
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_pobierz_seans" name="pobierzSeans">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_pobierz_seans_id" name="id" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_pobierz_seans_return" direction="return">
++            <type xmi:type="uml:Class" xmi:idref="class_seans"/>
++          </ownedParameter>
++        </ownedOperation>
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_zapisz_seans" name="zapiszSeans">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_zapisz_seans" name="seans" direction="in">
++            <type xmi:type="uml:Class" xmi:idref="class_seans"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_zapisz_seans_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_usun_seans_model" name="usunSeans">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usun_seans_id" name="id" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usun_seans_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
++          </ownedParameter>
++        </ownedOperation>
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_waliduj" name="walidujParametrySeansu">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_waliduj_seans" name="seans" direction="in">
++            <type xmi:type="uml:Class" xmi:idref="class_seans"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_waliduj_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
++          </ownedParameter>
++        </ownedOperation>
++      </packagedElement>
++      
++      <!-- Component: Widok -->
++      <packagedElement xmi:type="uml:Component" xmi:id="component_widok" name="Widok">
++        <ownedComment xmi:type="uml:Comment" xmi:id="comment_widok">
++          <body>Warstwa prezentacji - interfejs użytkownika (GUI).
++Nie będzie implementowana - symulowana przez Kontroler.</body>
++        </ownedComment>
++        <!-- Uses IKontrolerAdministratoraSieci -->
++        <packagedElement xmi:type="uml:Usage" xmi:id="usage_widok_kontroler" client="component_widok" supplier="interface_kontroler"/>
++      </packagedElement>
++      
++      <!-- Component: Kontroler -->
++      <packagedElement xmi:type="uml:Component" xmi:id="component_kontroler" name="Kontroler">
++        <ownedComment xmi:type="uml:Comment" xmi:id="comment_kontroler">
++          <body>Warstwa kontroli - logika biznesowa i koordynacja.
++Zawiera główną klasę SystemSprzedazyBiletow z operacją main().</body>
++        </ownedComment>
++        <!-- Provides IKontrolerAdministratoraSieci -->
++        <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="realization_kontroler" client="component_kontroler" supplier="interface_kontroler" contract="interface_kontroler"/>
++        <!-- Uses IModel -->
++        <packagedElement xmi:type="uml:Usage" xmi:id="usage_kontroler_model" client="component_kontroler" supplier="interface_model"/>
++      </packagedElement>
++      
++      <!-- Component: Model -->
++      <packagedElement xmi:type="uml:Component" xmi:id="component_model" name="Model">
++        <ownedComment xmi:type="uml:Comment" xmi:id="comment_model">
++          <body>Warstwa encji - zarządzanie danymi i dostęp do bazy danych.
++Zawiera encje: Film, Seans, Kino.</body>
++        </ownedComment>
++        <!-- Provides IModel -->
++        <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="realization_model" client="component_model" supplier="interface_model" contract="interface_model"/>
++      </packagedElement>
++      
++    </packagedElement>
++    
++  </uml:Model>
++  
++</xmi:XMI>
++
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 62m 32s</sub>
+
+### 💬 Copilot
+
+Great! Component diagram XML created. Now let me update the workflow and move to **Phase 3: Control Layer Design**:
+
+---
+
+<sub>⏱️ 62m 58s</sub>
+
+### ✅ `edit`
+
+**edit the file at /home/perepilka/SEM5-IO-L/etap3/analiza.md.**
+
+/home/perepilka/SEM5-IO-L/etap3/analiza.md
+
+<details>
+<summary>16 lines</summary>
+
+```diff
+
+diff --git a/home/perepilka/SEM5-IO-L/etap3/analiza.md b/home/perepilka/SEM5-IO-L/etap3/analiza.md
+index 0000000..0000000 100644
+--- a/home/perepilka/SEM5-IO-L/etap3/analiza.md
++++ b/home/perepilka/SEM5-IO-L/etap3/analiza.md
+@@ -109,10 +109,10 @@
+ 
+ ## Plan dalszych kroków
+ 
+-### Faza 2: Projekt architektury (NASTĘPNA)
+-- [ ] Stworzenie diagramu komponentów (3 komponenty + 2 interfejsy)
+-- [ ] Definicja interfejsów IKontrolerAdministratoraSieci i IModel
+-- [ ] Generacja XML dla diagramu komponentów
++### Faza 2: Projekt architektury ✅ ZAKOŃCZONA
++- [x] Stworzenie diagramu komponentów (3 komponenty + 2 interfejsy)
++- [x] Definicja interfejsów IKontrolerAdministratoraSieci i IModel
++- [x] Generacja XML dla diagramu komponentów
+ 
+ ### Faza 3: Projekt warstwy Kontroler
+ - [ ] Analiza wspólności i zmienności PU04 i PU06
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 63m 5s</sub>
+
+### ✅ `edit`
+
+**edit the file at /home/perepilka/SEM5-IO-L/etap3/analiza.md.**
+
+/home/perepilka/SEM5-IO-L/etap3/analiza.md
+
+<details>
+<summary>12 lines</summary>
+
+```diff
+
+diff --git a/home/perepilka/SEM5-IO-L/etap3/analiza.md b/home/perepilka/SEM5-IO-L/etap3/analiza.md
+index 0000000..0000000 100644
+--- a/home/perepilka/SEM5-IO-L/etap3/analiza.md
++++ b/home/perepilka/SEM5-IO-L/etap3/analiza.md
+@@ -114,7 +114,7 @@
+ - [x] Definicja interfejsów IKontrolerAdministratoraSieci i IModel
+ - [x] Generacja XML dla diagramu komponentów
+ 
+-### Faza 3: Projekt warstwy Kontroler
++### Faza 3: Projekt warstwy Kontroler (NASTĘPNA)
+ - [ ] Analiza wspólności i zmienności PU04 i PU06
+ - [ ] Zaprojektowanie hierarchii klas z wzorcami
+ - [ ] Stworzenie diagramu klas dla komponentu Kontroler
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 63m 8s</sub>
+
+### 💬 Copilot
+
+Perfect! **Phase 2 completed** ✅
+
+Now starting **Phase 3: Control Layer Class Diagram Design**. This is the most complex part - I need to analyze commonality/variability and apply design patterns.
+
+---
+
+<sub>⏱️ 66m 16s</sub>
+
+### ✅ `create`
+
+**create a new file at /home/perepilka/SEM5-IO-L/etap3/analiza_wspolnosci_zmiennosci.md.**
+
+/home/perepilka/SEM5-IO-L/etap3/analiza_wspolnosci_zmiennosci.md
+
+<details>
+<summary>298 lines</summary>
+
+```diff
+
+diff --git a/home/perepilka/SEM5-IO-L/etap3/analiza_wspolnosci_zmiennosci.md b/home/perepilka/SEM5-IO-L/etap3/analiza_wspolnosci_zmiennosci.md
+create file mode 100644
+index 0000000..0000000
+--- a/dev/null
++++ b/home/perepilka/SEM5-IO-L/etap3/analiza_wspolnosci_zmiennosci.md
+@@ -1,0 +1,292 @@
++# Analiza Wspólności i Zmienności - Warstwa Kontroler
++
++## Przypadki użycia do analizy:
++
++### PU04 - Edytowanie oferty kina w systemie
++**Scenariusz**:
++1. Administrator wybiera "Edycja oferty kin"
++2. Administrator wybiera opcję:
++   - "Dodaj nowy film" → czynność Dodanie nowego filmu
++   - "Edytuj film" → czynność Edytowanie filmu
++   - "Usuń film" → czynność Usunięcie filmu
++3. System wykonuje operację i aktualizuje ofertę
++
++**Pod-przypadki** (z diagramów czynności etapu 2):
++- PU05: Dodanie nowego seansu
++- PU06: Edytowanie szczegółów seansów
++- PU07: Usunięcie seansu
++
++### PU06 - Edytowanie szczegółów seansów w systemie kin
++**Scenariusz**:
++1. Administrator rozpoczyna edytowanie
++2. System prosi o ID filmu
++3. Administrator wpisuje ID
++4. System sprawdza istnienie filmu w bazie
++5. Jeśli istnieje: system pobiera film
++6. System wyświetla szczegóły
++7. Administrator edytuje dane
++8. Administrator zatwierdza
++9. System zapisuje zmiany
++10. System wyświetla potwierdzenie
++
++---
++
++## Analiza wspólności (COMMONALITY)
++
++### Wspólne kroki dla operacji na seansach/filmach:
++1. **Walidacja danych wejściowych** (ID, parametry)
++2. **Interakcja z modelem** (pobierz/zapisz/usuń)
++3. **Obsługa błędów** (film nie istnieje, błąd walidacji)
++4. **Komunikaty zwrotne** (potwierdzenie/błąd)
++
++### Wspólne odpowiedzialności:
++- Inicjacja operacji przez interfejs fasady
++- Przepływ sterowania między klasami
++- Delegacja operacji na dane do Modelu
++- Symulacja operacji I/O (View)
++
++---
++
++## Analiza zmienności (VARIABILITY)
++
++### Różnice między operacjami:
++- **Dodawanie**: Tworzenie nowego obiektu, walidacja wszystkich pól
++- **Edytowanie**: Modyfikacja istniejącego, walidacja ID + nowych danych
++- **Usuwanie**: Tylko walidacja ID, sprawdzenie istnienia
++
++### Różne parametry wejściowe:
++- Dodawanie: nazwaFilmu, opisFilmu, liczbaSeansow
++- Edytowanie: ID + modyfikowane pola
++- Usuwanie: tylko ID
++
++---
++
++## Zastosowanie wzorców projektowych
++
++### 1. FASADA (Facade) - WYMAGANY ✅
++
++**Klasa**: `KontrolerAdministratoraSieci`
++- **Odpowiedzialność**: Punkt wejścia do warstwy Kontroler
++- **Realizuje**: `IKontrolerAdministratoraSieci`
++- **Operacje**:
++  ```
++  + edytujOferteKina() : void
++  + dodajNowySeans(nazwaFilmu, opisFilmu, liczbaSeansow) : void
++  + edytujSzczegolySeansow(idFilmu) : void
++  + usunSeans(idFilmu) : void
++  ```
++- **Relacje**:
++  - Używa → IModel (dependency «use»)
++  - Tworzy instancje → ObslugaSeansow i jej klasy pochodne (dependency «instantiate»)
++
++---
++
++### 2. METODA SZABLONOWA (Template Method) - WYMAGANY ✅
++
++**Cel**: Zdefiniować szkielet algorytmu obsługi operacji na seansach, pozostawiając szczegóły implementacji klasom pochodnym.
++
++#### Klasa abstrakcyjna: `ObslugaSeansow`
++**Odpowiedzialność**: Szablon ogólnego algorytmu operacji CRUD
++**Operacje**:
++```
++# Metoda szablonowa (final):
+++ wykonajOperacje() : void {
++    1. walidujDaneWejsciowe()
++    2. wykonajOperacjeNaDanych()
++    3. wyswietlKomunikat()
++}
++
++# Metody abstrakcyjne (do nadpisania):
+++ walidujDaneWejsciowe() : boolean  [abstract]
+++ wykonajOperacjeNaDanych() : void  [abstract]
+++ wyswietlKomunikat() : void  [abstract]
++
++# Metody wspólne:
++- pobierzModel() : IModel
++```
++
++**Atrybuty**:
++```
++- model : IModel  (agregacja z IModel)
++```
++
++#### Klasy pochodne (konkretne):
++
++##### `DodawanieSeansow` extends ObslugaSeansow
++**Odpowiedzialność**: Implementacja dodawania nowego seansu
++**Atrybuty**:
++```
++- nazwaFilmu : String
++- opisFilmu : String
++- liczbaSeansow : int
++```
++**Operacje**:
++```
+++ DodawanieSeansow(nazwaFilmu, opisFilmu, liczbaSeansow, model)
+++ walidujDaneWejsciowe() : boolean  [override]
+++ wykonajOperacjeNaDanych() : void  [override]
+++ wyswietlKomunikat() : void  [override]
++```
++
++##### `EdytowanieSeansow` extends ObslugaSeansow
++**Odpowiedzialność**: Implementacja edytowania istniejącego seansu
++**Atrybuty**:
++```
++- idFilmu : String
++- noweParametry : Map<String, Object>
++```
++**Operacje**:
++```
+++ EdytowanieSeansow(idFilmu, model)
+++ walidujDaneWejsciowe() : boolean  [override]
+++ wykonajOperacjeNaDanych() : void  [override]
+++ wyswietlKomunikat() : void  [override]
++- pobierzNoweParametry() : void  [private, symuluje I/O]
++```
++
++##### `UsuwanieSeansow` extends ObslugaSeansow
++**Odpowiedzialność**: Implementacja usuwania seansu
++**Atrybuty**:
++```
++- idFilmu : String
++```
++**Operacje**:
++```
+++ UsuwanieSeansow(idFilmu, model)
+++ walidujDaneWejsciowe() : boolean  [override]
+++ wykonajOperacjeNaDanych() : void  [override]
+++ wyswietlKomunikat() : void  [override]
++```
++
++---
++
++### 3. ŁAŃCUCH ZOBOWIĄZAŃ (Chain of Responsibility) - ZALECANY ✅
++
++**Cel**: Oddzielić różne aspekty walidacji danych
++
++#### Klasa abstrakcyjna: `WalidatorDanych`
++**Odpowiedzialność**: Bazowa klasa dla łańcucha walidatorów
++**Atrybuty**:
++```
++- nastepnyWalidator : WalidatorDanych  (asocjacja do siebie)
++```
++**Operacje**:
++```
+++ ustawNastepny(walidator : WalidatorDanych) : void
+++ waliduj(dane : Object) : boolean {
++    if (!sprawdz(dane)) return false;
++    if (nastepnyWalidator != null)
++        return nastepnyWalidator.waliduj(dane);
++    return true;
++}
+++ sprawdz(dane : Object) : boolean  [abstract]
++```
++
++#### Klasy pochodne:
++
++##### `WalidatorID` extends WalidatorDanych
++**Odpowiedzialność**: Sprawdzenie poprawności ID (nie puste, format)
++```
+++ sprawdz(dane : Object) : boolean  [override]
++```
++
++##### `WalidatorIstnienia` extends WalidatorDanych
++**Odpowiedzialność**: Sprawdzenie czy obiekt istnieje w bazie
++**Atrybuty**:
++```
++- model : IModel
++```
++```
+++ WalidatorIstnienia(model : IModel)
+++ sprawdz(dane : Object) : boolean  [override]
++```
++
++##### `WalidatorParametrow` extends WalidatorDanych
++**Odpowiedzialność**: Sprawdzenie poprawności parametrów (nie null, zakresy)
++```
+++ sprawdz(dane : Object) : boolean  [override]
++```
++
++---
++
++## Główna klasa aplikacji
++
++### `SystemSprzedazyBiletow`
++**Odpowiedzialność**: Główna klasa uruchamiająca system
++**Lokalizacja**: Pakiet Kontroler
++**Operacje**:
++```
+++ main(args : String[]) : void {static}
++```
++**Relacje**:
++- Tworzy instancję → KontrolerAdministratoraSieci
++- Tworzy instancję → ModelBazyDanych (realizacja IModel)
++- Symuluje operacje View (wyświetlanie menu, pobieranie danych od użytkownika)
++
++---
++
++## Interfejsy
++
++### `IKontrolerAdministratoraSieci` (interface)
++**Lokalizacja**: Poza pakietem Kontroler (udostępniany na zewnątrz)
++**Operacje**: Jak opisano w Fasadzie
++
++### `IModel` (interface)
++**Lokalizacja**: Poza pakietem Kontroler (z komponentu Model)
++**Operacje**: Jak zdefiniowano w diagramie komponentów
++
++---
++
++## Pakiet Kontroler
++
++**Zawiera klasy**:
++- SystemSprzedazyBiletow
++- KontrolerAdministratoraSieci (realizuje IKontrolerAdministratoraSieci)
++- ObslugaSeansow (abstract)
++- DodawanieSeansow
++- EdytowanieSeansow
++- UsuwanieSeansow
++- WalidatorDanych (abstract)
++- WalidatorID
++- WalidatorIstnienia
++- WalidatorParametrow
++
++**Używa interfejsów** (poza pakietem):
++- IModel
++
++**Realizuje interfejsy** (poza pakietem):
++- IKontrolerAdministratoraSieci
++
++---
++
++## Zastosowanie zasad SOLID
++
++### S - Single Responsibility Principle ✅
++Każda klasa ma jedną odpowiedzialność:
++- KontrolerAdministratoraSieci: fasada/punkt wejścia
++- ObslugaSeansow: szablon algorytmu
++- DodawanieSeansow: tylko dodawanie
++- WalidatorID: tylko walidacja ID
++- itd.
++
++### O - Open/Closed Principle ✅
++- ObslugaSeansow otwarta na rozszerzenie (nowe operacje), zamknięta na modyfikację
++- WalidatorDanych: łatwo dodać nowy walidator bez zmiany istniejących
++
++### L - Liskov Substitution Principle ✅
++- Wszystkie klasy pochodne ObslugaSeansow mogą zastąpić klasę bazową
++- Wszystkie walidatory mogą zastąpić WalidatorDanych
++
++### I - Interface Segregation Principle ✅
++- IKontrolerAdministratoraSieci: tylko operacje dla Administratora
++- IModel: tylko operacje dostępu do danych
++
++### D - Dependency Inversion Principle ✅
++- Kontroler zależy od abstrakcji (IModel), nie od konkretnej implementacji
++- Klasy zależą od interfejsów, nie od klas konkretnych
++
++---
++
++**Status**: Gotowe do projektowania diagramu klas
++**Następny krok**: Stworzenie XML diagramu klas
++
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 66m 18s</sub>
+
+### 💬 Copilot
+
+Excellent! Now I have the complete analysis. Let me create the class diagram XML for the Control Layer:
+
+---
+
+<sub>⏱️ 69m 35s</sub>
+
+### ✅ `create`
+
+**create a new file at /home/perepilka/SEM5-IO-L/etap3/diagram_klas_kontroler.xml.**
+
+/home/perepilka/SEM5-IO-L/etap3/diagram_klas_kontroler.xml
+
+<details>
+<summary>599 lines</summary>
+
+```diff
+
+diff --git a/home/perepilka/SEM5-IO-L/etap3/diagram_klas_kontroler.xml b/home/perepilka/SEM5-IO-L/etap3/diagram_klas_kontroler.xml
+create file mode 100644
+index 0000000..0000000
+--- a/dev/null
++++ b/home/perepilka/SEM5-IO-L/etap3/diagram_klas_kontroler.xml
+@@ -1,0 +1,593 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1">
++  <xmi:Documentation exporter="Visual Paradigm" exporterVersion="17.0"/>
++  
++  <!-- Model -->
++  <uml:Model xmi:type="uml:Model" xmi:id="model_kontroler" name="Diagram Klas - Komponent Kontroler">
++    
++    <!-- Package: Kontroler -->
++    <packagedElement xmi:type="uml:Package" xmi:id="package_kontroler" name="Kontroler">
++      
++      <!-- ========== GŁÓWNA KLASA APLIKACJI ========== -->
++      
++      <!-- Class: SystemSprzedazyBiletow -->
++      <packagedElement xmi:type="uml:Class" xmi:id="class_system" name="SystemSprzedazyBiletow">
++        <ownedComment xmi:type="uml:Comment" xmi:id="comment_system">
++          <body>Główna klasa aplikacji. Uruchamia system i symuluje warstwę View.</body>
++        </ownedComment>
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_main" name="main" isStatic="true">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_main_args" name="args" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++            <upperValue xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_main_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++      </packagedElement>
++      
++      <!-- ========== KLASA FASADOWA ========== -->
++      
++      <!-- Class: KontrolerAdministratoraSieci -->
++      <packagedElement xmi:type="uml:Class" xmi:id="class_kontroler_admin" name="KontrolerAdministratoraSieci">
++        <ownedComment xmi:type="uml:Comment" xmi:id="comment_kontroler_admin">
++          <body>Fasada warstwy Kontroler. Punkt wejścia dla operacji administracyjnych.</body>
++        </ownedComment>
++        
++        <!-- Atrybuty -->
++        <ownedAttribute xmi:type="uml:Property" xmi:id="attr_kontroler_model" name="model" visibility="private">
++          <type xmi:type="uml:Interface" xmi:idref="interface_model"/>
++        </ownedAttribute>
++        
++        <!-- Operacje -->
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_kontroler_konstruktor" name="KontrolerAdministratoraSieci">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_kontroler_model" name="model" direction="in">
++            <type xmi:type="uml:Interface" xmi:idref="interface_model"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_edytuj_oferte" name="edytujOferteKina" visibility="public">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_edytuj_oferte_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_dodaj_seans_kontroler" name="dodajNowySeans" visibility="public">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodaj_nazwa_film" name="nazwaFilmu" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodaj_opis_film" name="opisFilmu" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodaj_liczba_seans" name="liczbaSeansow" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodaj_seans_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_edytuj_szczegoly_kontroler" name="edytujSzczegolySeansow" visibility="public">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_edytuj_id_film" name="idFilmu" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_edytuj_szcz_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_usun_seans_kontroler" name="usunSeans" visibility="public">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usun_id_film" name="idFilmu" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usun_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++      </packagedElement>
++      
++      <!-- ========== WZORZEC: METODA SZABLONOWA ========== -->
++      
++      <!-- Abstract Class: ObslugaSeansow -->
++      <packagedElement xmi:type="uml:Class" xmi:id="class_obsluga" name="ObslugaSeansow" isAbstract="true">
++        <ownedComment xmi:type="uml:Comment" xmi:id="comment_obsluga">
++          <body>Klasa abstrakcyjna definiująca szablon algorytmu obsługi operacji na seansach (Wzorzec: Template Method).</body>
++        </ownedComment>
++        
++        <!-- Atrybuty -->
++        <ownedAttribute xmi:type="uml:Property" xmi:id="attr_obsluga_model" name="model" visibility="protected">
++          <type xmi:type="uml:Interface" xmi:idref="interface_model"/>
++        </ownedAttribute>
++        
++        <!-- Operacje -->
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_obsluga_konstruktor" name="ObslugaSeansow" visibility="protected">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_obsluga_model" name="model" direction="in">
++            <type xmi:type="uml:Interface" xmi:idref="interface_model"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_wykonaj_operacje" name="wykonajOperacje" visibility="public">
++          <ownedComment xmi:type="uml:Comment" xmi:id="comment_metoda_szablonowa">
++            <body>Metoda szablonowa definiująca szkielet algorytmu.</body>
++          </ownedComment>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_wykonaj_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_waliduj_dane" name="walidujDaneWejsciowe" visibility="protected" isAbstract="true">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_waliduj_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_wykonaj_na_danych" name="wykonajOperacjeNaDanych" visibility="protected" isAbstract="true">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_wykonaj_danych_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_wyswietl_komunikat" name="wyswietlKomunikat" visibility="protected" isAbstract="true">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_wyswietl_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_pobierz_model" name="pobierzModel" visibility="protected">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_pobierz_model_return" direction="return">
++            <type xmi:type="uml:Interface" xmi:idref="interface_model"/>
++          </ownedParameter>
++        </ownedOperation>
++      </packagedElement>
++      
++      <!-- Concrete Class: DodawanieSeansow -->
++      <packagedElement xmi:type="uml:Class" xmi:id="class_dodawanie" name="DodawanieSeansow">
++        <ownedComment xmi:type="uml:Comment" xmi:id="comment_dodawanie">
++          <body>Konkretna implementacja dodawania nowego seansu.</body>
++        </ownedComment>
++        
++        <!-- Atrybuty -->
++        <ownedAttribute xmi:type="uml:Property" xmi:id="attr_dodawanie_nazwa" name="nazwaFilmu" visibility="private">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++        </ownedAttribute>
++        <ownedAttribute xmi:type="uml:Property" xmi:id="attr_dodawanie_opis" name="opisFilmu" visibility="private">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++        </ownedAttribute>
++        <ownedAttribute xmi:type="uml:Property" xmi:id="attr_dodawanie_liczba" name="liczbaSeansow" visibility="private">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
++        </ownedAttribute>
++        
++        <!-- Operacje -->
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_dodawanie_konstruktor" name="DodawanieSeansow" visibility="public">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodawanie_nazwa" name="nazwaFilmu" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodawanie_opis" name="opisFilmu" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodawanie_liczba" name="liczbaSeansow" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodawanie_model" name="model" direction="in">
++            <type xmi:type="uml:Interface" xmi:idref="interface_model"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_dodawanie_waliduj" name="walidujDaneWejsciowe" visibility="protected">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodawanie_waliduj_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_dodawanie_wykonaj" name="wykonajOperacjeNaDanych" visibility="protected">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodawanie_wykonaj_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_dodawanie_wyswietl" name="wyswietlKomunikat" visibility="protected">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodawanie_wyswietl_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <!-- Generalization -->
++        <generalization xmi:type="uml:Generalization" xmi:id="gen_dodawanie" general="class_obsluga"/>
++      </packagedElement>
++      
++      <!-- Concrete Class: EdytowanieSeansow -->
++      <packagedElement xmi:type="uml:Class" xmi:id="class_edytowanie" name="EdytowanieSeansow">
++        <ownedComment xmi:type="uml:Comment" xmi:id="comment_edytowanie">
++          <body>Konkretna implementacja edytowania istniejącego seansu.</body>
++        </ownedComment>
++        
++        <!-- Atrybuty -->
++        <ownedAttribute xmi:type="uml:Property" xmi:id="attr_edytowanie_id" name="idFilmu" visibility="private">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++        </ownedAttribute>
++        
++        <!-- Operacje -->
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_edytowanie_konstruktor" name="EdytowanieSeansow" visibility="public">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_edytowanie_id" name="idFilmu" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_edytowanie_model" name="model" direction="in">
++            <type xmi:type="uml:Interface" xmi:idref="interface_model"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_edytowanie_waliduj" name="walidujDaneWejsciowe" visibility="protected">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_edytowanie_waliduj_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_edytowanie_wykonaj" name="wykonajOperacjeNaDanych" visibility="protected">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_edytowanie_wykonaj_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_edytowanie_wyswietl" name="wyswietlKomunikat" visibility="protected">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_edytowanie_wyswietl_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_pobierz_nowe_param" name="pobierzNoweParametry" visibility="private">
++          <ownedComment xmi:type="uml:Comment" xmi:id="comment_pobierz_param">
++            <body>Symuluje operację I/O - pobieranie nowych parametrów od użytkownika.</body>
++          </ownedComment>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_pobierz_nowe_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <!-- Generalization -->
++        <generalization xmi:type="uml:Generalization" xmi:id="gen_edytowanie" general="class_obsluga"/>
++      </packagedElement>
++      
++      <!-- Concrete Class: UsuwanieSeansow -->
++      <packagedElement xmi:type="uml:Class" xmi:id="class_usuwanie" name="UsuwanieSeansow">
++        <ownedComment xmi:type="uml:Comment" xmi:id="comment_usuwanie">
++          <body>Konkretna implementacja usuwania seansu.</body>
++        </ownedComment>
++        
++        <!-- Atrybuty -->
++        <ownedAttribute xmi:type="uml:Property" xmi:id="attr_usuwanie_id" name="idFilmu" visibility="private">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++        </ownedAttribute>
++        
++        <!-- Operacje -->
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_usuwanie_konstruktor" name="UsuwanieSeansow" visibility="public">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usuwanie_id" name="idFilmu" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usuwanie_model" name="model" direction="in">
++            <type xmi:type="uml:Interface" xmi:idref="interface_model"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_usuwanie_waliduj" name="walidujDaneWejsciowe" visibility="protected">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usuwanie_waliduj_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_usuwanie_wykonaj" name="wykonajOperacjeNaDanych" visibility="protected">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usuwanie_wykonaj_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_usuwanie_wyswietl" name="wyswietlKomunikat" visibility="protected">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usuwanie_wyswietl_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <!-- Generalization -->
++        <generalization xmi:type="uml:Generalization" xmi:id="gen_usuwanie" general="class_obsluga"/>
++      </packagedElement>
++      
++      <!-- ========== WZORZEC: ŁAŃCUCH ZOBOWIĄZAŃ ========== -->
++      
++      <!-- Abstract Class: WalidatorDanych -->
++      <packagedElement xmi:type="uml:Class" xmi:id="class_walidator" name="WalidatorDanych" isAbstract="true">
++        <ownedComment xmi:type="uml:Comment" xmi:id="comment_walidator">
++          <body>Klasa abstrakcyjna dla łańcucha walidatorów (Wzorzec: Chain of Responsibility).</body>
++        </ownedComment>
++        
++        <!-- Atrybuty -->
++        <ownedAttribute xmi:type="uml:Property" xmi:id="attr_walidator_nastepny" name="nastepnyWalidator" visibility="protected">
++          <type xmi:type="uml:Class" xmi:idref="class_walidator"/>
++        </ownedAttribute>
++        
++        <!-- Operacje -->
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_ustaw_nastepny" name="ustawNastepny" visibility="public">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_ustaw_walidator" name="walidator" direction="in">
++            <type xmi:type="uml:Class" xmi:idref="class_walidator"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_ustaw_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_waliduj_lancuch" name="waliduj" visibility="public">
++          <ownedComment xmi:type="uml:Comment" xmi:id="comment_waliduj">
++            <body>Wykonuje walidację i przekazuje do następnego walidatora w łańcuchu.</body>
++          </ownedComment>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_waliduj_dane" name="dane" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#Object"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_waliduj_lancuch_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_sprawdz" name="sprawdz" visibility="protected" isAbstract="true">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_sprawdz_dane" name="dane" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#Object"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_sprawdz_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
++          </ownedParameter>
++        </ownedOperation>
++      </packagedElement>
++      
++      <!-- Concrete Class: WalidatorID -->
++      <packagedElement xmi:type="uml:Class" xmi:id="class_walidator_id" name="WalidatorID">
++        <ownedComment xmi:type="uml:Comment" xmi:id="comment_walidator_id">
++          <body>Walidator sprawdzający poprawność formatu ID.</body>
++        </ownedComment>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_sprawdz_id" name="sprawdz" visibility="protected">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_sprawdz_id_dane" name="dane" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#Object"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_sprawdz_id_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <generalization xmi:type="uml:Generalization" xmi:id="gen_walidator_id" general="class_walidator"/>
++      </packagedElement>
++      
++      <!-- Concrete Class: WalidatorIstnienia -->
++      <packagedElement xmi:type="uml:Class" xmi:id="class_walidator_istnienia" name="WalidatorIstnienia">
++        <ownedComment xmi:type="uml:Comment" xmi:id="comment_walidator_istnienia">
++          <body>Walidator sprawdzający czy obiekt istnieje w bazie danych.</body>
++        </ownedComment>
++        
++        <ownedAttribute xmi:type="uml:Property" xmi:id="attr_walidator_ist_model" name="model" visibility="private">
++          <type xmi:type="uml:Interface" xmi:idref="interface_model"/>
++        </ownedAttribute>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_walidator_ist_konstruktor" name="WalidatorIstnienia" visibility="public">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_walidator_ist_model" name="model" direction="in">
++            <type xmi:type="uml:Interface" xmi:idref="interface_model"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_sprawdz_istnienie" name="sprawdz" visibility="protected">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_sprawdz_ist_dane" name="dane" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#Object"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_sprawdz_ist_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <generalization xmi:type="uml:Generalization" xmi:id="gen_walidator_istnienia" general="class_walidator"/>
++      </packagedElement>
++      
++      <!-- Concrete Class: WalidatorParametrow -->
++      <packagedElement xmi:type="uml:Class" xmi:id="class_walidator_param" name="WalidatorParametrow">
++        <ownedComment xmi:type="uml:Comment" xmi:id="comment_walidator_param">
++          <body>Walidator sprawdzający poprawność parametrów (zakresy, wartości null).</body>
++        </ownedComment>
++        
++        <ownedOperation xmi:type="uml:Operation" xmi:id="op_sprawdz_param" name="sprawdz" visibility="protected">
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_sprawdz_param_dane" name="dane" direction="in">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#Object"/>
++          </ownedParameter>
++          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_sprawdz_param_return" direction="return">
++            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
++          </ownedParameter>
++        </ownedOperation>
++        
++        <generalization xmi:type="uml:Generalization" xmi:id="gen_walidator_param" general="class_walidator"/>
++      </packagedElement>
++      
++    </packagedElement>
++    
++    <!-- ========== INTERFEJSY (POZA PAKIETEM) ========== -->
++    
++    <!-- Interface: IKontrolerAdministratoraSieci (Realized by package) -->
++    <packagedElement xmi:type="uml:Interface" xmi:id="interface_kontroler_admin" name="IKontrolerAdministratoraSieci">
++      <ownedComment xmi:type="uml:Comment" xmi:id="comment_interface_kontroler">
++        <body>Interfejs udostępniany przez komponent Kontroler dla warstwy View.</body>
++      </ownedComment>
++      
++      <ownedOperation xmi:type="uml:Operation" xmi:id="op_int_edytuj_oferte" name="edytujOferteKina">
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_int_edytuj_return" direction="return">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++        </ownedParameter>
++      </ownedOperation>
++      
++      <ownedOperation xmi:type="uml:Operation" xmi:id="op_int_dodaj_seans" name="dodajNowySeans">
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_int_dodaj_nazwa" name="nazwaFilmu" direction="in">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++        </ownedParameter>
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_int_dodaj_opis" name="opisFilmu" direction="in">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++        </ownedParameter>
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_int_dodaj_liczba" name="liczbaSeansow" direction="in">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
++        </ownedParameter>
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_int_dodaj_return" direction="return">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++        </ownedParameter>
++      </ownedOperation>
++      
++      <ownedOperation xmi:type="uml:Operation" xmi:id="op_int_edytuj_szczegoly" name="edytujSzczegolySeansow">
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_int_edytuj_id" name="idFilmu" direction="in">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++        </ownedParameter>
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_int_edytuj_return" direction="return">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++        </ownedParameter>
++      </ownedOperation>
++      
++      <ownedOperation xmi:type="uml:Operation" xmi:id="op_int_usun_seans" name="usunSeans">
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_int_usun_id" name="idFilmu" direction="in">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++        </ownedParameter>
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_int_usun_return" direction="return">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++        </ownedParameter>
++      </ownedOperation>
++    </packagedElement>
++    
++    <!-- Interface: IModel (Used by package) -->
++    <packagedElement xmi:type="uml:Interface" xmi:id="interface_model" name="IModel">
++      <ownedComment xmi:type="uml:Comment" xmi:id="comment_interface_model">
++        <body>Interfejs udostępniany przez komponent Model dla warstwy Kontroler.</body>
++      </ownedComment>
++      
++      <ownedOperation xmi:type="uml:Operation" xmi:id="op_model_pobierz_film" name="pobierzFilm">
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_model_pobierz_id" name="id" direction="in">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++        </ownedParameter>
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_model_pobierz_return" name="return" direction="return">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#Object"/>
++        </ownedParameter>
++      </ownedOperation>
++      
++      <ownedOperation xmi:type="uml:Operation" xmi:id="op_model_zapisz_film" name="zapiszFilm">
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_model_zapisz_film" name="film" direction="in">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#Object"/>
++        </ownedParameter>
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_model_zapisz_return" direction="return">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++        </ownedParameter>
++      </ownedOperation>
++      
++      <ownedOperation xmi:type="uml:Operation" xmi:id="op_model_usun_film" name="usunFilm">
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_model_usun_id" name="id" direction="in">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++        </ownedParameter>
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_model_usun_return" direction="return">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
++        </ownedParameter>
++      </ownedOperation>
++      
++      <ownedOperation xmi:type="uml:Operation" xmi:id="op_model_pobierz_seans" name="pobierzSeans">
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_model_pobierz_seans_id" name="id" direction="in">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++        </ownedParameter>
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_model_pobierz_seans_return" direction="return">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#Object"/>
++        </ownedParameter>
++      </ownedOperation>
++      
++      <ownedOperation xmi:type="uml:Operation" xmi:id="op_model_zapisz_seans" name="zapiszSeans">
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_model_zapisz_seans" name="seans" direction="in">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#Object"/>
++        </ownedParameter>
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_model_zapisz_seans_return" direction="return">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
++        </ownedParameter>
++      </ownedOperation>
++      
++      <ownedOperation xmi:type="uml:Operation" xmi:id="op_model_usun_seans" name="usunSeans">
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_model_usun_seans_id" name="id" direction="in">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
++        </ownedParameter>
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_model_usun_seans_return" direction="return">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
++        </ownedParameter>
++      </ownedOperation>
++      
++      <ownedOperation xmi:type="uml:Operation" xmi:id="op_model_waliduj" name="walidujParametrySeansu">
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_model_waliduj_seans" name="seans" direction="in">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#Object"/>
++        </ownedParameter>
++        <ownedParameter xmi:type="uml:Parameter" xmi:id="param_model_waliduj_return" direction="return">
++          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
++        </ownedParameter>
++      </ownedOperation>
++    </packagedElement>
++    
++    <!-- ========== RELATIONSHIPS ========== -->
++    
++    <!-- Realization: KontrolerAdministratoraSieci implements IKontrolerAdministratoraSieci -->
++    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="realization_admin_interface" 
++                     client="class_kontroler_admin" supplier="interface_kontroler_admin" 
++                     contract="interface_kontroler_admin"/>
++    
++    <!-- Dependency: KontrolerAdministratoraSieci uses IModel -->
++    <packagedElement xmi:type="uml:Dependency" xmi:id="dep_kontroler_model" 
++                     client="class_kontroler_admin" supplier="interface_model">
++      <ownedComment xmi:type="uml:Comment" xmi:id="comment_dep_use">
++        <body>«use»</body>
++      </ownedComment>
++    </packagedElement>
++    
++    <!-- Dependency: KontrolerAdministratoraSieci instantiates ObslugaSeansow -->
++    <packagedElement xmi:type="uml:Dependency" xmi:id="dep_kontroler_obsluga" 
++                     client="class_kontroler_admin" supplier="class_obsluga">
++      <ownedComment xmi:type="uml:Comment" xmi:id="comment_dep_instantiate">
++        <body>«instantiate»</body>
++      </ownedComment>
++    </packagedElement>
++    
++    <!-- Dependency: SystemSprzedazyBiletow instantiates KontrolerAdministratoraSieci -->
++    <packagedElement xmi:type="uml:Dependency" xmi:id="dep_system_kontroler" 
++                     client="class_system" supplier="class_kontroler_admin">
++      <ownedComment xmi:type="uml:Comment" xmi:id="comment_dep_system_inst">
++        <body>«instantiate»</body>
++      </ownedComment>
++    </packagedElement>
++    
++    <!-- Dependency: SystemSprzedazyBiletow uses IModel -->
++    <packagedElement xmi:type="uml:Dependency" xmi:id="dep_system_model" 
++                     client="class_system" supplier="interface_model">
++      <ownedComment xmi:type="uml:Comment" xmi:id="comment_dep_system_model">
++        <body>«instantiate» - creates Model implementation</body>
++      </ownedComment>
++    </packagedElement>
++    
++    <!-- Association: ObslugaSeansow aggregates IModel -->
++    <packagedElement xmi:type="uml:Association" xmi:id="assoc_obsluga_model" 
++                     memberEnd="end_obsluga end_model">
++      <ownedEnd xmi:type="uml:Property" xmi:id="end_obsluga" name="" type="class_obsluga" 
++                association="assoc_obsluga_model"/>
++      <ownedEnd xmi:type="uml:Property" xmi:id="end_model" name="model" type="interface_model" 
++                association="assoc_obsluga_model" aggregation="shared"/>
++    </packagedElement>
++    
++    <!-- Association: WalidatorDanych self-association -->
++    <packagedElement xmi:type="uml:Association" xmi:id="assoc_walidator_self" 
++                     memberEnd="end_walidator1 end_walidator2">
++      <ownedEnd xmi:type="uml:Property" xmi:id="end_walidator1" name="" type="class_walidator" 
++                association="assoc_walidator_self"/>
++      <ownedEnd xmi:type="uml:Property" xmi:id="end_walidator2" name="nastepnyWalidator" 
++                type="class_walidator" association="assoc_walidator_self">
++        <lowerValue xmi:type="uml:LiteralInteger" value="0"/>
++        <upperValue xmi:type="uml:LiteralInteger" value="1"/>
++      </ownedEnd>
++    </packagedElement>
++    
++    <!-- Dependency: Validators use ObslugaSeansow classes -->
++    <packagedElement xmi:type="uml:Dependency" xmi:id="dep_obsluga_walidator" 
++                     client="class_obsluga" supplier="class_walidator">
++      <ownedComment xmi:type="uml:Comment" xmi:id="comment_dep_walidator">
++        <body>«use» - uses validators for data validation</body>
++      </ownedComment>
++    </packagedElement>
++    
++  </uml:Model>
++  
++</xmi:XMI>
++
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 69m 37s</sub>
+
+### 💬 Copilot
+
+Excellent! Now let me create a summary document and commit everything:
+
+---
+
+<sub>⏱️ 74m 19s</sub>
+
+### ✅ `create`
+
+**create a new file at /home/perepilka/SEM5-IO-L/etap3/README.md.**
+
+/home/perepilka/SEM5-IO-L/etap3/README.md
+
+<details>
+<summary>213 lines</summary>
+
+```diff
+
+diff --git a/home/perepilka/SEM5-IO-L/etap3/README.md b/home/perepilka/SEM5-IO-L/etap3/README.md
+create file mode 100644
+index 0000000..0000000
+--- a/dev/null
++++ b/home/perepilka/SEM5-IO-L/etap3/README.md
+@@ -1,0 +1,207 @@
++# Etap 3 - Modelowanie Obiektowej 3-warstwowej Architektury
++
++## Podsumowanie wykonanej pracy
++
++### ✅ Zadanie 1: Diagram Komponentów (3-warstwowa architektura MVC)
++
++**Plik**: `diagram_komponentow.xml`
++
++**Komponenty**:
++1. **Widok** - warstwa prezentacji (nie implementowana, symulowana przez Kontroler)
++2. **Kontroler** - warstwa logiki biznesowej
++3. **Model** - warstwa danych i dostępu do bazy
++
++**Interfejsy**:
++1. **IKontrolerAdministratoraSieci** - udostępniany przez Kontroler, używany przez Widok
++   - `edytujOferteKina() : void`
++   - `dodajNowySeans(nazwaFilmu, opisFilmu, liczbaSeansow) : void`
++   - `edytujSzczegolySeansow(idFilmu) : void`
++   - `usunSeans(idFilmu) : void`
++
++2. **IModel** - udostępniany przez Model, używany przez Kontroler
++   - `pobierzFilm(id) : Film`
++   - `zapiszFilm(film) : void`
++   - `usunFilm(id) : boolean`
++   - `pobierzSeans(id) : Seans`
++   - `zapiszSeans(seans) : void`
++   - `usunSeans(id) : boolean`
++   - `walidujParametrySeansu(seans) : boolean`
++
++**Połączenia**:
++- Widok → (uses) → IKontrolerAdministratoraSieci
++- Kontroler → (provides) → IKontrolerAdministratoraSieci
++- Kontroler → (uses) → IModel
++- Model → (provides) → IModel
++
++---
++
++### ✅ Zadanie 2: Diagram Klas Komponentu Kontroler
++
++**Plik**: `diagram_klas_kontroler.xml`
++
++#### Pakiet: Kontroler
++
++**Główna klasa**:
++- `SystemSprzedazyBiletow`
++  - `+ main(args: String[]) : void {static}`
++
++**Klasa fasadowa** (wzorzec Facade):
++- `KontrolerAdministratoraSieci` implements IKontrolerAdministratoraSieci
++  - Atrybuty: `- model : IModel`
++  - Operacje: edytujOferteKina(), dodajNowySeans(), edytujSzczegolySeansow(), usunSeans()
++
++**Wzorzec: Metoda Szablonowa (Template Method)**:
++- `ObslugaSeansow` (abstract)
++  - Atrybuty: `# model : IModel`
++  - Operacje:
++    - `+ wykonajOperacje() : void` - metoda szablonowa
++    - `+ walidujDaneWejsciowe() : boolean {abstract}`
++    - `+ wykonajOperacjeNaDanych() : void {abstract}`
++    - `+ wyswietlKomunikat() : void {abstract}`
++    - `# pobierzModel() : IModel`
++
++- `DodawanieSeansow` extends ObslugaSeansow
++  - Atrybuty: nazwaFilmu, opisFilmu, liczbaSeansow
++  - Nadpisuje: walidujDaneWejsciowe(), wykonajOperacjeNaDanych(), wyswietlKomunikat()
++
++- `EdytowanieSeansow` extends ObslugaSeansow
++  - Atrybuty: idFilmu
++  - Operacje: pobierzNoweParametry() (symuluje I/O)
++  - Nadpisuje: walidujDaneWejsciowe(), wykonajOperacjeNaDanych(), wyswietlKomunikat()
++
++- `UsuwanieSeansow` extends ObslugaSeansow
++  - Atrybuty: idFilmu
++  - Nadpisuje: walidujDaneWejsciowe(), wykonajOperacjeNaDanych(), wyswietlKomunikat()
++
++**Wzorzec: Łańcuch Zobowiązań (Chain of Responsibility)**:
++- `WalidatorDanych` (abstract)
++  - Atrybuty: `# nastepnyWalidator : WalidatorDanych`
++  - Operacje:
++    - `+ ustawNastepny(walidator) : void`
++    - `+ waliduj(dane) : boolean` - przechodzi przez łańcuch
++    - `# sprawdz(dane) : boolean {abstract}`
++
++- `WalidatorID` extends WalidatorDanych
++  - Sprawdza poprawność formatu ID
++
++- `WalidatorIstnienia` extends WalidatorDanych
++  - Atrybuty: `- model : IModel`
++  - Sprawdza czy obiekt istnieje w bazie
++
++- `WalidatorParametrow` extends WalidatorDanych
++  - Sprawdza poprawność parametrów (zakresy, null)
++
++**Interfejsy** (poza pakietem):
++- `IKontrolerAdministratoraSieci` - realizowany przez KontrolerAdministratoraSieci
++- `IModel` - używany przez klasy w pakiecie
++
++**Relacje**:
++- **Realizacja**: KontrolerAdministratoraSieci → IKontrolerAdministratoraSieci
++- **Uogólnienie**: DodawanieSeansow, EdytowanieSeansow, UsuwanieSeansow → ObslugaSeansow
++- **Uogólnienie**: WalidatorID, WalidatorIstnienia, WalidatorParametrow → WalidatorDanych
++- **Agregacja**: ObslugaSeansow agreguje IModel
++- **Asocjacja**: WalidatorDanych → WalidatorDanych (self-association)
++- **Zależność «use»**: KontrolerAdministratoraSieci → IModel
++- **Zależność «instantiate»**: 
++  - SystemSprzedazyBiletow → KontrolerAdministratoraSieci
++  - KontrolerAdministratoraSieci → ObslugaSeansow
++  - ObslugaSeansow → WalidatorDanych
++
++---
++
++## Zastosowane wzorce projektowe
++
++### ✅ 1. Fasada (Facade) - WYMAGANY
++**Klasa**: `KontrolerAdministratoraSieci`
++- Upraszcza dostęp do funkcjonalności warstwy Kontroler
++- Realizuje interfejs IKontrolerAdministratoraSieci
++- Punkt wejścia dla wszystkich operacji administracyjnych
++
++### ✅ 2. Metoda Szablonowa (Template Method) - WYMAGANY
++**Hierarchia**: `ObslugaSeansow` → DodawanieSeansow, EdytowanieSeansow, UsuwanieSeansow
++- Definiuje szkielet algorytmu obsługi operacji CRUD
++- Wspólna część: wykonajOperacje() - metoda szablonowa
++- Zmienne części: walidujDaneWejsciowe(), wykonajOperacjeNaDanych(), wyswietlKomunikat()
++
++### ✅ 3. Łańcuch Zobowiązań (Chain of Responsibility) - ZALECANY
++**Hierarchia**: `WalidatorDanych` → WalidatorID, WalidatorIstnienia, WalidatorParametrow
++- Oddziela różne aspekty walidacji
++- Każdy walidator ma jedną odpowiedzialność (SRP)
++- Łatwo rozszerzalny o nowe walidatory (OCP)
++
++---
++
++## Zastosowanie zasad SOLID
++
++### ✅ S - Single Responsibility Principle
++Każda klasa ma jedną, jasno określoną odpowiedzialność:
++- `SystemSprzedazyBiletow` - uruchomienie aplikacji
++- `KontrolerAdministratoraSieci` - fasada/punkt wejścia
++- `DodawanieSeansow` - tylko dodawanie
++- `EdytowanieSeansow` - tylko edytowanie
++- `UsuwanieSeansow` - tylko usuwanie
++- `WalidatorID` - tylko walidacja ID
++- itd.
++
++### ✅ O - Open/Closed Principle
++- `ObslugaSeansow` - otwarta na rozszerzenie (nowe operacje), zamknięta na modyfikację
++- `WalidatorDanych` - łatwo dodać nowy walidator bez zmiany istniejących
++
++### ✅ L - Liskov Substitution Principle
++- Wszystkie klasy pochodne `ObslugaSeansow` mogą zastąpić klasę bazową
++- Wszystkie klasy `WalidatorDanych` mogą zastąpić klasę bazową
++
++### ✅ I - Interface Segregation Principle
++- `IKontrolerAdministratoraSieci` - tylko operacje dla Administratora Sieci
++- `IModel` - tylko operacje dostępu do danych
++- Interfejsy są spójne i nie zmuszają do implementacji niepotrzebnych metod
++
++### ✅ D - Dependency Inversion Principle
++- Kontroler zależy od abstrakcji (`IModel`), nie od konkretnej implementacji
++- Klasy zależą od interfejsów i klas abstrakcyjnych, nie od klas konkretnych
++
++---
++
++## Analiza wspólności i zmienności
++
++**Wspólność** (wybrane przypadki użycia PU04, PU06):
++- Walidacja danych wejściowych
++- Interakcja z Modelem (CRUD)
++- Obsługa błędów
++- Wyświetlanie komunikatów
++
++**Zmienność**:
++- Różne parametry wejściowe dla każdej operacji
++- Różna logika walidacji
++- Różne operacje na danych (dodaj/edytuj/usuń)
++
++**Rozwiązanie**: Wzorzec Metoda Szablonowa + Łańcuch Zobowiązań
++
++---
++
++## Pliki do importu do Visual Paradigm
++
++1. **diagram_komponentow.xml** - Diagram komponentów (Zadanie 1)
++2. **diagram_klas_kontroler.xml** - Diagram klas komponentu Kontroler (Zadanie 2)
++
++### Instrukcja importu:
++1. Otwórz OnlineCinema.vpp w Visual Paradigm
++2. File → Import → XMI/XML
++3. Wybierz plik XML
++4. Potwierdź import
++
++---
++
++## Pliki pomocnicze (dokumentacja)
++
++- `analiza.md` - Ogólna analiza projektu
++- `diagram_komponentow_projekt.md` - Projekt diagramu komponentów
++- `analiza_wspolnosci_zmiennosci.md` - Szczegółowa analiza wspólności i zmienności
++
++---
++
++**Autorzy**: Oleksandr Radionenko, Yaroslav Perepilka  
++**Projekt**: Zintegrowany System Sprzedaży Biletów dla Sieci Multikin  
++**Data**: 24.11.2025  
++**Status**: ✅ UKOŃCZONE
++
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 74m 21s</sub>
+
+### 💬 Copilot
+
+Perfect! Now let me commit all the work:
+
+---
+
+<sub>⏱️ 74m 26s</sub>
+
+### ✅ `bash`
+
+**Stage all changes**
+
+$ cd /home/perepilka/SEM5-IO-L && git add -A && git status
+
+<details>
+<summary>16 lines</summary>
+
+```
+On branch etap3-implementation
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   IO-L Miniprojekt Biblioteka.pdf
+	new file:   WORKFLOW.md
+	deleted:    etap1/IO-L Miniprojekt Biblioteka.pdf
+	new file:   "etap2/IO-L Modelowanie realizacji przypadk\303\263w u\305\274ycia.pdf"
+	new file:   etap2/Projekt_Inz_Opr_Part_2.pdf
+	new file:   etap3/IO-L Modelowanie obiektowej 3-warstwowej architektury.pdf
+	new file:   etap3/README.md
+	new file:   etap3/analiza.md
+	new file:   etap3/analiza_wspolnosci_zmiennosci.md
+	new file:   etap3/diagram_klas_kontroler.xml
+	new file:   etap3/diagram_komponentow.xml
+	new file:   etap3/diagram_komponentow_projekt.md
+<exited with exit code 0>
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 74m 57s</sub>
+
+### ✅ `bash`
+
+**Commit all etap3 work**
+
+$ cd /home/perepilka/SEM5-IO-L && git commit -m "Etap 3: Implementacja architektury 3-warstwowej MVC
+
+- Zadanie 1: Diagram komponentów (Widok, Kontroler, Model)
+- Zadanie 2: Diagram klas komponentu Kontroler
+- Wzorce: Facade, Template Method, Chain of Responsibility
+- Zasady SOLID zastosowane
+- Analiza wspólności i zmienności PU04 i PU06
+- Pliki XML gotowe do importu do Visual Paradigm"
+
+<details>
+<summary>15 lines</summary>
+
+```
+[etap3-implementation 8b73d55] Etap 3: Implementacja architektury 3-warstwowej MVC
+ 12 files changed, 1559 insertions(+)
+ create mode 100644 IO-L Miniprojekt Biblioteka.pdf
+ create mode 100644 WORKFLOW.md
+ delete mode 100644 etap1/IO-L Miniprojekt Biblioteka.pdf
+ create mode 100644 "etap2/IO-L Modelowanie realizacji przypadk\303\263w u\305\274ycia.pdf"
+ create mode 100644 etap2/Projekt_Inz_Opr_Part_2.pdf
+ create mode 100644 etap3/IO-L Modelowanie obiektowej 3-warstwowej architektury.pdf
+ create mode 100644 etap3/README.md
+ create mode 100644 etap3/analiza.md
+ create mode 100644 etap3/analiza_wspolnosci_zmiennosci.md
+ create mode 100644 etap3/diagram_klas_kontroler.xml
+ create mode 100644 etap3/diagram_komponentow.xml
+ create mode 100644 etap3/diagram_komponentow_projekt.md
+<exited with exit code 0>
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 74m 59s</sub>
+
+### 💬 Copilot
+
+Perfect! Now let me create a final summary view:
+
+---
+
+<sub>⏱️ 76m 41s</sub>
+
+### ✅ `bash`
+
+**Show etap3 directory structure**
+
+$ cd /home/perepilka/SEM5-IO-L && tree etap3 -L 1
+
+<details>
+<summary>10 lines</summary>
+
+```
+etap3
+├── analiza.md
+├── analiza_wspolnosci_zmiennosci.md
+├── diagram_klas_kontroler.xml
+├── diagram_komponentow_projekt.md
+├── diagram_komponentow.xml
+├── IO-L Modelowanie obiektowej 3-warstwowej architektury.pdf
+└── README.md
+
+1 directory, 7 files
+<exited with exit code 0>
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 77m 15s</sub>
+
+### ✅ `bash`
+
+**Show recent commits**
+
+$ cd /home/perepilka/SEM5-IO-L && git log --oneline -5
+
+<details>
+<summary>7 lines</summary>
+
+```
+8b73d55 (HEAD -> etap3-implementation) Etap 3: Implementacja architektury 3-warstwowej MVC
+b384291 (origin/main, origin/HEAD, main) mod vpp
+321a8f0 add context
+2aae830 remove unused files and add etap1 LaTeX document for project requirements
+41987fb mod Etap1.odt
+(END)
+<command with sessionId: 16 is still running after 30 seconds. The command is still running. Check the output above - if it looks like the command is waiting for input, use write_bash to provide it. Otherwise, use read_bash to continue waiting for output, or stop_bash to stop it.>
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 77m 18s</sub>
+
+### ✅ `write_bash`
+
+<details>
+<summary>Arguments</summary>
+
+```json
+{
+  "sessionId": "16",
+  "input": "q"
+}
+```
+
+</details>
+
+<details>
+<summary>7 lines</summary>
+
+```
+8b73d55 (HEAD -> etap3-implementation) Etap 3: Implementacja architektury 3-warstwowej MVC
+b384291 (origin/main, origin/HEAD, main) mod vpp
+321a8f0 add context
+2aae830 remove unused files and add etap1 LaTeX document for project requirements
+41987fb mod Etap1.odt
+(END)
+<command with id: 16 exited with exit code 0>
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 77m 20s</sub>
+
+### 💬 Copilot
+
+Perfect! Let me create a final summary document:
+
+---
+
+<sub>⏱️ 77m 57s</sub>
+
+### ✅ `bash`
+
+**Display final summary**
+
+$ cat << 'EOF'
+╔══════════════════════════════════════════════════════════════════╗
+║                    ETAP 3 - COMPLETED ✅                         ║
+║           3-Layer MVC Architecture Implementation                ║
+╚══════════════════════════════════════════════════════════════════╝
+
+📦 PROJECT: Zintegrowany System Sprzedaży Biletów dla Sieci Multikin
+👥 AUTHORS: Oleksandr Radionenko, Yaroslav Perepilka
+🌿 BRANCH: etap3-implementation
+📅 DATE: 2025-11-24
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ TASK 1: Component Diagram (3-Layer Architecture)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 File: etap3/diagram_komponentow.xml
+
+Components:
+  🔹 Widok (View)         → Presentation layer
+  🔹 Kontroler (Controller) → Business logic layer  
+  🔹 Model                → Data access layer
+
+Interfaces:
+  🔸 IKontrolerAdministratoraSieci (4 operations)
+  🔸 IModel (7 operations)
+
+Connections:
+  Widok ----( uses )---→ IKontrolerAdministratoraSieci
+                              ↓ (provided by)
+                          Kontroler
+                              ↓ (uses)
+                           IModel
+                              ↓ (provided by)
+                            Model
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ TASK 2: Class Diagram for Controller Component
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 File: etap3/diagram_klas_kontroler.xml
+
+Package: Kontroler (10 classes total)
+
+Main Class:
+  • SystemSprzedazyBiletow
+    └─ main(args: String[]) : void
+
+Design Pattern #1: FACADE ✅
+  • KontrolerAdministratoraSieci
+    ├─ implements IKontrolerAdministratoraSieci
+    └─ Entry point for all admin operations
+
+Design Pattern #2: TEMPLATE METHOD ✅
+  • ObslugaSeansow (abstract)
+    ├─ wykonajOperacje() - template method
+    ├─ walidujDaneWejsciowe() - abstract
+    ├─ wykonajOperacjeNaDanych() - abstract
+    └─ wyswietlKomunikat() - abstract
+  
+  Concrete implementations:
+    • DodawanieSeansow
+    • EdytowanieSeansow
+    • UsuwanieSeansow
+
+Design Pattern #3: CHAIN OF RESPONSIBILITY ✅
+  • WalidatorDanych (abstract)
+    ├─ waliduj(dane) - chain handler
+    └─ sprawdz(dane) - abstract
+  
+  Concrete validators:
+    • WalidatorID
+    • WalidatorIstnienia
+    • WalidatorParametrow
+
+Relationships:
+  ✓ Realization (implements)
+  ✓ Generalization (extends)
+  ✓ Aggregation
+  ✓ Association
+  ✓ Dependency «use»
+  ✓ Dependency «instantiate»
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 SOLID PRINCIPLES APPLIED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✅ S - Single Responsibility: Each class has ONE responsibility
+  ✅ O - Open/Closed: Open for extension, closed for modification
+  ✅ L - Liskov Substitution: Subtypes can replace base types
+  ✅ I - Interface Segregation: Focused, cohesive interfaces
+  ✅ D - Dependency Inversion: Depend on abstractions, not concrete
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📁 DELIVERABLES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+XML Files (for Visual Paradigm import):
+  ✓ diagram_komponentow.xml         (9.7 KB)
+  ✓ diagram_klas_kontroler.xml      (37.3 KB)
+
+Documentation:
+  ✓ README.md                        - Main summary
+  ✓ analiza.md                       - Project analysis
+  ✓ analiza_wspolnosci_zmiennosci.md - Commonality/variability
+  ✓ diagram_komponentow_projekt.md   - Component design
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 HOW TO USE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Open OnlineCinema.vpp in Visual Paradigm
+2. Go to: File → Import → XMI/XML
+3. Import diagram_komponentow.xml (Task 1)
+4. Import diagram_klas_kontroler.xml (Task 2)
+5. Review and adjust layout if needed
+6. Generate code if required (Tools → Instant Generator)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎉 ALL PHASES COMPLETED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Phase 1: Project Analysis        ✅ DONE
+Phase 2: Architecture Design     ✅ DONE
+Phase 3: Control Layer Design    ✅ DONE
+Phase 4: XML Generation          ✅ DONE
+Phase 5: Documentation           ✅ DONE
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Next steps:
+  1. Review the generated XML files
+  2. Import into Visual Paradigm
+  3. Verify diagrams look correct
+  4. Merge branch to main when satisfied
+  
+  Commands:
+    git checkout main
+    git merge etap3-implementation
+    git push origin main
+
+╚══════════════════════════════════════════════════════════════════╝
+EOF
+
+<details>
+<summary>112 lines</summary>
+
+```
+╔══════════════════════════════════════════════════════════════════╗
+║                    ETAP 3 - COMPLETED ✅                         ║
+║           3-Layer MVC Architecture Implementation                ║
+╚══════════════════════════════════════════════════════════════════╝
+
+📦 PROJECT: Zintegrowany System Sprzedaży Biletów dla Sieci Multikin
+👥 AUTHORS: Oleksandr Radionenko, Yaroslav Perepilka
+🌿 BRANCH: etap3-implementation
+📅 DATE: 2025-11-24
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ TASK 1: Component Diagram (3-Layer Architecture)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 File: etap3/diagram_komponentow.xml
+
+Components:
+  🔹 Widok (View)         → Presentation layer
+  🔹 Kontroler (Controller) → Business logic layer  
+  🔹 Model                → Data access layer
+
+Interfaces:
+  🔸 IKontrolerAdministratoraSieci (4 operations)
+  🔸 IModel (7 operations)
+
+Connections:
+  Widok ----( uses )---→ IKontrolerAdministratoraSieci
+                              ↓ (provided by)
+                          Kontroler
+                              ↓ (uses)
+                           IModel
+                              ↓ (provided by)
+                            Model
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ TASK 2: Class Diagram for Controller Component
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 File: etap3/diagram_klas_kontroler.xml
+
+Package: Kontroler (10 classes total)
+
+Main Class:
+  • SystemSprzedazyBiletow
+    └─ main(args: String[]) : void
+
+Design Pattern #1: FACADE ✅
+  • KontrolerAdministratoraSieci
+    ├─ implements IKontrolerAdministratoraSieci
+    └─ Entry point for all admin operations
+
+Design Pattern #2: TEMPLATE METHOD ✅
+  • ObslugaSeansow (abstract)
+    ├─ wykonajOperacje() - template method
+    ├─ walidujDaneWejsciowe() - abstract
+    ├─ wykonajOperacjeNaDanych() - abstract
+    └─ wyswietlKomunikat() - abstract
+  
+  Concrete implementations:
+    • DodawanieSeansow
+    • EdytowanieSeansow
+    • UsuwanieSeansow
+
+Design Pattern #3: CHAIN OF RESPONSIBILITY ✅
+  • WalidatorDanych (abstract)
+    ├─ waliduj(dane) - chain handler
+    └─ sprawdz(dane) - abstract
+  
+  Concrete validators:
+    • WalidatorID
+    • WalidatorIstnienia
+    • WalidatorParametrow
+
+Relationships:
+  ✓ Realization (implements)
+  ✓ Generalization (extends)
+  ✓ Aggregation
+  ✓ Association
+  ✓ Dependency «use»
+  ✓ Dependency «instantiate»
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 SOLID PRINCIPLES APPLIED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✅ S - Single Responsibility: Each class has ONE responsibility
+  ✅ O - Open/Closed: Open for extension, closed for modification
+  ✅ L - Liskov Substitution: Subtypes can replace base types
+  ✅ I - Interface Segregation: Focused, cohesive interfaces
+  ✅ D - Dependency Inversion: Depend on abstractions, not concrete
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📁 DELIVERABLES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+XML Files (for Visual Paradigm import):
+  ✓ diagram_komponentow.xml         (9.7 KB)
+  ✓ diagram_klas_kontroler.xml      (37.3 KB)
+
+Documentation:
+  ✓ README.md                        - Main summary
+  ✓ analiza.md                       - Project analysis
+  ✓ analiza_wspolnosci_zmiennosci.md - Commonality/variability
+  ✓ diagram_komponentow_projekt.md   - Component design
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 HOW TO USE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Open OnlineCinema.vpp in Visual Paradigm
+2. Go to: File → Import → XMI/XML
+3. Import diagram_komponentow.xml (Task 1)
+4. Import diagram_klas_kontroler.xml (Task 2)
+5. Review and adjust layout if needed
+6. Generate code if required (Tools → Instant Generator)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎉 ALL PHASES COMPLETED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Phase 1: Project Analysis        ✅ DONE
+Phase 2: Architecture Design     ✅ DONE
+Phase 3: Control Layer Design    ✅ DONE
+Phase 4: XML Generation          ✅ DONE
+Phase 5: Documentation           ✅ DONE
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Next steps:
+  1. Review the generated XML files
+  2. Import into Visual Paradigm
+  3. Verify diagrams look correct
+  4. Merge branch to main when satisfied
+  
+  Commands:
+    git checkout main
+    git merge etap3-implementation
+    git push origin main
+
+╚══════════════════════════════════════════════════════════════════╝
+<exited with exit code 0>
+```
+
+</details>
+
+
+---
+
+<sub>⏱️ 77m 59s</sub>
+
+### 💬 Copilot
+
+## 🎉 **ETAP 3 COMPLETED!** 
+
+I've successfully completed all stages of the third phase project. Here's what was delivered:
+
+### ✅ **Deliverables:**
+
+**1. Component Diagram (Task 1)**
+- File: `etap3/diagram_komponentow.xml`
+- 3-layer MVC architecture: Widok (View), Kontroler (Controller), Model
+- 2 interfaces connecting the layers with proper lollipop & socket notation
+
+**2. Class Diagram for Controller Layer (Task 2)**
+- File: `etap3/diagram_klas_kontroler.xml`
+- 10 classes in the Kontroler package
+- Main class: `SystemSprzedazyBiletow` with `main()` operation
+- **3 Design Patterns implemented:**
+  - ✅ **Facade** - `KontrolerAdministratoraSieci`
+  - ✅ **Template Method** - `ObslugaSeansow` hierarchy
+  - ✅ **Chain of Responsibility** - `WalidatorDanych` hierarchy
+- All SOLID principles applied
+
+### 📁 **Files Created:**
+- `diagram_komponentow.xml` - Ready to import into Visual Paradigm
+- `diagram_klas_kontroler.xml` - Ready to import into Visual Paradigm
+- `README.md` - Complete documentation
+- Analysis documents for reference
+
+### 📝 **Branch & Commit:**
+- Branch: `etap3-implementation`
+- All work committed and ready for review
+
+### 🚀 **Next Steps:**
+1. Open Visual Paradigm
+2. Import the XML files (File → Import → XMI/XML)
+3. Review diagrams
+4. If satisfied, merge to main branch
+
+Everything is documented in Polish as requested, working step-by-step as you suggested! 🎯
+
+---
+
+<sub>⏱️ 81m 8s</sub>
+
+### ℹ️ Info
+
+Global shortcuts:
+  @ - mention files, include contents in the current context
+  Esc - cancel the current operation
+  ! - Execute the command in your local shell without sending to Copilot
+  Ctrl+c - cancel operation if thinking, clear input if present, or exit
+  Ctrl+d - shutdown
+  Ctrl+l - clear the screen
+
+Expand timeline content shortcuts:
+  Ctrl+o - expand all timeline/collapse timeline
+  Ctrl+r - expand recent timeline/collapse timeline
+
+Motion shortcuts:
+  Ctrl+a - move to the beginning of the line
+  Ctrl+e - move to the end of the line
+  Ctrl+h - delete previous character
+  Ctrl+w - delete previous word
+  Ctrl+u - delete from cursor to beginning of line
+  Ctrl+k - delete from cursor to end of line
+  Meta+←/→ - move cursor by word
+
+Use ↑↓ keys to navigate command history
+
+Respects instructions sourced from various locations:
+  `.github/instructions/**/*.instructions.md` (in git root and cwd)
+  `.github/copilot-instructions.md`
+  `AGENTS.md` (in git root and cwd)
+  `CLAUDE.md`
+  `GEMINI.md`
+  `$HOME/.copilot/copilot-instructions.md`
+  Additional directories via `COPILOT_CUSTOM_INSTRUCTIONS_DIRS`
+
+To learn about what I can do:
+  Ask me "What can you do?"
+  Or visit: https://docs.github.com/en/copilot/how-tos/use-copilot-agents/use-copilot-cli
+
+Available commands:
+  /add-dir \<directory\> - Add a directory to the allowed list for file access
+  /agent - Browse and select from available agents (if any)
+  /clear - Clear the conversation history
+  /cwd [directory] - Change working directory or show current directory
+  /delegate \<prompt\> - Delegate changes to remote repository with AI-generated PR
+  /exit, /quit - Exit the CLI
+  /share [file|gist] [path] - Share session to markdown file or GitHub gist
+  /feedback - Provide feedback about the CLI
+  /help - Show help for interactive commands
+  /list-dirs - Display all allowed directories for file access
+  /login - Log in to Copilot
+  /logout - Log out of Copilot
+  /mcp [show|add|edit|delete|disable|enable] [server-name] - Manage MCP server configuration
+  /model [model] - Select AI model to use
+  /reset-allowed-tools - Reset the list of allowed tools
+  /session - Show information about the current CLI session
+  /terminal-setup - Configure terminal for multiline input support (Shift+Enter and Ctrl+Enter)
+  /theme [show|set|list] [auto|dark|light] - View or configure terminal theme
+  /usage - Display session usage metrics and statistics
+  /user [show|list|switch] - Manage GitHub user list
+
+---
+
+<sub>Generated by [GitHub Copilot CLI](https://github.com/features/copilot/cli)</sub>

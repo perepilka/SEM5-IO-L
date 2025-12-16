@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:Visual_Paradigm="http://www.visual-paradigm.com/uml">
+  <xmi:Documentation exporter="Visual Paradigm" exporterVersion="17.0"/>
+  
+  <!-- Model -->
+  <uml:Model xmi:type="uml:Model" xmi:id="model_1" name="Architektura MVC - System Sprzedaży Biletów">
+    
+    <!-- Component Diagram -->
+    <packagedElement xmi:type="uml:Package" xmi:id="pkg_component_diagram" name="Diagram Komponentów">
+      
+      <!-- Interface: IKontrolerAdministratoraSieci -->
+      <packagedElement xmi:type="uml:Interface" xmi:id="interface_kontroler" name="IKontrolerAdministratoraSieci">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="op_edytuj_oferte" name="edytujOferteKina">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_edytuj_return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="op_dodaj_seans" name="dodajNowySeans">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodaj_nazwa" name="nazwaFilmu" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodaj_opis" name="opisFilmu" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodaj_liczba" name="liczbaSeansow" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_dodaj_return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="op_edytuj_szczegoly" name="edytujSzczegolySeansow">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_edytuj_id" name="idFilmu" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_edytuj_szcz_return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="op_usun_seans" name="usunSeans">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usun_id" name="idFilmu" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usun_return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      
+      <!-- Interface: IModel -->
+      <packagedElement xmi:type="uml:Interface" xmi:id="interface_model" name="IModel">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="op_pobierz_film" name="pobierzFilm">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_pobierz_id" name="id" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_pobierz_return" name="return" direction="return">
+            <type xmi:type="uml:Class" xmi:idref="class_film"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="op_zapisz_film" name="zapiszFilm">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_zapisz_film" name="film" direction="in">
+            <type xmi:type="uml:Class" xmi:idref="class_film"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_zapisz_return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="op_usun_film" name="usunFilm">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usun_film_id" name="id" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usun_film_return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="op_pobierz_seans" name="pobierzSeans">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_pobierz_seans_id" name="id" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_pobierz_seans_return" direction="return">
+            <type xmi:type="uml:Class" xmi:idref="class_seans"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="op_zapisz_seans" name="zapiszSeans">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_zapisz_seans" name="seans" direction="in">
+            <type xmi:type="uml:Class" xmi:idref="class_seans"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_zapisz_seans_return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#void"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="op_usun_seans_model" name="usunSeans">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usun_seans_id" name="id" direction="in">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_usun_seans_return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="op_waliduj" name="walidujParametrySeansu">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_waliduj_seans" name="seans" direction="in">
+            <type xmi:type="uml:Class" xmi:idref="class_seans"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="param_waliduj_return" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      
+      <!-- Component: Widok -->
+      <packagedElement xmi:type="uml:Component" xmi:id="component_widok" name="Widok">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_widok">
+          <body>Warstwa prezentacji - interfejs użytkownika (GUI).
+Nie będzie implementowana - symulowana przez Kontroler.</body>
+        </ownedComment>
+        <!-- Uses IKontrolerAdministratoraSieci -->
+        <packagedElement xmi:type="uml:Usage" xmi:id="usage_widok_kontroler" client="component_widok" supplier="interface_kontroler"/>
+      </packagedElement>
+      
+      <!-- Component: Kontroler -->
+      <packagedElement xmi:type="uml:Component" xmi:id="component_kontroler" name="Kontroler">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_kontroler">
+          <body>Warstwa kontroli - logika biznesowa i koordynacja.
+Zawiera główną klasę SystemSprzedazyBiletow z operacją main().</body>
+        </ownedComment>
+        <!-- Provides IKontrolerAdministratoraSieci -->
+        <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="realization_kontroler" client="component_kontroler" supplier="interface_kontroler" contract="interface_kontroler"/>
+        <!-- Uses IModel -->
+        <packagedElement xmi:type="uml:Usage" xmi:id="usage_kontroler_model" client="component_kontroler" supplier="interface_model"/>
+      </packagedElement>
+      
+      <!-- Component: Model -->
+      <packagedElement xmi:type="uml:Component" xmi:id="component_model" name="Model">
+        <ownedComment xmi:type="uml:Comment" xmi:id="comment_model">
+          <body>Warstwa encji - zarządzanie danymi i dostęp do bazy danych.
+Zawiera encje: Film, Seans, Kino.</body>
+        </ownedComment>
+        <!-- Provides IModel -->
+        <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="realization_model" client="component_model" supplier="interface_model" contract="interface_model"/>
+      </packagedElement>
+      
+    </packagedElement>
+    
+    <!-- Diagram Information -->
+    <Visual_Paradigm:Diagram xmi:type="Visual_Paradigm:Diagram" xmi:id="diagram_component" name="Diagram Komponentów - MVC" diagramType="ComponentDiagram">
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:ComponentShape" xmi:id="shape_widok" modelElement="component_widok" x="100" y="100" width="150" height="100"/>
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:InterfaceShape" xmi:id="shape_interface_kontroler" modelElement="interface_kontroler" x="350" y="80" width="200" height="140"/>
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:ComponentShape" xmi:id="shape_kontroler" modelElement="component_kontroler" x="350" y="280" width="200" height="120"/>
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:InterfaceShape" xmi:id="shape_interface_model" modelElement="interface_model" x="650" y="80" width="180" height="140"/>
+      <Visual_Paradigm:DiagramElement xmi:type="Visual_Paradigm:ComponentShape" xmi:id="shape_model" modelElement="component_model" x="650" y="280" width="180" height="100"/>
+      <Visual_Paradigm:Connector xmi:type="Visual_Paradigm:UsageLine" xmi:id="conn_widok_kontroler" from="shape_widok" to="shape_interface_kontroler" modelElement="usage_widok_kontroler"/>
+      <Visual_Paradigm:Connector xmi:type="Visual_Paradigm:RealizationLine" xmi:id="conn_kontroler_interface" from="shape_kontroler" to="shape_interface_kontroler" modelElement="realization_kontroler"/>
+      <Visual_Paradigm:Connector xmi:type="Visual_Paradigm:UsageLine" xmi:id="conn_kontroler_model" from="shape_kontroler" to="shape_interface_model" modelElement="usage_kontroler_model"/>
+      <Visual_Paradigm:Connector xmi:type="Visual_Paradigm:RealizationLine" xmi:id="conn_model_interface" from="shape_model" to="shape_interface_model" modelElement="realization_model"/>
+    </Visual_Paradigm:Diagram>
+    
+  </uml:Model>
+  
+</xmi:XMI>
