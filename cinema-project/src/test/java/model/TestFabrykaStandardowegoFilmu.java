@@ -55,7 +55,6 @@ class TestFabrykaStandardowegoFilmu {
         
         // Wtedy: Film powinien być utworzony z poprawnymi danymi
         assertNotNull(film, "Film nie powinien być null");
-        assertEquals("F001", film.dajId());
         assertEquals("Avengers", film.dajTytul());
         assertEquals("Superbohaterowie", film.dajOpis());
         assertEquals(150, film.dajCzasTrwania());

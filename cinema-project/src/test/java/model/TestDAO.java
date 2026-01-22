@@ -86,20 +86,21 @@ class TestDAO {
         assertNull(znalezionyFilm, "Nieistniejący film powinien zwrócić null");
     }
     
-    @Test
+    @ParameterizedTest
     @Order(4)
     @DisplayName("Test automatycznego inkrementowania ID filmów")
-    void testInkrementacjaIdFilmow() {
-        // Jeśli: Dane kilku filmów
-        String film1 = "F001;Film1;Opis1;90;Komedia;20.0";
-        String film2 = "F002;Film2;Opis2;120;Dramat;25.0";
-        String film3 = "F003;Film3;Opis3;110;Akcja;30.0";
-        
+    @CsvSource({
+        "Film1;Opis1;90;Komedia;20.0, Film2;Opis2;120;Dramat;25.0, Film3;Opis3;110;Akcja;30.0",
+        "KomediaX;OpisX;95;Komedia;18.0, DramatY;OpisY;125;Dramat;22.5, AkcjaZ;OpisZ;100;Akcja;27.0"
+    })
+    void testInkrementacjaIdFilmow(String film1, String film2, String film3) {
+        // Jeśli: Dane kilku filmów (parametryzowane)
+
         // Gdy: Dodajemy filmy kolejno
         String id1 = dao.dodajFilm(film1);
         String id2 = dao.dodajFilm(film2);
         String id3 = dao.dodajFilm(film3);
-        
+
         // Wtedy: ID powinny być kolejno inkrementowane
         assertEquals("F1", id1);
         assertEquals("F2", id2);
@@ -125,14 +126,14 @@ class TestDAO {
     @Order(6)
     @DisplayName("Test dodawania wielu filmów")
     @CsvSource({
-        "F001, Titanic, Romans, 195, Dramat, 25.0",
-        "F002, Avatar, Fantasy, 162, SciFi, 35.0",
-        "F003, Inception, Thriller, 148, Akcja, 32.0"
+        "Titanic, Romans, 195, Dramat, 25.0",
+        "Avatar, Fantasy, 162, SciFi, 35.0",
+        "Inception, Thriller, 148, Akcja, 32.0"
     })
-    void testDodajWieleFilmow(String id, String tytul, String opis, 
+    void testDodajWieleFilmow(String tytul, String opis,
                               int czas, String gatunek, double cena) {
         // Jeśli: Dane filmu
-        String daneFilmu = id + ";" + tytul + ";" + opis + ";" + czas + ";" + gatunek + ";" + cena;
+        String daneFilmu = tytul + ";" + opis + ";" + czas + ";" + gatunek + ";" + cena;
         
         // Gdy: Dodajemy film
         String generowaneId = dao.dodajFilm(daneFilmu);
@@ -150,7 +151,7 @@ class TestDAO {
     @ValueSource(doubles = {10.0, 15.5, 20.0, 25.99, 30.0})
     void testDodajFilmyRozneCeny(double cena) {
         // Jeśli: Dane filmu z różnymi cenami
-        String daneFilmu = "F001;Film;Opis;120;Gatunek;" + cena;
+        String daneFilmu = "Film;Opis;120;Gatunek;" + cena;
         
         // Gdy: Dodajemy film
         String id = dao.dodajFilm(daneFilmu);
