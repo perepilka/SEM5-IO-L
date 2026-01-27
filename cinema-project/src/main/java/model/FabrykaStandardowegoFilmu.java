@@ -4,7 +4,7 @@ package model;
  * Fabryka do tworzenia standardowych filmów bez żadnych dekoracji.
  * Implementuje wzorzec Fabryka do tworzenia filmów.
  */
-public class FabrykaStandardowegoFilmu implements IFabrykaFilmu {
+public class  FabrykaStandardowegoFilmu implements IFabrykaFilmu {
 
 	/**
 	 * Tworzy standardowy film z danych rozdzielonych średnikami.

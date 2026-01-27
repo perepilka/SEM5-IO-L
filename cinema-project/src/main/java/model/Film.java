@@ -2,7 +2,8 @@ package model;
 
 /**
  * Reprezentuje standardowy film w systemie zarządzania kinem.
- * Przechowuje podstawowe informacje o filmie, w tym tytuł, opis, czas trwania, gatunek i cenę.
+ * Przechowuje podstawowe informacje o filmie, w tym tytuł, opis, czas trwania,
+ * gatunek i cenę.
  */
 public class Film implements IFilm {
 	private String id;
@@ -14,14 +15,16 @@ public class Film implements IFilm {
 
 	/**
 	 * Tworzy Film z określonymi szczegółami.
-	 * @param idValue unikalny identyfikator filmu
-	 * @param tytulValue tytuł filmu
-	 * @param opisValue opis filmu
-	 * @param czasValue czas trwania w minutach
+	 * 
+	 * @param idValue      unikalny identyfikator filmu
+	 * @param tytulValue   tytuł filmu
+	 * @param opisValue    opis filmu
+	 * @param czasValue    czas trwania w minutach
 	 * @param gatunekValue gatunek filmu
-	 * @param cenaValue cena podstawowa seansów
+	 * @param cenaValue    cena podstawowa seansów
 	 */
-	public Film(String idValue, String tytulValue, String opisValue, int czasValue, String gatunekValue, double cenaValue) {
+	public Film(String idValue, String tytulValue, String opisValue, int czasValue, String gatunekValue,
+			double cenaValue) {
 		id = idValue;
 		tytul = tytulValue;
 		opis = opisValue;
@@ -32,6 +35,7 @@ public class Film implements IFilm {
 
 	/**
 	 * Zwraca unikalny identyfikator filmu.
+	 * 
 	 * @return ID filmu
 	 */
 	public String dajId() {
@@ -40,6 +44,7 @@ public class Film implements IFilm {
 
 	/**
 	 * Zwraca tytuł filmu.
+	 * 
 	 * @return tytuł filmu
 	 */
 	public String dajTytul() {
@@ -48,6 +53,7 @@ public class Film implements IFilm {
 
 	/**
 	 * Zwraca opis filmu.
+	 * 
 	 * @return opis filmu
 	 */
 	public String dajOpis() {
@@ -56,6 +62,7 @@ public class Film implements IFilm {
 
 	/**
 	 * Zwraca czas trwania filmu w minutach.
+	 * 
 	 * @return czas trwania w minutach
 	 */
 	public int dajCzasTrwania() {
@@ -64,9 +71,19 @@ public class Film implements IFilm {
 
 	/**
 	 * Zwraca cenę podstawową seansów dla tego filmu.
+	 * 
 	 * @return cena seansu
 	 */
 	public double dajCeneSeansow() {
 		return cenaPodstawowa;
+	}
+
+	/**
+	 * Zwraca gatunek filmu.
+	 * 
+	 * @return gatunek filmu
+	 */
+	public String dajGatunek() {
+		return gatunek;
 	}
 }

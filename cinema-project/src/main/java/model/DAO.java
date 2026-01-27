@@ -7,7 +7,8 @@ import java.util.List;
 
 /**
  * Data Access Object do zarządzania trwałością danych kinowych.
- * Zapewnia przechowywanie i pobieranie w pamięci dla filmów, seansów, rezerwacji i klientów.
+ * Zapewnia przechowywanie i pobieranie w pamięci dla filmów, seansów,
+ * rezerwacji i klientów.
  */
 public class DAO implements IDAO {
 
@@ -16,7 +17,6 @@ public class DAO implements IDAO {
   private Map<String, String> bazyRezerwacji;
   private Map<String, String> bazyKlientow;
   private List<String> logi;
-  private int nextFilmId;
   private int nextSeansId;
   private int nextRezerwacjaId;
   private int nextKlientId;
@@ -31,7 +31,6 @@ public class DAO implements IDAO {
     bazyRezerwacji = new HashMap<>();
     bazyKlientow = new HashMap<>();
     logi = new ArrayList<>();
-    nextFilmId = 1;
     nextSeansId = 1;
     nextRezerwacjaId = 1;
     nextKlientId = 1;
@@ -39,6 +38,7 @@ public class DAO implements IDAO {
 
   /**
    * Dodaje wpis zdarzenia do dziennika systemowego.
+   * 
    * @param zdarzenie opis zdarzenia do zapisania
    */
   public void dodajWpisDoLogu(String zdarzenie) {
@@ -48,6 +48,7 @@ public class DAO implements IDAO {
 
   /**
    * Pobiera dane filmu według ID.
+   * 
    * @param idFilmu ID filmu do znalezienia
    * @return dane filmu jako string, lub null jeśli nie znaleziono
    */
@@ -56,18 +57,21 @@ public class DAO implements IDAO {
   }
 
   /**
-   * Dodaje nowy film do bazy danych i generuje unikalny ID.
-   * @param filmData dane filmu do zapisania
-   * @return wygenerowane ID filmu
+   * Dodaje nowy film do bazy danych.
+   * 
+   * @param filmData dane filmu do zapisania (pierwsze pole to ID)
+   * @return ID filmu z danych
    */
   public String dodajFilm(String filmData) {
-    String id = "F" + nextFilmId++;
+    String[] parts = filmData.split(";");
+    String id = parts[0];
     bazyFilmow.put(id, filmData);
     return id;
   }
 
   /**
    * Aktualizuje istniejące dane filmu.
+   * 
    * @param filmData zaktualizowane dane filmu
    */
   public void edytujFilm(String filmData) {
@@ -76,6 +80,7 @@ public class DAO implements IDAO {
 
   /**
    * Usuwa film z bazy danych.
+   * 
    * @param idFilmu ID filmu do usunięcia
    */
   public void usunFilm(String idFilmu) {
@@ -84,6 +89,7 @@ public class DAO implements IDAO {
 
   /**
    * Pobiera dane seansu według ID.
+   * 
    * @param idSeansu ID seansu do znalezienia
    * @return dane seansu jako string, lub null jeśli nie znaleziono
    */
@@ -93,13 +99,15 @@ public class DAO implements IDAO {
 
   /**
    * Znajduje wszystkie seanse dla określonego filmu.
+   * 
    * @param idFilmu ID filmu
    * @return tablica ID seansów dla określonego filmu
    */
   public String[] znajdzSeansyFilmu(String idFilmu) {
     List<String> seansyFilmu = new ArrayList<>();
     for (Map.Entry<String, String> entry : bazySeans.entrySet()) {
-      if (entry.getValue().contains(idFilmu)) {
+      String[] parts = entry.getValue().split(";");
+      if (parts.length > 0 && parts[0].equals(idFilmu)) {
         seansyFilmu.add(entry.getKey());
       }
     }
@@ -108,6 +116,7 @@ public class DAO implements IDAO {
 
   /**
    * Dodaje nowy seans do bazy danych i generuje unikalny ID.
+   * 
    * @param seansData dane seansu do zapisania
    * @return wygenerowane ID seansu
    */
@@ -119,6 +128,7 @@ public class DAO implements IDAO {
 
   /**
    * Aktualizuje istniejące dane seansu.
+   * 
    * @param seansData zaktualizowane dane seansu
    */
   public void edytujSeans(String seansData) {
@@ -127,6 +137,7 @@ public class DAO implements IDAO {
 
   /**
    * Usuwa seans z bazy danych.
+   * 
    * @param idSeansu ID seansu do usunięcia
    */
   public void usunSeans(String idSeansu) {
@@ -135,6 +146,7 @@ public class DAO implements IDAO {
 
   /**
    * Pobiera dane rezerwacji według ID.
+   * 
    * @param idRezerwacji ID rezerwacji do znalezienia
    * @return dane rezerwacji jako string, lub null jeśli nie znaleziono
    */
@@ -144,6 +156,7 @@ public class DAO implements IDAO {
 
   /**
    * Dodaje nową rezerwację do bazy danych i generuje unikalny ID.
+   * 
    * @param rezerwacjaData dane rezerwacji do zapisania
    * @return wygenerowane ID rezerwacji
    */
@@ -155,6 +168,7 @@ public class DAO implements IDAO {
 
   /**
    * Usuwa rezerwację z bazy danych.
+   * 
    * @param idRezerwacji ID rezerwacji do usunięcia
    */
   public void usunRezerwacje(String idRezerwacji) {
@@ -163,6 +177,7 @@ public class DAO implements IDAO {
 
   /**
    * Pobiera dane klienta według ID.
+   * 
    * @param idKlienta ID klienta do znalezienia
    * @return dane klienta jako string, lub null jeśli nie znaleziono
    */
@@ -172,6 +187,7 @@ public class DAO implements IDAO {
 
   /**
    * Dodaje nowego klienta do bazy danych.
+   * 
    * @param klientData dane klienta do zapisania
    * @return wygenerowane ID klienta
    */

@@ -2,13 +2,15 @@ package model;
 
 /**
  * Bazowa klasa dekoratora dla filmów implementująca wzorzec Dekorator.
- * Zapewnia opakowanie wokół IFilm, które deleguje wszystkie wywołania do opakowanego filmu.
+ * Zapewnia opakowanie wokół IFilm, które deleguje wszystkie wywołania do
+ * opakowanego filmu.
  */
 public class DekoratorFilmu implements IFilm {
 	protected IFilm film;
 
 	/**
 	 * Tworzy DekoratorFilmu opakowujący określony film.
+	 * 
 	 * @param filmValue film do udekorowania
 	 */
 	public DekoratorFilmu(IFilm filmValue) {
@@ -17,6 +19,7 @@ public class DekoratorFilmu implements IFilm {
 
 	/**
 	 * Zwraca unikalny identyfikator filmu.
+	 * 
 	 * @return ID filmu z opakowanego filmu
 	 */
 	public String dajId() {
@@ -25,6 +28,7 @@ public class DekoratorFilmu implements IFilm {
 
 	/**
 	 * Zwraca tytuł filmu.
+	 * 
 	 * @return tytuł filmu z opakowanego filmu
 	 */
 	public String dajTytul() {
@@ -33,6 +37,7 @@ public class DekoratorFilmu implements IFilm {
 
 	/**
 	 * Zwraca opis filmu.
+	 * 
 	 * @return opis filmu z opakowanego filmu
 	 */
 	public String dajOpis() {
@@ -41,6 +46,7 @@ public class DekoratorFilmu implements IFilm {
 
 	/**
 	 * Zwraca czas trwania filmu w minutach.
+	 * 
 	 * @return czas trwania z opakowanego filmu
 	 */
 	public int dajCzasTrwania() {
@@ -49,9 +55,19 @@ public class DekoratorFilmu implements IFilm {
 
 	/**
 	 * Zwraca cenę seansów dla tego filmu.
+	 * 
 	 * @return cena seansu z opakowanego filmu
 	 */
 	public double dajCeneSeansow() {
 		return film.dajCeneSeansow();
+	}
+
+	/**
+	 * Zwraca gatunek filmu.
+	 * 
+	 * @return gatunek filmu z opakowanego filmu
+	 */
+	public String dajGatunek() {
+		return film.dajGatunek();
 	}
 }

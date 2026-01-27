@@ -10,8 +10,9 @@ public class Model implements IModel {
 
 	/**
 	 * Tworzy Model z określoną ofertą i DAO.
+	 * 
 	 * @param ofertaValue instancja oferty kina
-	 * @param daoValue obiekt dostępu do danych dla trwałości
+	 * @param daoValue    obiekt dostępu do danych dla trwałości
 	 */
 	public Model(Oferta ofertaValue, IDAO daoValue) {
 		oferta = ofertaValue;
@@ -21,26 +22,28 @@ public class Model implements IModel {
 	/**
 	 * Dodaje nowy film do systemu kina.
 	 * Tworzy film za pomocą fabryki, zapisuje go i loguje operację.
+	 * 
 	 * @param daneFilmu dane filmu w formacie rozdzielanym średnikami
 	 * @return komunikat potwierdzenia z ID filmu
 	 */
 	public String dodajFilm(String daneFilmu) {
 		IFabrykaFilmu fabryka = new FabrykaStandardowegoFilmu();
 		IFilm film = fabryka.utworzFilm(daneFilmu);
-		
-		String opis = film.dajId() + ";" + film.dajTytul() + ";" + 
-		              film.dajOpis() + ";" + film.dajCzasTrwania() + ";" + 
-		              film.dajCeneSeansow();
-		
+
+		String opis = film.dajId() + ";" + film.dajTytul() + ";" +
+				film.dajOpis() + ";" + film.dajCzasTrwania() + ";" +
+				film.dajGatunek() + ";" + film.dajCeneSeansow();
+
 		String idFilmu = dao.dodajFilm(opis);
 		dao.dodajWpisDoLogu("Dodano film: " + idFilmu);
-		
+
 		return "Film dodany pomyslnie. ID: " + idFilmu;
 	}
 
 	/**
 	 * Edytuje istniejący film w systemie kina.
-	 * @param idFilmu ID filmu do edycji
+	 * 
+	 * @param idFilmu   ID filmu do edycji
 	 * @param daneFilmu nowe dane filmu
 	 * @return komunikat potwierdzenia
 	 */
@@ -50,6 +53,7 @@ public class Model implements IModel {
 
 	/**
 	 * Usuwa film z systemu kina.
+	 * 
 	 * @param idFilmu ID filmu do usunięcia
 	 * @return komunikat potwierdzenia
 	 */
@@ -59,6 +63,7 @@ public class Model implements IModel {
 
 	/**
 	 * Dodaje nowy seans do systemu kina.
+	 * 
 	 * @param daneSeansu dane seansu w formacie rozdzielanym średnikami
 	 * @return komunikat potwierdzenia z ID seansu
 	 */
@@ -70,7 +75,8 @@ public class Model implements IModel {
 
 	/**
 	 * Edytuje istniejący seans w systemie kina.
-	 * @param idSeansu ID seansu do edycji
+	 * 
+	 * @param idSeansu   ID seansu do edycji
 	 * @param daneSeansu nowe dane seansu
 	 * @return komunikat potwierdzenia
 	 */
@@ -80,6 +86,7 @@ public class Model implements IModel {
 
 	/**
 	 * Usuwa seans z systemu kina.
+	 * 
 	 * @param idSeansu ID seansu do usunięcia
 	 * @return komunikat potwierdzenia
 	 */
@@ -89,31 +96,34 @@ public class Model implements IModel {
 
 	/**
 	 * Pobiera repertuar kina na podstawie kryteriów wyszukiwania.
+	 * 
 	 * @param kryteria kryteria wyszukiwania (np. ID filmu)
-	 * @return sformatowany ciąg znaków pasujących seansów lub komunikat jeśli nie znaleziono
+	 * @return sformatowany ciąg znaków pasujących seansów lub komunikat jeśli nie
+	 *         znaleziono
 	 */
 	public String pobierzRepertuar(String kryteria) {
 		String[] seansyIds = dao.znajdzSeansyFilmu(kryteria);
-		
+
 		if (seansyIds == null || seansyIds.length == 0) {
 			return "Brak seansow dla filmu: " + kryteria;
 		}
-		
+
 		StringBuilder repertuar = new StringBuilder();
 		repertuar.append("Repertuar dla filmu ").append(kryteria).append(":\n");
-		
+
 		for (String seansId : seansyIds) {
 			String seansData = dao.znajdzSeans(seansId);
 			if (seansData != null) {
 				repertuar.append("  - Seans: ").append(seansData).append("\n");
 			}
 		}
-		
+
 		return repertuar.toString();
 	}
 
 	/**
 	 * Pobiera pełny repertuar dla określonego kina.
+	 * 
 	 * @param idKina ID kina
 	 * @return pełny repertuar kina
 	 */
@@ -123,29 +133,39 @@ public class Model implements IModel {
 
 	/**
 	 * Tworzy rezerwację na seans.
-	 * Parsuje dane rezerwacji, tworzy obiekt rezerwacji, zapisuje go i loguje operację.
-	 * @param daneRezerwacji dane rezerwacji w formacie: id;idSeansu;idKlienta;nrMiejsca;cena
+	 * Parsuje dane rezerwacji, tworzy obiekt rezerwacji, zapisuje go i loguje
+	 * operację.
+	 * 
+	 * @param daneRezerwacji dane rezerwacji w formacie:
+	 *                       idSeansu;idKlienta;nrMiejsca;cena
 	 * @return komunikat potwierdzenia ze szczegółami rezerwacji
 	 */
 	public String zarezerwujMiejsce(String daneRezerwacji) {
 		String[] dane = daneRezerwacji.split(";");
-		String idRezerwacji = dane[0];
-		String idSeansu = dane[1];
-		String idKlienta = dane[2];
-		int nrMiejsca = Integer.parseInt(dane[3]);
-		double cena = Double.parseDouble(dane[4]);
-		
-		Rezerwacja rezerwacja = new Rezerwacja(idRezerwacji, idSeansu, idKlienta, nrMiejsca, cena);
-		
+		String idSeansu = dane[0];
+		String idKlienta = dane[1];
+		int nrMiejsca = Integer.parseInt(dane[2]);
+		double cena = Double.parseDouble(dane[3]);
+
+		// Sprawdzenie czy seans istnieje (Fix #6)
+		String seansData = dao.znajdzSeans(idSeansu);
+		if (seansData == null) {
+			return "Blad: Seans o ID " + idSeansu + " nie istnieje";
+		}
+
+		// ID rezerwacji będzie wygenerowane przez DAO (Fix #4)
+		Rezerwacja rezerwacja = new Rezerwacja(null, idSeansu, idKlienta, nrMiejsca, cena);
+
 		String opis = rezerwacja.dajOpis();
 		String id = dao.dodajRezerwacje(opis);
 		dao.dodajWpisDoLogu("Zarezerwowano bilet: " + id + " dla klienta: " + idKlienta);
-		
+
 		return "Rezerwacja wykonana pomyslnie. ID: " + id + ", cena: " + cena + " PLN";
 	}
 
 	/**
 	 * Anuluje istniejącą rezerwację.
+	 * 
 	 * @param idRezerwacji ID rezerwacji do anulowania
 	 * @return komunikat potwierdzenia
 	 */
@@ -155,6 +175,7 @@ public class Model implements IModel {
 
 	/**
 	 * Finalizuje transakcję zakupu.
+	 * 
 	 * @param daneZakupu dane zakupu
 	 * @return komunikat potwierdzenia
 	 */
@@ -164,6 +185,7 @@ public class Model implements IModel {
 
 	/**
 	 * Rejestruje zdarzenie systemowe.
+	 * 
 	 * @param zdarzenie opis zdarzenia do zarejestrowania
 	 */
 	public void zarejestrujZdarzenie(String zdarzenie) {
